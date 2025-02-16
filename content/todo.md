@@ -1,0 +1,120 @@
+# TODO
+
+- general
+    - file structure (shared/core/pages or features)
+    - naming convention
+        - Always use whole word, no abbreviation
+    - code style
+        - https://github.com/microsoft/TypeScript/wiki/Coding-guidelines
+        - always use triple equal ===, except for != null
+        - comments (bad vs good comment)
+            - TODO and FIXME : always set ticket code
+    - never use var, use const or let
+    - use #myVar for private var, not private myVar or _myVar
+    - philosphy 
+        - frontend should be as simple as possible, complexity must be on backend
+        - data validation and business logic must always be on backend side, front side is for UX
+        - use as little dependencies as possible
+        - automate everything
+        - KISS
+        - SOLID
+        - Prefer composition over extension
+- data fetching
+    - use resolver instead of ngOnInit data fetching
+    - use OpenAPI specification
+    - use specific models
+        - prefix by Create/Read/Update/Search
+        - suffix by Request/Response
+    - REST API
+        - plural
+        - kebab-case in path
+        - avoid verb in path
+        - specific DTO for each endpoint
+            - prefix by Create/Read/Update/Search
+            - suffix by Request/Response
+    - use interceptor
+    - make as few requests as possible
+        - avoid requests in loops
+    - avoid multiple requests to get the data you want
+        - if you need to combine the result of 2 requests = design issue
+    - avoid sequential requests
+    - avoid filtering request result, example : getting a list for just one item
+    - no HTTP call
+- typing
+    - prefer `?` type over undefined in methode inputs or objectƒ attributes
+    - never use any, use unknown or generics
+    - do not create class for pojo objects
+- strategy pattern for component
+- route path not hardcoded, define constants to reuse for nav
+- form
+    - Template vs ReactiveForm
+    - always type
+    - formControlName vs formControl / form.controls.a vs form.get('a') vs form.controls['a']
+    - how to translate enums to readable text
+    - how to use mat-select and reactive form to display a list of objects (id or object itself as option value ?)
+    - how to reuse form for both edit and readonly page
+    - how to split form in multiple components
+- i18n
+    - use https://github.com/daniel-sc/ng-extract-i18n-merge
+- state management
+    - prefer sharing inputs by input/outputs, then service, then store/shared state
+    - use shared state only to : cache data for reusing it, or share data between two or more components further apart in component tree
+- component
+    - naming selector
+        - prefix app-
+    - group components attributes (inject, input, output, constants, ...)
+    - use input, output and host signals instead of @Input, @Ouput and @Host decorators
+    - use model for input/ouput
+    - use inject instead of constructor
+    - use layout components
+    - use content projection
+    - use control flow
+    - avoid ngOnChanges
+    - avoid function call in template
+    - never make heavy compute in template 
+    - avoid manipulating DOM
+    - never use ViewEncapsulation.None
+    - ChangeDetectionStrategy.Default vs ChangeDetectionStrategy.OnPush
+        - Configurer pour mettre OnPush par défaut dans angular.json
+    - avoid as much as possible detectChanges, usually means it is bad code/architecture
+    - avoid as much as possible markForCheck, use signals instead
+    - subscritions
+        - when and when not to unsubscribe
+        - use async pipes
+        - use takeUntilDestroyed instead of saving subscription and unsubscribe in ngOnDestroy
+    - rxjs ?
+    - use standalone, never NgModule
+    - component extending another component or directive 
+- styling 
+    - ngdeep usage
+    - global css
+    - overriding UI lib components
+        - material specific override mixin
+    - avoid using !important
+    - class vs NgClass ?
+    - use MediaMatcher to subscribe to window width changes
+- libraries recommendations and advices
+    - state management : ngrx
+    - ui components :
+        - material
+        - primeng
+        - ng zorro
+        - spartan ui
+    - css :
+        - tailwind
+        - bootstrap
+    - icon
+    - font
+    - testing (jest, ...)
+- performance
+    - nothing then virtual scroll or client pagination then backend pagination
+    - rendering
+        - when to use CSR vs SSR vs SSG
+        - use lazy loading
+- abstraction
+    - never polluting generic components with specific logic, use input/outputs, generics, content projection
+- testing
+- going further, share useful links :
+    - git commit convention
+    - semver
+
