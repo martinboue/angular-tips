@@ -1,8 +1,7 @@
 # Dev environment
 
-## Prerequisites
+## Requirements
 - Install `node` and `npm`.
-- Install `ng`.
 
 ## Install
 To install all dependencies, run:

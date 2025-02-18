@@ -44,8 +44,16 @@
     - prefer `?` type over undefined in methode inputs or objectƒ attributes
     - never use any, use unknown or generics
     - do not create class for pojo objects
+    - recommend tsconfig options
+    - use Readonly<T> or readonly T or "as const"
+    - use satisfies
+    - type vs interface
 - strategy pattern for component
-- route path not hardcoded, define constants to reuse for nav
+- routing
+    - route path not hardcoded, define constants to reuse for nav
+    - use lazy loading
+    - naming convention
+    - use custom data to pass static data to components
 - form
     - Template vs ReactiveForm
     - always type
@@ -54,6 +62,7 @@
     - how to use mat-select and reactive form to display a list of objects (id or object itself as option value ?)
     - how to reuse form for both edit and readonly page
     - how to split form in multiple components
+    - use control value accessor for custom form fields
 - i18n
     - use https://github.com/daniel-sc/ng-extract-i18n-merge
 - state management
@@ -66,12 +75,7 @@
     - use input, output and host signals instead of @Input, @Ouput and @Host decorators
     - use model for input/ouput
     - use inject instead of constructor
-    - use layout components
-    - use content projection
-    - use control flow
     - avoid ngOnChanges
-    - avoid function call in template
-    - never make heavy compute in template 
     - avoid manipulating DOM
     - never use ViewEncapsulation.None
     - ChangeDetectionStrategy.Default vs ChangeDetectionStrategy.OnPush
@@ -84,7 +88,23 @@
         - use takeUntilDestroyed instead of saving subscription and unsubscribe in ngOnDestroy
     - rxjs ?
     - use standalone, never NgModule
-    - component extending another component or directive 
+    - component extending another component or directive
+    - implement lifecycle interface (OnInit, OnDestroy, ...) if you define its methods
+    - prefer template and CSS in a seperate file
+        - exception : extremely short template (1-2 lines)
+    - template
+        - avoid function call in template
+        - never make heavy compute in template 
+        - use content projection
+        - use adequat tags
+            - <a> with routerLink for links, not button with router.navigateByUrl
+            - button for clickable elements
+        - use control flow
+        - use layout components
+        - use as few tags as possible
+        - attribute binding : always use [field]="value" instead of field="{{ value }}"
+            - exception : mixing variables and constants, ex : class="prefix-{{ state }}"
+        - group related tags in code blocks and add comments for readability
 - styling 
     - ngdeep usage
     - global css
@@ -100,19 +120,30 @@
         - primeng
         - ng zorro
         - spartan ui
+        - avoid mixing multiple components libs
     - css :
         - tailwind
         - bootstrap
     - icon
     - font
     - testing (jest, ...)
+    - date :
+        - moment : deprecated 
 - performance
     - nothing then virtual scroll or client pagination then backend pagination
     - rendering
         - when to use CSR vs SSR vs SSG
-        - use lazy loading
+- features 
+    - auth
+        - recommend tool : angular auth oidc client
+        - inject token by configuring openapi generator or use interceptor
+    - logging
+    - handling exceptions
+- maintenance : use migration guide and schematics
 - abstraction
     - never polluting generic components with specific logic, use input/outputs, generics, content projection
+- IDE
+    - setup for vscode or intelliJ (plugins, conf, ...)
 - testing
 - going further, share useful links :
     - git commit convention
