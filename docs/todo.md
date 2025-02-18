@@ -1,5 +1,4 @@
 # TODO
-
 - general
     - file structure (shared/core/pages or features)
     - naming convention
@@ -8,7 +7,7 @@
         - https://github.com/microsoft/TypeScript/wiki/Coding-guidelines
         - always use triple equal ===, except for != null
         - comments (bad vs good comment)
-            - TODO and FIXME : always set ticket code
+            - TODO and FIXME : always set issue/ticket code
     - never use var, use const or let
     - use #myVar for private var, not private myVar or _myVar
     - philosphy 
@@ -45,7 +44,7 @@
     - never use any, use unknown or generics
     - do not create class for pojo objects
     - recommend tsconfig options
-    - use Readonly<T> or readonly T or "as const"
+    - use `Readonly<T>` or readonly T or "as const"
     - use satisfies
     - type vs interface
 - strategy pattern for component
@@ -97,13 +96,13 @@
         - never make heavy compute in template 
         - use content projection
         - use adequat tags
-            - <a> with routerLink for links, not button with router.navigateByUrl
+            - `<a>` with routerLink for links, not button with router.navigateByUrl
             - button for clickable elements
         - use control flow
         - use layout components
         - use as few tags as possible
-        - attribute binding : always use [field]="value" instead of field="{{ value }}"
-            - exception : mixing variables and constants, ex : class="prefix-{{ state }}"
+        - attribute binding : always use `[field]="value"` instead of `field="{{ value }}"`
+            - exception : mixing variables and constants, ex : `class="prefix-{{ state }}"`
         - group related tags in code blocks and add comments for readability
 - styling 
     - ngdeep usage
@@ -148,4 +147,3 @@
 - going further, share useful links :
     - git commit convention
     - semver
-

@@ -1,16 +1,17 @@
 # Dev environment
+This website is built using [Docusaurus](https://docusaurus.io).
 
 ## Requirements
-- Install `node` and `npm`.
+- `Node.js` version 18.0 or above.
 
-## Install
+## Installation
 To install all dependencies, run:
 
 ```bash
 npm install
 ```
 
-## Run locally
+## Local Development
 To start the project locally, run:
 
 ```bash
@@ -22,4 +23,11 @@ To execute unit tests, run:
 
 ```bash
 npm run test
+```
+
+## Build
+To generate static content, run:
+
+```bash
+npm run build
 ```
