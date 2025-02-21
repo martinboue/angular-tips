@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+draft: true
 ---
 
 # About
@@ -9,10 +10,14 @@ Before you read, this guide is:
 
 Public : any experience
 
-## Rules :
-- if possible, the tip title or category should be solution/problem/use case oriented
-    - good example : "Global style"
-    - bad example : "::ng-deep" 
-- a tip should add value to angular official doc
-    - good example : "To do X prefer using feature A over feature B because of Y"
-    - bad example : "Feature A exists" and A is documented on angular official doc
+## Vocabulary
+
+Each tip describes either a good or bad practice, and all follow the same rule, as described in the official [Angular documentation](https://angular.dev/style-guide#style-vocabulary):
+
+>**Do** is one that should always be followed. Always might be a bit too strong of a word. Guidelines that literally should always be followed are extremely rare. On the other hand, you need a really unusual case for breaking a Do guideline.
+>
+>**Consider** guidelines should generally be followed. If you fully understand the meaning behind the guideline and have a good reason to deviate, then do so. Aim to be consistent.
+>
+>**Avoid** indicates something you should *almost* never do. Code examples to avoid have an unmistakable red header."
+>
+>**Why?** Gives reasons for following the previous recommendations.

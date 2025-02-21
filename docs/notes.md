@@ -1,0 +1,42 @@
+---
+draft: true
+sidebar_position: 0
+---
+# Notes
+- seperation of concern (the art of creating reusable components)
+- strategy pattern for component
+    - routing vs if/switch vs NgComponentOutlet/ViewContainerRef
+- i18n
+    - use https://github.com/daniel-sc/ng-extract-i18n-merge
+- state management
+    - prefer sharing inputs by input/outputs, then service, then store/shared state
+    - use shared state only to : cache data for reusing it, or share data between two or more components further apart in component tree
+- performance
+    - nothing then virtual scroll or client pagination then backend pagination
+    - rendering
+        - when to use CSR vs SSR vs SSG
+- features 
+    - auth
+        - recommend tool : angular auth oidc client
+        - inject token by configuring openapi generator or use interceptor
+    - logging
+    - handling exceptions
+- maintenance : use migration guide and schematics
+- abstraction
+    - never polluting generic components with specific logic, use input/outputs, generics, content projection
+- dev workspace
+    - IDE
+        - setup for vscode or intelliJ (plugins, conf, ...)
+    - .gitignore
+        - DO commit package-lock.json
+        - use angular default .gitignore
+- testing
+- versioning
+    - use semver
+    - use npm version major/minor/patch
+    - how to show version to user:
+        - do NOT import package.json to display version
+        - use postversion script
+- going further, share useful links :
+    - git commit convention
+    - semver

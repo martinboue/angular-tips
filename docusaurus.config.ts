@@ -1,11 +1,15 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import {name} from './package.json';
+
+const appName = 'Angular Tips';
+const repository = 'https://github.com/martinboue/angular-tips'
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Angular Tips',
+  title: appName,
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.png',
 
@@ -18,7 +22,7 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'martinboue', // Usually your GitHub org/user name.
-  projectName: 'angular-tips', // Usually your repo name.
+  projectName: name, // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -37,9 +41,11 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/martinboue/angular-tips/',
-          showLastUpdateTime: true
+          editUrl: `${repository}/`,
+          showLastUpdateTime: true,
+          routeBasePath: '/'
         },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -51,11 +57,12 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Angular Tips',
+      title: appName,
       logo: {
-        alt: 'Angular Tips Logo',
+        alt: `${appName} logo`,
         src: 'img/logo.svg',
       },
+      hideOnScroll: true,
       items: [
         {
           type: 'docSidebar',
@@ -64,11 +71,14 @@ const config: Config = {
           label: 'Docs',
         },
         {
-          href: 'https://github.com/martinboue/angular-tips',
+          href: repository,
           label: 'GitHub',
           position: 'right',
         },
       ],
+    },
+    tableOfContents: {
+      maxHeadingLevel: 4
     },
     footer: {
       style: 'light',
@@ -104,12 +114,12 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/martinboue/angular-tips',
+              href: repository,
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Angular Tips, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} ${appName}. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
