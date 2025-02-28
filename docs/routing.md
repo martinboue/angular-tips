@@ -6,7 +6,7 @@ draft: true
 
 Notes:
 - route path not hardcoded, define constants to reuse for nav
-- naming convention
+- naming convention like REST API
 - use custom data to pass static data to components
 - try to be as close as possible to your REST
 - each route in the same feature should be prefixed by the feature name, example :
@@ -15,10 +15,7 @@ Notes:
 
 ## Naming convention
 
-**Consider** having a file structure similar to your routes structure, see [file structure](./general/file-structure.md#features).
-
-
-
+**Consider** having a file structure similar to your routes structure, see [file structure](./general/folder-structure.md#features-folder).
 
 ## Lazy loading
 

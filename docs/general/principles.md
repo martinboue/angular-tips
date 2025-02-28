@@ -1,5 +1,6 @@
 ---
 sidebar_position:  3
+draft: true
 ---
 # Principles
 - frontend should be as simple as possible, complexity must be on backend

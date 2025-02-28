@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+draft: true
 ---
 # HTML template
 
@@ -15,3 +16,4 @@ sidebar_position: 2
 - attribute binding : always use `[field]="value"` instead of `field="{{ value }}"`
     - exception : mixing variables and constants, ex : `class="prefix-{{ state }}"`
 - group related tags in code blocks and add comments for readability
+- prefer self closing tag, ex: `<app-my-comp/>` instead of `<app-my-comp></app-my-comp>`

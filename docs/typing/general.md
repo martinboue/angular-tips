@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+draft: true
 ---
 # General best practices
 - prefer `?` type over undefined in methode inputs or objectƒ attributes
