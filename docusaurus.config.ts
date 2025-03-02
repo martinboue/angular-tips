@@ -1,31 +1,32 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import {name} from './package.json';
+import {name as projectName, description} from './package.json';
 
 const appName = 'Angular Tips';
-const repository = 'https://github.com/martinboue/angular-tips'
+const organizationName = 'martinboue';
+const repository = `https://github.com/${organizationName}/${projectName}`;
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
   title: appName,
-  tagline: 'Dinosaurs are cool',
+  tagline: description,
   favicon: 'img/favicon.png',
 
   // Set the production url of your site here
-  url: 'https://martinboue.github.io/',
+  url: `https://${organizationName}.github.io/`,
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: `/${name}/`,
+  baseUrl: `/${projectName}/`,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'martinboue', // Usually your GitHub org/user name.
-  projectName: name, // Usually your repo name.
-  deploymentBranch: 'gh-pages',
+  organizationName: organizationName, // Usually your GitHub org/user name.
+  projectName: projectName, // Usually your repo name.
   
   trailingSlash: false,
+  
   noIndex: true, // true for now until there is enough content
 
   onBrokenLinks: 'throw',
