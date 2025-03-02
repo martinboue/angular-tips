@@ -18,10 +18,24 @@ On top of the [Angular official coding style guide](https://angular.dev/style-gu
 
 ## Naming
 
-- Use PascalCase for enum, class, type and interface names.
-- Do not prefix interface with `I`.
-- Do not prefix enum with `E`.
-- Use camelCase for variable and method names.
+- Use PascalCase for enum, class, type and interface names, examples:
+    - ❌ `userProfile`
+    - ❌ `user_profile`
+    - ✅ `UserProfile`
+- Do not include type indicator in interface names, examples:
+    - ❌ `IUser`
+    - ❌ `UserInterface`
+    - ❌ `UserInt`
+    - ✅ `User`
+- Do not include type indicator in enum names, examples:
+    - ❌ `EUserStatus`
+    - ❌ `UserStatusEnum`
+    - ✅ `UserStatus`
+- Use camelCase for variable and method names, examples:
+    - ❌ `my_var`
+    - ✅ `myVar`
+    - ❌ `MyMethod()`
+    - ✅ `myMethod()`
 - Prefer whole words in names, no abbreviation.
 - Prefix private properties with `#`, examples:
     - ❌ `_myVar`
@@ -30,7 +44,7 @@ On top of the [Angular official coding style guide](https://angular.dev/style-gu
 - Use plural form in names for iterables (array, set, ...), examples:
     - ❌ `userList = getUserArray()`
     - ✅ `users = getUsers()`
-- Avoid ambiguity:
+- Avoid ambiguity, examples:
     - ❌ `id: number` (unclear if referring to a user or company ID)
     - ✅ `userId: number`
     - ✅ `companyId: number`
@@ -46,14 +60,25 @@ On top of the [Angular official coding style guide](https://angular.dev/style-gu
 
 ## Code
 
-- Never use `var`, use `const` by default and `let` if necessary.
-- Use triple equals (`===` and `!==`), never doubles (`==` and `!=`).
+- Never use `var`, use `const` by default and `let` if necessary, examples:
+    - ❌ `var a = 1`
+    - ✅ `const a = 1`
+    - ✅ `let a = 1`
+- Use triple equals, never doubles, examples:
+    - ❌ `a == b`
+    - ✅ `a === b`
+    - ❌ `a != b`
+    - ✅ `a !== b`
     - exception: comparing to `null` or `undefined`.
-- Use single quotes for string.
+- Use single quotes for string, examples:
+    - ❌ `"some text"`
+    - ✅ `'some text'`
 - Use template literals for string interpolation, examples:
     - ❌ `'I am ' + age + 'years old.'` 
     - ✅ `` `I am ${age} years old.` `` 
-- Use arrow function `(a: number) => { }` over anonymous function `function(a: number) {}`.
+- Use arrow function  over anonymous function, examples:
+    - ❌ `function() {...}`
+    - ✅ `() => {...}`
 - Prefer [pure](https://en.wikipedia.org/wiki/Pure_function) functions over impure.
 
 ## Comments
