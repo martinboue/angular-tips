@@ -33,12 +33,9 @@ A typical Angular project should look like this:
 ```
 
 with 3 main folders inside `src/app`:
-- [Folder structure](#folder-structure)
-  - [General guidelines](#general-guidelines)
-  - [Project structure](#project-structure)
-    - [`core` folder](#core-folder)
-    - [`features` folder](#features-folder)
-    - [`shared` folder](#shared-folder)
+- [`core` folder](#core-folder)
+- [`features` folder](#features-folder)
+- [`shared` folder](#shared-folder)
 
 ### `core` folder
 
@@ -66,7 +63,7 @@ This folder should contain domain-specific files divided in feature folders. Eac
 
 A feature folder can be as deep as needed and have feature sub-folders, sub-sub-folders, etc.
 
-A feature folder with more than one route should have a dedicated `<feature>.routes.ts` file (see [routing](../routing.md)).
+A feature folder with more than one route should have a dedicated `<feature>.routes.ts` file (see [lazy loading](../routing.md)).
 
 ```txt title="example"
 features
