@@ -14,19 +14,41 @@ sidebar_position: 5
 
 **Consider** lazy loading each feature under `features` folder.
 
-**Do** use `loadComponent` to lazy load single route features.
+**Do** create a sub route file for multi route features.
 
-```ts title="✅ app.routes.ts"
+```ts title="❌ app.routes.ts"
 const routes: Routes = [
   {
     path: 'admin',
-    loadComponent: () => import('./features/admin/admin.component').then(c => c.AdminComponent)
+    component: AdminComponent
   },
+  {
+    path: 'users',
+    component: SearchUsersComponent
+  },
+  {
+    path: 'users/:id',
+    component: UserProfileComponent
+  }
   // ...
 ];
 ```
 
-**Do** create a sub route file for multi route features.
+```ts title="✅ app.routes.ts"
+const routes: Routes = [
+  // use 'loadComponent' to lazy load single route features
+  {
+    path: 'admin',
+    loadComponent: () => import('./features/admin/admin.component').then(c => c.AdminComponent)
+  },
+  // use 'loadChildren' to lazy load multi route features.
+  {
+    path: 'users',
+    loadChildren: () => import('./features/users/users.routes').then(m => m.USERS_ROUTES)
+  }
+  // ...
+];
+```
 
 ```ts title="✅ features/users/users.routes.ts"
 const USERS_ROUTES: Routes = [
@@ -39,17 +61,6 @@ const USERS_ROUTES: Routes = [
     component: UserProfileComponent
   },
   // ...
-];
-```
-
-**Do** use `loadChildren` to lazy load multi route features.
-
-```ts title="✅ app.routes.ts"
-const routes: Routes = [
-  {
-    path: 'users',
-    loadChildren: () => import('./features/users/users.routes').then(m => m.USERS_ROUTES)
-  }
 ];
 ```
 
