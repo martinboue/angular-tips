@@ -106,3 +106,37 @@ interface SearchUserResponse {
     name: string;
 }
 ```
+
+## Response codes
+
+**Do** use the appropriate HTTP response code.
+
+### Successful responses
+**Do** use `2XX` HTTP codes for successful responses, the most common are:
+
+- `200 OK` when the request was successfully processed.
+- `201 Created` when a ressource was successfully created.
+- `202 Accepted` when an action has been queued for execution.
+- `204 No Content` when an action was successfully completed but did not return any content.
+- `206 Partially Returned` when only part of the collection is returned or the resource is incomplete.
+
+### Client error responses
+
+**Do** use `4XX` HTTP codes for client-side errors, the most common are:
+
+- `400 Bad Request` when the request is malformed or violates business rules.
+- `401 Unauthorized` when the client's authentication is invalid.
+- `403 Forbidden` when the authentication is valid, but the client does not have permission to access the resource.
+- `404 Not Found` when the requested resource could not be found.
+- `404 Method Not Allowed` when the action requested by the HTTP verb cannot be performed on the specified resource.
+- `409 Conflict` when there is a version mismatch between the client and the server for the resource.
+
+### Server error
+
+**Do** use `5XX` HTTP codes for server-side errors, the most common are:
+
+- `500 Internal Server Error` when an unexpected, not anticipated server error occurs.
+- `501 Not Implemented` when a feature is not implemented yet.
+- `503 Service Unavailable` when the server is unable to respond.
+- `504 Gateway Timeout` the server takes too long to respond.
+

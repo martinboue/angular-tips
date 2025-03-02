@@ -8,4 +8,6 @@ draft: true
 - CRUD
 - endpoint
 - DTO
- 
+- HTTP verb
+- path param
+- query param
