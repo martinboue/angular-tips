@@ -74,7 +74,7 @@ you can create a shared DTO (see `Company` in example below).
 
 **Do** suffix DTO names by either `Request` or `Response`.
 
-```ts title="❌ Bad example"
+```ts title="❌ model"
 // In this example you need to mark almost every field as optional to match all use cases.
 interface User {
     id?: number;
@@ -84,7 +84,7 @@ interface User {
 }
 ```
 
-```ts title="✅ Good example"
+```ts title="✅ model"
 // Read DTO is complete and all fields can be marked as required.
 interface ReadUserResponse {
     id: number;

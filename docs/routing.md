@@ -16,18 +16,19 @@ sidebar_position: 5
 
 **Do** use `loadComponent` to lazy load single route features.
 
-```ts title="app.routes.ts"
+```ts title="✅ app.routes.ts"
 const routes: Routes = [
   {
     path: 'admin',
-    loadComponent: () => import('./features/admin/admin.component').then(c => c.LazyComponent)
-  }
+    loadComponent: () => import('./features/admin/admin.component').then(c => c.AdminComponent)
+  },
+  // ...
 ];
 ```
 
 **Do** create a sub route file for multi route features.
 
-```ts title="features/users/users.routes.ts"
+```ts title="✅ features/users/users.routes.ts"
 const USERS_ROUTES: Routes = [
   {
     path: '',
@@ -43,7 +44,7 @@ const USERS_ROUTES: Routes = [
 
 **Do** use `loadChildren` to lazy load multi route features.
 
-```ts title="app.routes.ts"
+```ts title="✅ app.routes.ts"
 const routes: Routes = [
   {
     path: 'users',
@@ -56,11 +57,12 @@ const routes: Routes = [
 
 **Do** use `routerLink` for links over `router.navigate()` or `router.navigateByUrl()`.
 
-```html title="❌ Bad example (template)"
+```html title="❌ company.component.html"
 <button (click)="showEmployees()">See employees</button>
 <button (click)="showManager(user.id)">See manager</button>
 ```
-```ts title="❌ Bad example (class)"
+
+```ts title="❌ company.component.ts"
 import { Router } from '@angular/router';
 
 export class CompanyComponent {
@@ -75,7 +77,7 @@ export class CompanyComponent {
 }
 ```
 
-```html title="✅ Good example"
+```html title="✅ company.component.html"
 <a routerLink="/users">See users</a>
 <a [routerLink]="['/users', user.id]">See manager</a>
 ```
@@ -91,7 +93,7 @@ Only use `router` when programmatic navigation is required, such as redirects.
 
 **Do** use `withComponentInputBinding()` for accessing route data (resolver, params and static data).
 
-```ts title="❌ Bad example (user.component.ts)"
+```ts title="❌ user.component.ts"
 export class UserComponent implements OnInit {
   #route = inject(ActivatedRoute);
 
@@ -105,7 +107,7 @@ export class UserComponent implements OnInit {
 }
 ```
 
-```ts title="✅ Good example (app.config.ts)"
+```ts title="✅ app.config.ts"
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes, withComponentInputBinding()),
@@ -114,7 +116,7 @@ export const appConfig: ApplicationConfig = {
 };
 ```
 
-```ts title="✅ Good example (user.component.ts)"
+```ts title="✅ user.component.ts"
 export class UserComponent implements OnInit {
   userId = input.required<string>();
   user = input.required<User>();
@@ -123,7 +125,7 @@ export class UserComponent implements OnInit {
 
 **Prefer** fetching data using a resolver instead of inside `ngOnInit` lifecycle hook.
 
-```ts title="❌ Bad example (user.component.ts)"
+```ts title="❌ user.component.ts"
 export class UserComponent implements OnInit {
   #userService = inject(UserService);
   userId = input.required<string>();
@@ -138,7 +140,7 @@ export class UserComponent implements OnInit {
 }
 ```
 
-```ts title="✅ Good example (user.component.ts)"
+```ts title="✅ user.component.ts"
 export class UserComponent {
   // 'user' will be loaded before the component initializes
   // and there is no need to handle the loading state.
@@ -146,7 +148,7 @@ export class UserComponent {
 }
 ```
 
-```ts title="✅ Good example (users.routes.ts)"
+```ts title="✅ users.routes.ts"
 const USERS_ROUTES: Routes = [
   {
     path: ':id',
