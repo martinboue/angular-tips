@@ -4,6 +4,7 @@ sidebar_position: 0
 ---
 # Notes
 - seperation of concern (the art of creating reusable components)
+- use custom data to pass static data to components
 - strategy pattern for component
     - routing vs if/switch vs NgComponentOutlet/ViewContainerRef
 - i18n

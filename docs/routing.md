@@ -2,19 +2,13 @@
 sidebar_position: 5
 ---
 # Routing
+## General
 
-Notes:
-- route path not hardcoded, define constants to reuse for nav
-- naming convention like REST API
-- use custom data to pass static data to components
-- try to be as close as possible to your REST
-- each route in the same feature should be prefixed by the feature name, example :
-    - admin: admin/roles, admin/privacy, ...
-- do not suffix /all
+**Consider** having a project structure similar to your routes structure, see [folder structure](./general/folder-structure.md#features-folder).
 
-## Naming convention
+**Consider** applying the same naming convention as your REST API, see [REST API naming convention](./http/rest-api.md#naming-convention).
 
-**Consider** having a file structure similar to your routes structure, see [file structure](./general/folder-structure.md#features-folder).
+**Consider** having a client routing as close as possible to your server API routing.
 
 ## Lazy loading
 
@@ -60,10 +54,111 @@ const routes: Routes = [
 
 ## Navigation
 
-**Avoid** hardcoding route path.
+**Do** use `routerLink` for links over `router.navigate()` or `router.navigateByUrl()`.
+
+```html title="❌ Bad example (template)"
+<button (click)="showEmployees()">See employees</button>
+<button (click)="showManager(user.id)">See manager</button>
+```
+```ts title="❌ Bad example (class)"
+import { Router } from '@angular/router';
+
+export class CompanyComponent {
+  #router = inject(Router);
+
+  showEmployees() {
+    this.#router.navigateByUrl('/users');
+  }
+  showManager(managerId: number) {
+    this.#router.navigate(['users', managerId]);
+  }
+}
+```
+
+```html title="✅ Good example"
+<a routerLink="/users">See users</a>
+<a [routerLink]="['/users', user.id]">See manager</a>
+```
 
 :::tip Why?
-  TODO
+`RouterLink` uses standard HTML `<a>` tags which is better for accessibility, it supports native browser behaviors (opening link in new tab for example).
+
+Only use `router` when programmatic navigation is required, such as redirects.
 :::
 
 
+## Data fetching
+
+**Do** use `withComponentInputBinding()` for accessing route data (resolver, params and static data).
+
+```ts title="❌ Bad example (user.component.ts)"
+export class UserComponent implements OnInit {
+  #route = inject(ActivatedRoute);
+
+  userId!: string;
+  user!: User;
+
+  ngOnInit(): void {
+    this.userId = this.route.snapshot.params['id'];
+    this.user = this.route.snapshot.data['user'];
+  }
+}
+```
+
+```ts title="✅ Good example (app.config.ts)"
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideRouter(routes, withComponentInputBinding()),
+    // ...
+  ]
+};
+```
+
+```ts title="✅ Good example (user.component.ts)"
+export class UserComponent implements OnInit {
+  userId = input.required<string>();
+  user = input.required<User>();
+}
+```
+
+**Prefer** fetching data using a resolver instead of inside `ngOnInit` lifecycle hook.
+
+```ts title="❌ Bad example (user.component.ts)"
+export class UserComponent implements OnInit {
+  #userService = inject(UserService);
+  userId = input.required<string>();
+
+  // 'user' is undefined until HTTP request is resolved.
+  user?: User;
+
+  ngOnInit(): void {
+    this.#userService.getUser(this.userId())
+      .subscribe(user => this.user = user);
+  }
+}
+```
+
+```ts title="✅ Good example (user.component.ts)"
+export class UserComponent {
+  // 'user' will be loaded before the component initializes
+  // and there is no need to handle the loading state.
+  user: input.required<User>();
+}
+```
+
+```ts title="✅ Good example (users.routes.ts)"
+const USERS_ROUTES: Routes = [
+  {
+    path: ':id',
+    component: UserProfileComponent,
+    resolve: {
+      // Define your resolver here
+      user: (route: ActivatedRouteSnapshot) => {
+        const userId = route.params['id'];
+        return inject(UserService).getUser(userId);
+      }
+    }
+  },
+  // ...
+];
+```
