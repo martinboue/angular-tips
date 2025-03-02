@@ -14,15 +14,19 @@ const config: Config = {
   favicon: 'img/favicon.png',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://martinboue.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: `/${name}/`,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'martinboue', // Usually your GitHub org/user name.
   projectName: name, // Usually your repo name.
+  deploymentBranch: 'gh-pages',
+  
+  trailingSlash: false,
+  noIndex: true, // true for now until there is enough content
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
