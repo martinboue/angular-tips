@@ -3,6 +3,7 @@ sidebar_position: 2
 ---
 # Folder structure
 
+This page is your roadmap to a well-organized Angular project, showing you how to structure your folders for scalability and readability.
 
 ## General guidelines
 

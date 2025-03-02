@@ -2,6 +2,9 @@
 sidebar_position: 5
 ---
 # Routing
+
+This page provides best practices for routing in Angular, focusing on structure, lazy loading, and navigation.
+
 ## General
 
 **Consider** having a project structure similar to your routes structure, see [folder structure](./general/folder-structure.md#features-folder).
