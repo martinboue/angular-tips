@@ -7,7 +7,7 @@ Before you read, this guide is:
 - Strongly opinionated
 - Based on experience
 
-Public : any experience
+This documentation is intended for those who want to build complex industry web applications designed to last over time and be developed and maintained by multiple people.
 
 ## Vocabulary
 
