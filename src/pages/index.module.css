@@ -4,6 +4,7 @@
  */
 
 .heroBanner {
+  min-height: calc(100vh - var(--ifm-navbar-height));
   padding: 4rem 0;
   text-align: center;
   position: relative;
