@@ -1,10 +1,14 @@
 ---
 sidebar_position: 4
 ---
-# REST API
+# API design
 
-This section gives you best practices for designing a REST API with clear naming conventions and data modeling strategies.
+This section gives you best practices for designing an API with clear naming conventions and data modeling strategies.
 Adhering to consistent conventions across your API ensures better maintainability, scalability, and ease of use for developers.
+
+## Principles
+
+**Consider** following REST API principles.
 
 ## Naming convention
 

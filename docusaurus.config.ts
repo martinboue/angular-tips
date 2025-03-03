@@ -1,7 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import {name as projectName, description} from './package.json';
+import {name as projectName, description, author} from './package.json';
 
 const appName = 'Angular Tips';
 const organizationName = 'martinboue';
@@ -26,8 +26,6 @@ const config: Config = {
   projectName: projectName, // Usually your repo name.
   
   trailingSlash: false,
-  
-  noIndex: true, // true for now until there is enough content
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -46,7 +44,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: `${repository}/`,
+          editUrl: `${repository}/edit/main`,
           showLastUpdateTime: true,
           routeBasePath: '/'
         },
@@ -81,6 +79,11 @@ const config: Config = {
         },
       ],
     },
+    algolia: {
+      appId: '2ILZS3R8JA',
+      apiKey: '8acfd050f8e1e0854b3f49f80ec46a26',
+      indexName: 'martinboueio',
+    },
     tableOfContents: {
       maxHeadingLevel: 4
     },
@@ -98,22 +101,9 @@ const config: Config = {
               label: 'General',
               to: '/category/general',
             },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'Component',
+              to: '/category/component',
             },
           ],
         },
@@ -124,6 +114,15 @@ const config: Config = {
               label: 'GitHub',
               href: repository,
             },
+          ],
+        },
+        {
+          title: 'Made by',
+          items: [
+            {
+              label: author.name,
+              href: 'https://martinboue.fr',
+            }
           ],
         },
       ],

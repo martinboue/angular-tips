@@ -50,3 +50,4 @@ sidebar_position: 0
     - @for: use @empty, $last and $first
     - passing array as input and change detection not triggered when adding or removing elements in array, you need to create a new array
     - is this still the case with signal inputs?
+- details or add external link on REST API principles
