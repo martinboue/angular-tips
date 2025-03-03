@@ -1,9 +1,12 @@
 ---
 sidebar_position: 1
+slug: /
 ---
-# About
+# Getting started
 
-This documentation is intended for those who want to build complex industry web applications, with a large scope and codebase, designed to last over time and be developed and maintained by multiple people. 
+## About
+
+Angular Tips documentation is intended for those who want to build complex industry web applications, with a large scope and codebase, designed to last over time and be developed and maintained by multiple people. 
 
 It might not be suitable for simple web apps which can be simplified thanks to their smaller scope.
 

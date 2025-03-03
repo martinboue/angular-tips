@@ -46,7 +46,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           editUrl: `${repository}/edit/main`,
           showLastUpdateTime: true,
-          routeBasePath: '/'
+          routeBasePath: '/',
         },
         blog: false,
         theme: {
@@ -94,8 +94,8 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'About',
-              to: '/about',
+              label: 'Getting started',
+              to: '/',
             },
             {
               label: 'General',
