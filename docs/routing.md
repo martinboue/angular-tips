@@ -137,7 +137,7 @@ export class UserComponent implements OnInit {
 }
 ```
 
-**Prefer** fetching data using a resolver instead of inside `ngOnInit` lifecycle hook.
+**Consider** fetching data using a resolver instead of inside `ngOnInit` lifecycle hook.
 
 ```ts title="❌ user.component.ts"
 export class UserComponent implements OnInit {

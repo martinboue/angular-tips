@@ -5,6 +5,9 @@
 /build
 .docusaurus
 
+# Affinity Designer
+*.afdesign~lock~
+
 # IDEs and editors
 .idea/
 .project

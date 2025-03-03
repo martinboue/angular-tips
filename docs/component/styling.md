@@ -25,7 +25,7 @@ div {
 }
 ```
 
-**Do** use snake-case for class and id names, examples:
+**Do** use snake-case for class and id names.
 - ❌ `class="selectedItem"`
 - ✅ `class="selected-item"`
 - ❌ `id="add_button"`
@@ -37,7 +37,7 @@ div {
 
 ### SASS variables
 
-**Do** use SASS variables for static values, example:
+**Do** use SASS variables for static values.
 ```css 
 $color-danger: #FF0000;
 
@@ -46,7 +46,7 @@ p {
 }
 ```
 
-**Do** add extra base path to import global SASS variables, example:
+**Do** add extra base path to import global SASS variables.
 
 ```css title="❌ user.component.scss"
 @use '../../../../../theme';
@@ -85,7 +85,7 @@ h1 {
 
 ### CSS variables
 
-**Do** use CSS variables for dynamic values that can change at runtime, example:
+**Do** use CSS variables for dynamic values that can change at runtime.
 ```css 
 :root {
   --app-font-size: 16px;
@@ -100,9 +100,9 @@ p {
 }
 ```
 
-**Prefer** defining global CSS variables within the `:root` selector.
+**Consider** defining global CSS variables within the `:root` selector.
 
-**Do** prefix global CSS variable names by `app-`, example:
+**Do** prefix global CSS variable names by `app-`.
 
 ```css title="✅ user.component.scss"
 :root { 
@@ -110,9 +110,9 @@ p {
 }
 ```
 
-**Prefer** defining component's CSS variables within the `:host` selector.
+**Consider** defining component's CSS variables within the `:host` selector.
 
-**Do** prefix component's CSS variable names with the component name, example:
+**Do** prefix component's CSS variable names with the component name.
 
 ```css title="✅ user.component.scss"
 :host { 
@@ -122,11 +122,11 @@ p {
 
 ## Component styles
 
-**Do** keep default style scoping, examples:
+**Do** keep default style scoping.
 - ❌ `encapsulation: ViewEncapsulation.None`
 - ✅ `encapsulation: ViewEncapsulation.Emulated`
 
-**Prefer** component style over global styles, example:
+**Consider** using component style instead of global styles.
 
 ```css title="❌ styles.scss"
 .selected p > span {
@@ -145,7 +145,7 @@ Global styles often leads to unintended side effects. The larger the project, th
 forcing you to override them in several places.
 :::
 
-**Do** use `:host` to apply styles to the component root element, example:
+**Do** use `:host` to apply styles to the component root element.
 ```css title="✅ user.component.scss"
 :host { 
   display: flex;
@@ -154,7 +154,7 @@ forcing you to override them in several places.
 
 ## Global styles
 
-**Do** split global styles in partial SCSS files, examples:
+**Do** split global styles in partial SCSS files.
 - `styles.scss` as the entrypoint. 
 - `_default.scss` for overriding default browsers styles.
 - `_typography.scss` for fonts and headings.
@@ -163,7 +163,7 @@ forcing you to override them in several places.
 
 ## Overriding styles
 
-**Prefer** CSS variables or component inputs to override your components styles.
+**Consider** CSS variables or component inputs to override your components styles.
 
 **Avoid** using `::ng-deep`.
 
@@ -191,7 +191,7 @@ Try another technique mentioned above or use a more specific selector instead.
 
 ## Responsive design
 
-**Do** use `MediaMatcher` to listen for window width changes, example:
+**Do** use `MediaMatcher` to listen for window width changes.
 ```ts title="✅ layout.component.ts"
 this.mobileQuery = this.media.matchMedia('(max-width: 900px)');
 const isMobile = this.mobileQuery.matches;

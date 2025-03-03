@@ -7,7 +7,7 @@ sidebar_position: 101
 TODO
 
 ## Rules :
-- if possible, the tip title or category should be solution/problem/use case oriented, examples:
+- if possible, the tip title or category should be solution/problem/use case oriented.
     - ❌ "::ng-deep" 
     - ✅ "Global style"
 - a tip should add value to angular official doc

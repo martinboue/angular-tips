@@ -8,17 +8,17 @@ Adhering to consistent conventions across your API ensures better maintainabilit
 
 ## Naming convention
 
-**Do** use kebab-case for path, examples:
+**Do** use kebab-case for path.
     - ❌ `/bestPractices` 
     - ❌ `/best_practices` 
     - ✅ `/best-practices`
 
-**Do** use snake_case or camelCase for query params, but be consistent, examples:
+**Do** use snake_case or camelCase for query params, but be consistent.
     - ❌ `/users?first-name=Martin` 
     - ✅ `/users?first_name=Martin` 
     - ✅ `/users?firstName=Martin`
 
-**Consider** using only resource names in path, not verbs, examples:
+**Consider** using only resource names in path, not verbs.
 - ❌ `/getUsers`,
 - ❌ `/users/all`
 - ❌ `/users/delete`
@@ -50,13 +50,13 @@ In that case, you can safely break this rule and append the action name at the e
 - `PATCH` for partially updating a resource.
 - `DELETE` for deleting a resource.
 
-**Do** use path to reflect the hierarchical relationship between resources, examples:
+**Do** use path to reflect the hierarchical relationship between resources.
 - ❌ `GET /users?companyId=1`
 - ✅ `GET /companies/1/users`
 
 ## Data modeling
 
-**Prefer** defining a dedicated a DTO for each endpoint rather than reusing the same one.
+**Consider** defining a dedicated a DTO for each endpoint rather than reusing the same one.
 
 :::tip Why?
 - Clarity: clearly indicates the expected input/output, making it easier for consumers.

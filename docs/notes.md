@@ -41,3 +41,12 @@ sidebar_position: 0
 - going further, share useful links :
     - git commit convention
     - semver
+- template
+    - use layout components
+    - use content projection
+    - ng container ?
+    - ng template ?
+    - use @let
+    - @for: use @empty, $last and $first
+    - passing array as input and change detection not triggered when adding or removing elements in array, you need to create a new array
+    - is this still the case with signal inputs?

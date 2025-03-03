@@ -7,9 +7,9 @@ This page is your roadmap to a well-organized Angular project, showing you how t
 
 ## General guidelines
 
-**Prefer** grouping files in folders by domain-specific (business feature) rather than technical type (components, services, ...).
+**Consider** grouping files in folders by domain-specific (business feature) rather than technical type (components, services, ...).
 
-**Prefer** a file tree structure as close as possible to the routing and navigation in the application.
+**Consider** structuring the file tree as close as possible to the routing and navigation in the application.
 
 ## Project structure
 
