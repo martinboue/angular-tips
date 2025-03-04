@@ -64,6 +64,26 @@ focusing on best practices for naming conventions, code clarity, and consistency
 - ❌ `nameOfManagerInCompanyDepartment: string`
 - ✅ `companyDepartmentManagerName: string`
 
+**Consider** starting function and method names with a verb.
+- ❌ `user()`
+- ✅ `getUser()`
+
+**Do** use common verbs appropriately in function and method names.
+- ✅ `get`: return a value, no side effect.
+- ✅ `set`: assign a new value to a property, no returned value.
+- ✅ `is`/`has`: return a boolean, no side effect.
+- ✅ `create`: instantiate a new instance of an object.
+- ✅ `delete`: delete an object.
+- ✅ `add`: insert one or multiple elements in a collection.
+- ✅ `remove`: take one or multiple elements out of a collection.
+- ✅ `to`: convert one type to another and return it, no side effect.
+- ✅ `toggle`: switch between binary state.
+
+:::tip Why?
+Following a clear, strict and consitent pattern with function names improves readability and predictability.
+Developers will quickly understand a function's purpose without the need to read it's content, avoiding misinterpretation.
+:::
+
 **Do**, for maps, specify the name of the key and then the value, seperating them with "To".
 - ❌ `usersMap: Map<number, User>` (unclear what the key and value are)
 - ✅ `userIdToManager: Map<number, User>`
