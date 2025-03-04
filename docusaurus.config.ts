@@ -74,8 +74,9 @@ const config: Config = {
         },
         {
           href: repository,
-          label: 'GitHub',
+          className: 'header-github-link',
           position: 'right',
+          'aria-label': 'GitHub repository',
         },
       ],
     },
