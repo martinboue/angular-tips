@@ -9,7 +9,7 @@ This page provides best practices for routing in Angular, focusing on structure,
 
 **Consider** having a project structure similar to your routes structure, see [folder structure](./general/folder-structure.md#features-folder).
 
-**Consider** applying the same naming convention as your REST API, see [REST API naming convention](./http/rest-api.md#naming-convention).
+**Consider** applying the same naming convention as your REST API, see [REST API naming convention](./http/api-design.md#naming-convention).
 
 **Consider** having a client routing as close as possible to your server API routing.
 
