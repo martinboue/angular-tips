@@ -6,7 +6,6 @@ draft: true
 - frontend should be as simple as possible, complexity must be on backend
 - data validation and business logic must always be on backend side, front side is for UX
 - server-side technical choices should not influence the front end
-- use as little dependencies as possible
 - automate everything
 - KISS
 - SOLID

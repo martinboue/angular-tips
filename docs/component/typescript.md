@@ -14,8 +14,8 @@ draft: true
 
 ## General 
 
- - naming selector
-        - prefix app-
+- naming selector
+    - prefix app-
 - prefer template and CSS in a seperate file
     - exception : extremely short template (1-2 lines)
 - group components attributes (inject, input, output, constants, ...)
@@ -24,6 +24,7 @@ draft: true
 
 ## Inputs & outputs
 - use input, output and host signals instead of @Input, @Ouput and @Host decorators
+    - use required inputs
 - use model for input/ouput
 
 ## Change detection

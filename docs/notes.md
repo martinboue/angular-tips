@@ -12,6 +12,7 @@ sidebar_position: 0
 - state management
     - prefer sharing inputs by input/outputs, then service, then store/shared state
     - use shared state only to : cache data for reusing it, or share data between two or more components further apart in component tree
+    - use providers to scope service in a component or route to create a local state
 - performance
     - nothing then virtual scroll or client pagination then backend pagination
     - rendering
@@ -57,3 +58,4 @@ sidebar_position: 0
     - openapi config?
     - recommend https://www.npmjs.com/package/angular-auth-oidc-client or other?
 - http error handling: add interceptor example.
+- use typescript alias for imports

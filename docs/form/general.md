@@ -16,3 +16,4 @@ draft: true
     - formControl + value
     - disabled formControl + disabled
 - bind save form method on form submit instead of button click
+- use getRawValue to get all form value including disabled controls
