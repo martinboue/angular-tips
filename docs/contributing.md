@@ -1,16 +1,37 @@
 ---
-draft: true
 sidebar_position: 101
 ---
 # Contributing
 
-TODO
+Contributions are welcome!
 
-## Rules :
-- if possible, the tip title or category should be solution/problem/use case oriented.
-    - ❌ "::ng-deep" 
-    - ✅ "Global style"
-- a tip should add value to angular official doc
-    - ❌ "Feature A exists" and A is documented on angular official doc
-    - ✅ "To do X prefer using feature A over feature B because of Y"
-- add a "Why?" detailed block for each tip.
+## Found a bug?
+
+Please [submit an issue](#submitting-an-issue) with steps to reproduce.
+
+## Missing tip?
+
+Please [submit an issue](#submitting-an-issue) and provide arguments to open the discussion.
+
+## Disagree with a tip?
+
+Please [submit an issue](#submitting-an-issue) and provide arguments to open the discussion.
+
+## Submitting an issue
+Please check already existing issues before submitting a new one.
+
+## Submitting a pull request
+Please check already existing pull requests before submitting a new one.
+
+For major changes, please [submit an issue](#submitting-an-issue) first so we can discuss it.
+
+## Rules
+
+When adding a new tip:
+- It must add value to the official Angular documentation.
+- It must follow the [vocabulary](./getting-started.md#vocabulary).
+- If possible, provide bad and good examples.
+  - bad examples must be prefixed with "❌"
+  - good examples must be prefixed with "✅"
+- If possible, it's headline should be use case oriented, not solution oriented.
+- If necessary, add a detailed "Why?" block.
