@@ -79,7 +79,7 @@ focusing on best practices for naming conventions, code clarity, and consistency
 - ✅ `to`: convert one type to another and return it, no side effect.
 - ✅ `toggle`: switch between binary state.
 
-:::tip Why?
+:::info Why?
 Following a clear, strict and consitent pattern with function names improves readability and predictability.
 Developers will quickly understand a function's purpose without the need to read it's content, avoiding misinterpretation.
 :::

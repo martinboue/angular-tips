@@ -8,7 +8,7 @@ This page covers best practices for styling in Angular, including structuring st
 
 **Avoid** repeating CSS styles.
 
-:::tip Why?
+:::info Why?
 If you do, it usually means that you need to make a component out of it.
 :::
 
@@ -19,7 +19,7 @@ If you do, it usually means that you need to make a component out of it.
 <div style="margin-top: 20px">...</div>
 ```
 
-```css title="✅ user.component.scss"
+```scss title="✅ user.component.scss"
 div { 
   margin-top: 20px;
 }
@@ -38,7 +38,7 @@ div {
 ### SASS variables
 
 **Do** use SASS variables for static values.
-```css 
+```scss 
 $color-danger: #FF0000;
 
 p {
@@ -48,7 +48,7 @@ p {
 
 **Do** add extra base path to import global SASS variables.
 
-```css title="❌ user.component.scss"
+```scss title="❌ user.component.scss"
 @use '../../../../../theme';
 h1 {
   color: theme.$primary;
@@ -76,7 +76,7 @@ h1 {
 }
 ```
 
-```css title="✅ user.component.scss"
+```scss title="✅ user.component.scss"
 @use 'theme';
 h1 {
   color: theme.$primary;
@@ -86,7 +86,7 @@ h1 {
 ### CSS variables
 
 **Do** use CSS variables for dynamic values that can change at runtime.
-```css 
+```scss 
 :root {
   --app-font-size: 16px;
 }
@@ -104,7 +104,7 @@ p {
 
 **Do** prefix global CSS variable names by `app-`.
 
-```css title="✅ user.component.scss"
+```scss title="✅ user.component.scss"
 :root { 
   --app-text-color: #131218;
 }
@@ -114,7 +114,7 @@ p {
 
 **Do** prefix component's CSS variable names with the component name.
 
-```css title="✅ user.component.scss"
+```scss title="✅ user.component.scss"
 :host { 
   --user-title-color: theme.$primary;
 }
@@ -128,25 +128,25 @@ p {
 
 **Consider** using component style instead of global styles.
 
-```css title="❌ styles.scss"
+```scss title="❌ styles.scss"
 .selected p > span {
   color: $primary;
 }
 ```
 
-```css title="✅ user-card.component.scss"
+```scss title="✅ user-card.component.scss"
 .selected p > span {
   color: $primary;
 }
 ```
 
-:::tip Why?
+:::info Why?
 Global styles often leads to unintended side effects. The larger the project, the more difficult it will be to modify these global styles, 
 forcing you to override them in several places.
 :::
 
 **Do** use `:host` to apply styles to the component root element.
-```css title="✅ user.component.scss"
+```scss title="✅ user.component.scss"
 :host { 
   display: flex;
 }
@@ -167,13 +167,13 @@ forcing you to override them in several places.
 
 **Avoid** using `::ng-deep`.
 
-```css title="❌ user.component.ts"
+```scss title="❌ user.component.ts"
 :host ::ng-deep .mat-mdc-chip-action > .mdc-evolution-chip__graphic {
   padding: 0;
 }
 ```
 
-:::tip Why?
+:::info Why?
 If you are trying to override your own component, use CSS variables or inputs instead.
 
 If you are trying to override an external component, you'll need to rely on private implementation details that may change at any time (without being mentioned in a changelog). 
@@ -184,7 +184,7 @@ External libraries often provide theming features to customise their components,
 
 **Avoid** using `!important`.
 
-:::tip Why?
+:::info Why?
 It usually means that you are trying to override either global styles or private implementation details. 
 Try another technique mentioned above or use a more specific selector instead.
 :::

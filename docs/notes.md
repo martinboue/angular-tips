@@ -51,3 +51,9 @@ sidebar_position: 0
     - passing array as input and change detection not triggered when adding or removing elements in array, you need to create a new array
     - is this still the case with signal inputs?
 - details or add external link on REST API principles
+- handle authentication
+    - where to store token?
+    - how to inject token in requests
+    - openapi config?
+    - recommend https://www.npmjs.com/package/angular-auth-oidc-client or other?
+- http error handling: add interceptor example.

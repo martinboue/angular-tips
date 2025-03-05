@@ -11,7 +11,7 @@ This page outlines best practices for Angular component's templates, focusing on
 
 **Consider** using meaningful semantic HTML elements instead of non-semantic ones.
 
-```html title="❌ app.component.ts"
+```html title="❌ app.component.html"
 <div class="header">
   <div>Welcome to my Website</div>
 </div>
@@ -24,7 +24,7 @@ This page outlines best practices for Angular component's templates, focusing on
 <div class="footer">...</div>
 ```
 
-```html title="✅ app.component.ts"
+```html title="✅ app.component.html"
 <header>
   <h1>Welcome to my Website</h1>
 </header>
@@ -37,7 +37,7 @@ This page outlines best practices for Angular component's templates, focusing on
 <footer>...</footer>
 ```
 
-:::info
+:::tip
 Use `<div>` or `<span>` as last resort if no more suitable element exists, a few examples:
 - `<nav>` for navigation bar or side menu.
 - `<main>` for main content area.
@@ -59,19 +59,19 @@ Use `<div>` or `<span>` as last resort if no more suitable element exists, a few
 - ✅ `<app-my-comp/>`
 - ✅ `<app-my-comp>Content</app-my-comp>` (valid with content projection)
 
-:::tip Why?
+:::info Why?
 Enhanced readability.
 :::
 
 **Do** use a proper indentation.
 
-```html title="❌"
+```html title="❌ app.component.html"
 <section>
 <h2>Title</h2><p>Then a paragraph.</p>
 </section>
 ```
 
-```html title="✅"
+```html title="✅ app.component.html"
 <section>
   <h2>Title</h2>
   <p>Then a paragraph.</p>
@@ -80,7 +80,7 @@ Enhanced readability.
 
 **Consider** grouping related tags into code blocks and adding descriptive comments.
 
-```html title="❌ app.component.ts"
+```html title="❌ app.component.html"
 <header>
   ...
 </header>
@@ -94,7 +94,7 @@ Enhanced readability.
 </main>
 ```
 
-```html title="✅ app.component.ts"
+```html title="✅ app.component.html"
 <!-- Navigation bar and menu -->
 <header>
   ...
@@ -220,7 +220,7 @@ export class TeamsComponent {
 }
 ```
 
-:::tip Why?
+:::info Why?
 Angular templates are evaluated and rendered during each change detection cycle.
 Heavy computations inside your template may cause performance issues.
 

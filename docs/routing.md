@@ -96,7 +96,7 @@ export class CompanyComponent {
 <a [routerLink]="['/users', user.id]">See manager</a>
 ```
 
-:::tip Why?
+:::info Why?
 `RouterLink` uses standard HTML `<a>` tags which is better for accessibility, it supports native browser behaviors (opening link in new tab for example).
 
 Only use `router` when programmatic navigation is required, such as redirects.

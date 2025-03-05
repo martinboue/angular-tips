@@ -13,14 +13,14 @@ Adhering to consistent conventions across your API ensures better maintainabilit
 ## Naming convention
 
 **Do** use kebab-case for path.
-    - ❌ `/bestPractices` 
-    - ❌ `/best_practices` 
-    - ✅ `/best-practices`
+- ❌ `/bestPractices` 
+- ❌ `/best_practices` 
+- ✅ `/best-practices`
 
 **Do** use snake_case or camelCase for query params, but be consistent.
-    - ❌ `/users?first-name=Martin` 
-    - ✅ `/users?first_name=Martin` 
-    - ✅ `/users?firstName=Martin`
+- ❌ `/users?first-name=Martin` 
+- ✅ `/users?first_name=Martin` 
+- ✅ `/users?firstName=Martin`
 
 **Consider** using only resource names in path, not verbs.
 - ❌ `/getUsers`,
@@ -29,7 +29,7 @@ Adhering to consistent conventions across your API ensures better maintainabilit
 - ✅ `/users` with `GET` HTTP verb
 - ✅ `/users` with `DELETE` HTTP verb
 
-:::tip Why?
+:::info Why?
 The HTTP verb (GET, POST, ...) is already indicates the action to be performed.
 :::
 
@@ -62,7 +62,7 @@ In that case, you can safely break this rule and append the action name at the e
 
 **Consider** defining a dedicated a DTO for each endpoint rather than reusing the same one.
 
-:::tip Why?
+:::info Why?
 - Clarity: clearly indicates the expected input/output, making it easier for consumers.
 - Flexibilty: allow different structure of the same data.
 - Maintainability & evolutivity: future modifications on an endpoint will not break others.
@@ -78,36 +78,36 @@ you can create a shared DTO (see `Company` in example below).
 
 **Do** suffix DTO names by either `Request` or `Response`.
 
-```ts title="❌ model"
+```ts title="❌ Example"
 // In this example you need to mark almost every field as optional to match all use cases.
 interface User {
-    id?: number;
-    name: string;
-    age?: number;
-    company?: Company;
+  id?: number;
+  name: string;
+  age?: number;
+  company?: Company;
 }
 ```
 
-```ts title="✅ model"
+```ts title="✅ Example"
 // Read DTO is complete and all fields can be marked as required.
 interface ReadUserResponse {
-    id: number;
-    name: string;
-    age: number;
-    company: Company;
+  id: number;
+  name: string;
+  age: number;
+  company: Company;
 }
 
 // Create DTO does not have an id yet and only company's id is needed.
 interface CreateUserRequest {
-    name: string;
-    age: number;
-    companyId: number;
+  name: string;
+  age: number;
+  companyId: number;
 }
 
 // Search DTO can be lighter with only id and name.
 interface SearchUserResponse {
-    id: number;
-    name: string;
+  id: number;
+  name: string;
 }
 ```
 
@@ -135,7 +135,7 @@ interface SearchUserResponse {
 - `404 Method Not Allowed` when the action requested by the HTTP verb cannot be performed on the specified resource.
 - `409 Conflict` when there is a version mismatch between the client and the server for the resource.
 
-### Server error
+### Server error responses
 
 **Do** use `5XX` HTTP codes for server-side errors, the most common are:
 

@@ -42,7 +42,7 @@ with 3 main folders inside `src/app`:
 
 This folder should contain global components, services, interceptors and more, usually all the things that should be instantiated once.
 
-```txt title="example"
+```txt title="✅ Example"
 core
 ├── authentication
 |   └── authentication.service.ts
@@ -66,7 +66,7 @@ A feature folder can be as deep as needed and have feature sub-folders, sub-sub-
 
 A feature folder with more than one route should have a dedicated `<feature>.routes.ts` file (see [lazy loading](../routing.md)).
 
-```txt title="example"
+```txt title="✅ Example"
 features
 ├── dashboard
 |   └── dashboard.component.ts
@@ -85,7 +85,7 @@ This folder should contain reusable components, services, directives and more, t
 
 Because many files in this folder are generics, i.e. not related to any feature, you should organize them by technical types. Other feature related files can be grouped together in feature folders.
 
-```txt title="Example"
+```txt title="✅ Example"
 shared
 ├── components
 |   ├── form

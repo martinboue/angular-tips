@@ -1,7 +1,17 @@
 ---
 sidebar_position: 5
-draft: true
+title: Error handling
 ---
-# Handling errors
+# HTTP error handling
 
-- use interceptor
+**Do** use a generic error response model.
+
+```ts title="✅ Example"
+interface ErrorResponse {
+  code: string;
+  error: string;
+  message: string;
+}
+```
+
+**Do** use an interceptor to catch and handle error responses.
