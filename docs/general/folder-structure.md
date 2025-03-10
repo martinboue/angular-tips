@@ -83,7 +83,7 @@ features
 
 This folder should contain reusable components, services, directives and more, that are shared accross multiple features.
 
-Because many files in this folder are generics, i.e. not related to any feature, you should organize them by technical types. Other feature related files can be grouped together in feature folders.
+Because many files in this folder are generics, i.e. not related to any feature, you can organize them by technical types. Other feature related files can be grouped together in feature folders.
 
 ```txt title="✅ Example"
 shared
