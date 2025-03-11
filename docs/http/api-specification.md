@@ -6,7 +6,7 @@ sidebar_position: 2
 An API specification is a language-agnostic contract that define how a client and a server communicate.
 It describes the paths that can be used, their input parameters and output formats.
 
-## General
+## General guidelines
 
 **Do** define an API specification.
 

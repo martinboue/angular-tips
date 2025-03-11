@@ -3,7 +3,8 @@ sidebar_position: 1
 draft: true
 ---
 # Component class
-
+- use angular cli
+    - short: ng g c my-comp
 - subscritions
     - when and when not to unsubscribe
     - use async pipes
@@ -12,7 +13,7 @@ draft: true
 - use standalone, never NgModule
 - component extending another component or directive
 
-## General 
+## General guidelines
 
 - naming selector
     - prefix app-

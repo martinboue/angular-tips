@@ -7,7 +7,7 @@ sidebar_position: 1
 This page provides additional coding style guidelines on top of the [Angular official coding style guide](https://angular.dev/style-guide), 
 focusing on best practices for naming conventions, code clarity, and consistency.
 
-## General
+## General guidelines
 
 **Be** consistent.
 

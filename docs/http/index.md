@@ -3,7 +3,9 @@ sidebar_position: 6
 ---
 # HTTP
 
-## General
+This section outlines best practices for communicating efficiently with a server, from design to integration.
+
+## General guidelines
 
 **Do** send as few requests as possible.
 - ❌ send requests in a loop.

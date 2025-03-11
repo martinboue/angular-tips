@@ -5,7 +5,7 @@ sidebar_position: 2
 
 This page outlines best practices for Angular component's templates, focusing on organization, readability, accessibilty and performance. By following these guidelines, you'll ensure your templates are maintainable, readable, and aligned with Angular's recommended patterns.
 
-## General
+## General guidelines
 
 **Do** use as few tags as possible.
 
@@ -60,7 +60,8 @@ Use `<div>` or `<span>` as last resort if no more suitable element exists, a few
 - ✅ `<app-my-comp>Content</app-my-comp>` (valid with content projection)
 
 :::info Why?
-Enhanced readability.
+Closing tag isn't necessary and removing it improves readability.
+It also indicates that the component does not have projectable content.
 :::
 
 **Do** use a proper indentation.
@@ -226,6 +227,6 @@ Heavy computations inside your template may cause performance issues.
 
 Consider computing the value once and caching the result in the class instead.
 
-Use `computed` signal when dealing with signal inputs.
+You can use `computed` signal when dealing with signal.
 :::
 

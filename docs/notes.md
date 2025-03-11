@@ -13,6 +13,7 @@ sidebar_position: 0
     - prefer sharing inputs by input/outputs, then service, then store/shared state
     - use shared state only to : cache data for reusing it, or share data between two or more components further apart in component tree
     - use providers to scope service in a component or route to create a local state
+    - do not use store just for sending events, it's meant to hold data
 - performance
     - nothing then virtual scroll or client pagination then backend pagination
     - rendering
@@ -59,3 +60,24 @@ sidebar_position: 0
     - recommend https://www.npmjs.com/package/angular-auth-oidc-client or other?
 - http error handling: add interceptor example.
 - use typescript alias for imports
+- Controlling user access / preventing unauthorized access
+    - Protect routes
+        - Verify user is authenticated (guard) 
+        - Verify user has a given role (guard)
+    - Hide UI elements (custom directive)
+- Redirecting to 404 not found page
+    - for unknown route
+    - on resolver fail
+- form
+    - Template vs ReactiveForm
+    - how to translate enums to readable text
+    - how to use mat-select and reactive form to display a list of objects (id or object itself as option value ?)
+    - how to reuse form for both edit and readonly page
+    - how to split form in multiple components
+    - use control value accessor for custom form fields
+    - use getRawValue to get all form value including disabled controls
+- typing
+    - use `?` for optional properties or method inputs
+    - use `Readonly<T>` or readonly T or "as const"
+    - use satisfies
+    - type vs interface

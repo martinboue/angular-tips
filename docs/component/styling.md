@@ -4,7 +4,7 @@ sidebar_position: 3
 # Styling
 This page covers best practices for styling in Angular, including structuring styles, using variables, scoping component styles, and avoiding common pitfalls.
 
-## General
+## General guidelines
 
 **Avoid** repeating CSS styles.
 
@@ -100,26 +100,6 @@ p {
 }
 ```
 
-**Consider** defining global CSS variables within the `:root` selector.
-
-**Do** prefix global CSS variable names by `app-`.
-
-```scss title="✅ user.component.scss"
-:root { 
-  --app-text-color: #131218;
-}
-```
-
-**Consider** defining component's CSS variables within the `:host` selector.
-
-**Do** prefix component's CSS variable names with the component name.
-
-```scss title="✅ user.component.scss"
-:host { 
-  --user-title-color: theme.$primary;
-}
-```
-
 ## Component styles
 
 **Do** keep default style scoping.
@@ -152,6 +132,16 @@ forcing you to override them in several places.
 }
 ```
 
+**Consider** defining component's CSS variables within the `:host` selector.
+
+**Do** prefix component's CSS variable names with the component name.
+
+```scss title="✅ user.component.scss"
+:host { 
+  --user-title-color: theme.$primary;
+}
+```
+
 ## Global styles
 
 **Do** split global styles in partial SCSS files.
@@ -160,6 +150,17 @@ forcing you to override them in several places.
 - `_typography.scss` for fonts and headings.
 - `_form.scss` for form fields.
 - ...
+
+**Consider** defining global CSS variables within the `:root` selector.
+
+**Do** prefix global CSS variable names by `app-`.
+
+```scss title="✅ user.component.scss"
+:root { 
+  --app-text-color: #131218;
+}
+```
+
 
 ## Overriding styles
 
