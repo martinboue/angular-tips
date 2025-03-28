@@ -30,6 +30,8 @@ sidebar_position: 0
 - dev workspace
     - IDE
         - setup for vscode or intelliJ (plugins, conf, ...)
+        - prettier
+        - linter
     - .gitignore
         - DO commit package-lock.json
         - use angular default .gitignore
@@ -81,3 +83,7 @@ sidebar_position: 0
     - use `Readonly<T>` or readonly T or "as const"
     - use satisfies
     - type vs interface
+- when to use and not to use Angular
+- folder structure :
+    - shared should have no dependency to features (import rules)
+    - see https://feature-sliced.design/

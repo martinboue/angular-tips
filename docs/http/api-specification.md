@@ -36,49 +36,29 @@ You ensure that the data structures used in your code always match the expected 
 
 ## OpenAPI
 
-We recommend using [OpenAPI](https://www.openapis.org/) standard to describe your API, and [openapi-generator-cli](https://www.npmjs.com/package/@openapitools/openapi-generator-cli) npm package to generate clients and models.
+**Do** use [OpenAPI](https://www.openapis.org/) standard to describe your API, and one of the following tool to generate clients and models:
+- [openapi-generator-cli](https://www.npmjs.com/package/@openapitools/openapi-generator-cli) with [typescrip-angular generator](https://openapi-generator.tech/docs/generators/typescript-angular).
+- [orval](https://orval.dev/) with [Angular client](https://orval.dev/guides/angular).
 
 :::tip
 You can check out an interactive example of an API specification file on [Swagger Editor](https://editor.swagger.io/).
 :::
 
-Install the dependency by running:
+**Do** put generated files in [`shared` folder](../general//folder-structure.md#shared-folder).
 
-```
-npm install @openapitools/openapi-generator-cli
-```
+**Avoid** committing or modifying generated files.
 
-then generate clients and models with:
-
-```
-openapi-generator-cli generate -i server/api.yaml -g typescript-angular -o src/app/shared/openapi --additional-properties=fileNaming=kebab-case,stringEnums=true
-```
-
-:::info Command break down
-- `-i server/api.yaml` is the input file, the OpenAPI specification.
-- `-g typescript-angular` indicates that you want to generate Angular files.
-- `-o src/app/shared/openapi` is the ouptut, where all files will be generated.
-- `--additional-properties` are optional configurations, we recommend setting `fileNaming=kebab-case` and `stringEnums=true`.
-
-More details on the OpenAPI Angular generator in the [official documentation](https://openapi-generator.tech/docs/generators/typescript-angular).
-:::
-
-Generated files should not be committed or manually modified.
-
-```txt title=".gitignore"
+```txt title="✅ .gitignore"
 src/app/shared/openapi
 ```
 
-You can use `postinstall` script to automatically regenerate files after running `npm install`.
+**Consider** using `postinstall` script to automatically regenerate files after running `npm install`.
 
-```json title="package.json"
+```json title="✅ package.json"
 {
   "scripts": {
-    "generate": "openapi-generator-cli generate -i server/api.yaml -g typescript-angular -o src/app/shared/openapi --additional-properties=fileNaming=kebab-case,stringEnums=true",
-    "postinstall": "npm run generate"
+    "postinstall": "npm run generate",
+    "generate": "<command to generate clients and models>"
   }
 }
 ```
-
-You can now inject generated HTTP clients in your components and import the models.
-
