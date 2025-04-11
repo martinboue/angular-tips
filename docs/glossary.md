@@ -11,3 +11,9 @@ draft: true
 - HTTP verb
 - path param
 - query param
+- attribute
+- property
+- variable
+- function
+- method
+- signature (method or class)

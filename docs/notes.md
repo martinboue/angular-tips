@@ -87,3 +87,23 @@ sidebar_position: 0
 - folder structure :
     - shared should have no dependency to features (import rules)
     - see https://feature-sliced.design/
+- JavaScript details
+    - false/true vs truthy/falsy
+    - ?? vs || operator
+    - null safe operator ? (optional chaining)
+    - spread operator on list or object: `...myVar`
+    - non-null assertion operator: `myVar!`
+- dependency injection
+    - how to use injector
+    - providers and multiple instances of a service
+- component
+    - use angular cli
+        - short: ng g c my-comp
+    - subscritions
+        - when and when not to unsubscribe
+        - use async pipes
+        - use takeUntilDestroyed instead of saving subscription and unsubscribe in ngOnDestroy
+    - rxjs ?
+    - use standalone, never NgModule
+    - component extending another component or directive
+    - use host, view and viewChild signals instead of @Host, @View and @ViewChild decorator
