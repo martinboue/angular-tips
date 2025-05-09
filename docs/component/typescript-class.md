@@ -13,18 +13,6 @@ This page provides best practices and recommendations for writing TypeScript cla
 You can use a single file for components with no style and extremely short template (1 to 3 lines).
 :::
 
-**Do** use `inject` function for dependency injection.
-
-```ts title="user.component.ts"
-export class UserComponent {
-  // ✅ inject function
-  userService = inject(UserService);
-
-  // ❌ constructor-based dependency injection
-  constructor(authService: AuthService) {}
-}
-```
-
 **Avoid** direct DOM access or manipulation.
 
 - ❌ `document.getElementById('my-button')`
