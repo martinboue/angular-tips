@@ -1,6 +1,5 @@
 ---
 sidebar_position: 8
-draft: true
 ---
 # Dependency injection
 
@@ -41,7 +40,7 @@ When you provide a service at the root level, Angular creates a single instance 
 :::
 
 :::warning Exceptions
-Providing a service at the component level can be useful in some cases, a few use cases:
+Providing a service at the component level can be useful in some cases, a few examples:
 - Multiple instances of the same service with different states
 - Service state that needs to be reset when the component is destroyed
 - Multiple service implementations of an abstract class
