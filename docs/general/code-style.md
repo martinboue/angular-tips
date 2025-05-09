@@ -9,13 +9,13 @@ focusing on best practices for naming conventions, code clarity, and consistency
 
 ## General guidelines
 
-**Be** consistent.
+**Do** maintain consistency.
 
 **Consider** clarity over short code.
 
-**Be** explicit.
+**Do** ensure explicitness.
 
-**Avoid** repeating yourself.
+**Avoid** redundancy.
 
 ## Naming
 **Do** use PascalCase for enum, class, type and interface names.

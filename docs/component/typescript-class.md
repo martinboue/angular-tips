@@ -3,6 +3,8 @@ sidebar_position: 1
 ---
 # TypeScript class
 
+This page provides best practices and recommendations for writing TypeScript classes in Angular components.
+
 ## General guidelines
 
 **Do** use seperate files for class, template and style.
@@ -75,9 +77,25 @@ export class UserComponent {
 }
 ```
 
+**Do** declare attributes first, then methods.
+
+```ts title="✅ user.component.ts"
+export class UserComponent {
+  // Attributes
+  userService = inject(UserService);
+  user = input.required<User>();
+  form = new FormGroup(...);
+
+  // Methods
+  constructor() {...}
+  createSomething() {...}
+  submit() {...}
+}
+```
+
 ## Inputs & outputs
 
-**Do** use `input()` and `output()` signals instead of `@Input()` and `@Ouput()` decorators.
+**Do** use `input()` signal and `output()` function instead of `@Input()` and `@Ouput()` decorators.
 
 :::tip
 You can run [schematic migrations](https://angular.dev/reference/migrations) to automatically transform decorators to signals.
