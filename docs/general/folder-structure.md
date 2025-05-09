@@ -79,6 +79,8 @@ features
 └── ...
 ```
 
+**Avoid** importing files from `core` folder into the `features` folder.
+
 ### `shared` folder
 
 This folder should contain reusable components, services, directives and more, that are shared accross multiple features.
@@ -103,3 +105,10 @@ shared
 |   └── ...
 └── ...
 ```
+
+**Avoid** importing files from `core` or `features` folders into the `shared` folder.
+
+## Going further
+This folder structure is a strong starting point, but for very large codebase, you may need to adapt a more complex and strict structure to keep your project maintainable.
+
+For example, you can check out the [Feature Sliced Design methodology](https://feature-sliced.github.io/documentation/), which is a more advanced approach of the folder structure described above.

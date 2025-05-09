@@ -32,7 +32,8 @@ To submit a pull request:
 ## Rules
 
 When adding a new tip:
-- It must add value to the official Angular documentation.
+- It must be Angular related.
+- It must add value to the [official Angular documentation](https://angular.dev/).
 - It must follow the [vocabulary](./getting-started.md#vocabulary).
 - If possible, provide bad and good examples.
   - Bad examples must be prefixed with "❌"

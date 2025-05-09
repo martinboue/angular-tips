@@ -4,6 +4,8 @@ sidebar_position: 0
 ---
 # Notes
 - seperation of concern (the art of creating reusable components)
+    - abstraction techniques
+        - never polluting generic components with specific logic, use input/outputs, generics, content projection
 - use custom data to pass static data to components
 - strategy pattern for component
     - routing vs if/switch vs NgComponentOutlet/ViewContainerRef
@@ -19,14 +21,26 @@ sidebar_position: 0
     - rendering
         - when to use CSR vs SSR vs SSG
 - features 
+    - dynamic page titles and meta tags
+    - prevent user from leaving the page with unsaved changes
     - auth
         - recommend tool : angular auth oidc client
         - inject token by configuring openapi generator or use interceptor
+        - where to store token?
+        - how to inject token in requests
+        - openapi config?
+        - recommend https://www.npmjs.com/package/angular-auth-oidc-client or other?
     - logging
-    - handling exceptions
+    - http error handling: add interceptor example.
+    - Redirecting to 404 not found page
+        - for unknown route
+        - on resolver fail
+    - Controlling user access / preventing unauthorized access
+        - Protect routes
+            - Verify user is authenticated (guard) 
+            - Verify user has a given role (guard)
+        - Hide UI elements (custom directive)
 - maintenance : use migration guide and schematics
-- abstraction
-    - never polluting generic components with specific logic, use input/outputs, generics, content projection
 - dev workspace
     - IDE
         - setup for vscode or intelliJ (plugins, conf, ...)
@@ -44,7 +58,6 @@ sidebar_position: 0
         - use postversion script
 - going further, share useful links :
     - git commit convention
-    - semver
 - template
     - use layout components
     - use content projection
@@ -55,21 +68,6 @@ sidebar_position: 0
     - passing array as input and change detection not triggered when adding or removing elements in array, you need to create a new array
     - is this still the case with signal inputs?
 - details or add external link on REST API principles
-- handle authentication
-    - where to store token?
-    - how to inject token in requests
-    - openapi config?
-    - recommend https://www.npmjs.com/package/angular-auth-oidc-client or other?
-- http error handling: add interceptor example.
-- use typescript alias for imports
-- Controlling user access / preventing unauthorized access
-    - Protect routes
-        - Verify user is authenticated (guard) 
-        - Verify user has a given role (guard)
-    - Hide UI elements (custom directive)
-- Redirecting to 404 not found page
-    - for unknown route
-    - on resolver fail
 - form
     - Template vs ReactiveForm
     - how to translate enums to readable text
@@ -84,9 +82,6 @@ sidebar_position: 0
     - use satisfies
     - type vs interface
 - when to use and not to use Angular
-- folder structure :
-    - shared should have no dependency to features (import rules)
-    - see https://feature-sliced.design/
 - JavaScript details
     - false/true vs truthy/falsy
     - spread operator on list or object: `...myVar`

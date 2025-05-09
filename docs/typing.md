@@ -137,3 +137,32 @@ Use it only when you're absolutely sure that the value will never be `null` or `
   }
 }
 ```
+
+**Do** use import aliases.
+
+```ts title="❌ user.component.ts"
+import { ManagerComponent } from '../../../../shared/manager/manager.component';
+````
+
+```json title="✅ tsconfig.json"
+{
+  ...
+  "compilerOptions": {
+    ...
+    "baseUrl" : "./src",
+    "paths": {
+      "@shared/*": ["app/shared/*"],
+      "@features/*": ["app/features/*"],
+      "@core/*": ["app/core/*"]
+    }
+  }
+}
+```
+
+```ts title="✅ user.component.ts"
+import { ManagerComponent } from '@shared/manager/manager.component';
+````
+
+:::info Why?
+Using import aliases improves code readability and reduces the number of import paths to be modified when moving files.
+:::
