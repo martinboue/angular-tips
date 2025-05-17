@@ -3,14 +3,14 @@ draft: true
 sidebar_position: 0
 ---
 # Notes
+- avoid using switch default case with enums or union types (i.e. fixed set of values)
+    - why? if you add a new case, the missing case will be detected by the compiler unless you have a default case
 - seperation of concern (the art of creating reusable components)
     - abstraction techniques
         - never polluting generic components with specific logic, use input/outputs, generics, content projection
 - use custom data to pass static data to components
 - strategy pattern for component
     - routing vs if/switch vs NgComponentOutlet/ViewContainerRef
-- i18n
-    - use https://github.com/daniel-sc/ng-extract-i18n-merge
 - state management
     - prefer sharing inputs by input/outputs, then service, then store/shared state
     - use shared state only to : cache data for reusing it, or share data between two or more components further apart in component tree

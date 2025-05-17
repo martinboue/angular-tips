@@ -36,13 +36,13 @@ You ensure that the data structures used in your code always match the expected 
 
 ## OpenAPI
 
-**Do** use [OpenAPI](https://www.openapis.org/) standard to describe your API, and one of the following tool to generate clients and models:
-- [openapi-generator-cli](https://www.npmjs.com/package/@openapitools/openapi-generator-cli) with [typescrip-angular generator](https://openapi-generator.tech/docs/generators/typescript-angular).
-- [orval](https://orval.dev/) with [Angular client](https://orval.dev/guides/angular).
+**Do** use [OpenAPI](https://www.openapis.org/) standard to describe your API.
 
 :::tip
 You can check out an interactive example of an API specification file on [Swagger Editor](https://editor.swagger.io/).
 :::
+
+**Do** generate models and HTTP clients from your API specification (see [recommended librairies](../librairies.md#openapi-code-generation)).
 
 **Do** put generated files in [`shared` folder](../general//folder-structure.md#shared-folder).
 
