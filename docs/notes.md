@@ -11,11 +11,6 @@ sidebar_position: 0
 - use custom data to pass static data to components
 - strategy pattern for component
     - routing vs if/switch vs NgComponentOutlet/ViewContainerRef
-- state management
-    - prefer sharing inputs by input/outputs, then service, then store/shared state
-    - use shared state only to : cache data for reusing it, or share data between two or more components further apart in component tree
-    - use providers to scope service in a component or route to create a local state
-    - do not use store just for sending events, it's meant to hold data
 - performance
     - nothing then virtual scroll or client pagination then backend pagination
     - rendering
@@ -96,3 +91,8 @@ sidebar_position: 0
     - use standalone, never NgModule
     - component extending another component or directive
     - use host, view and viewChild signals instead of @Host, @View and @ViewChild decorator
+- librairies
+    - state management
+        - NgXs
+        - Elf
+    - TanStack

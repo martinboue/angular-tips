@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 10
 ---
 # Librairies
 
@@ -74,7 +74,11 @@ Angular CDK can be used with any UI component library, not just Angular Material
 
 ## State management
 
-✅ **[NgRx](https://ngrx.io/)**: reactive state management library that provides a global store inspired by Redux, but also a simpler signal-based alternative store.
+✅ **[NgRx](https://ngrx.io/)**: reactive state management library that provides a global store inspired by Redux, but also a simpler signal-based store.
+
+❌ **[TanStack Query](https://tanstack.com/query/latest/docs/framework/angular/overview)**: the Angular adapter is not yet production-ready, but worth keeping an eye on.
+
+❌ **[Akita](https://opensource.salesforce.com/akita/)**: no longer maintained.
 
 ## OpenAPI code generation
 
