@@ -8,7 +8,7 @@ sidebar_position: 0
 - seperation of concern (the art of creating reusable components)
     - abstraction techniques
         - never polluting generic components with specific logic, use input/outputs, generics, content projection
-- use custom data to pass static data to components
+- use custom data in route to pass static data to components
 - strategy pattern for component
     - routing vs if/switch vs NgComponentOutlet/ViewContainerRef
 - performance
@@ -35,6 +35,7 @@ sidebar_position: 0
             - Verify user is authenticated (guard) 
             - Verify user has a given role (guard)
         - Hide UI elements (custom directive)
+    - custom field with control value accessor
 - maintenance : use migration guide and schematics
 - dev workspace
     - IDE
@@ -61,7 +62,6 @@ sidebar_position: 0
     - use @let
     - @for: use @empty, $last and $first
     - passing array as input and change detection not triggered when adding or removing elements in array, you need to create a new array
-    - is this still the case with signal inputs?
 - details or add external link on REST API principles
 - form
     - Template vs ReactiveForm
@@ -69,8 +69,7 @@ sidebar_position: 0
     - how to use mat-select and reactive form to display a list of objects (id or object itself as option value ?)
     - how to reuse form for both edit and readonly page
     - how to split form in multiple components
-    - use control value accessor for custom form fields
-    - use getRawValue to get all form value including disabled controls
+    - leverage grouping controls to disable/enable a group of controls, checking a validity, ...
 - typing
     - use `?` for optional properties or method inputs
     - use `Readonly<T>` or readonly T or "as const"

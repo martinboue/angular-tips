@@ -119,6 +119,7 @@ It also indicates that the component does not have projectable content.
 **Consider** using dynamic property binding instead of text interpolation.
 - ❌ `<app-card title="{{ user.name }}"/>`
 - ✅ `<app-card [title]="user.name"/>`
+- ✅ `<app-card title="Martin"/>` (valid when static content)
 - ✅ `<app-card title="Created by {{ user.name }}"/>` (valid when mixing static and dynamic content)
 
 **Consider** using two-way binding instead of property binding and event binding.

@@ -17,7 +17,7 @@ A **store** is a term often used in state management librairies to designate a c
 2. Input and output: to pass state between nearby components. This is the most simple and efficient way to share state.
 3. Service: to share state between components with signals and/or observables. This is often sufficient and the most flexible solution, it also doesn't require a third-party library.
 4. Store: to widely share data between multiple components. This is useful for managing complex state that needs to be shared across the application. Some examples:
-   - ❌ A state that is used only by one component
+   - ❌ A state that is used by only one component
    - ✅ A state that is cached
    - ✅ A state shared between unrelated components or far apart in the component tree
 
