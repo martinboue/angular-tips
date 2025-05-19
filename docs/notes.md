@@ -90,7 +90,7 @@ sidebar_position: 0
     - use standalone, never NgModule
     - component extending another component or directive
     - use host, view and viewChild signals instead of @Host, @View and @ViewChild decorator
-- librairies
+- libraries
     - state management
         - NgXs
         - Elf

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 ---
-# Librairies
+# Libraries
 
 Below is a curated list of production-ready and battle-tested libraries recommended for Angular developers, with their pros and cons. These libraries are widely used in the community and can help you build robust, efficient applications faster.
 
@@ -47,9 +47,9 @@ Each dependency you add to your project increases the complexity, the size of yo
 
 ## Headless UI
 
-Headless UI libraries provide a set of unstyled but accessible components and/or primitives that can be styled according to your design system. They are useful when you want to have full control over the styling and behavior of your components.
+Headless UI library provide functional UI logic without any styling or markup, allowing developers full control over how components look, while still handling how they behave. They usually come with a set of primitives that handle behavior logic, state management and accessibility, giving you maximum visual flexibility.
 
-:::info Note
+:::info
 Headless UI libraries are not so popular and advanced in the Angular ecosystem compared to others like React (see [shadcn](https://ui.shadcn.com/), [Radix](https://www.radix-ui.com/), [TanStack](https://tanstack.com/), [HeadlessUI](https://headlessui.com/), etc.). There aren't many viable solutions, but they are evolving and still worth considering.
 :::
 
