@@ -6,7 +6,7 @@
 
 **Angular Tips** is a practical documentation of Angular best practices, with tips to follow and mistakes to avoid for building maintainable applications.
 
-[Documentation](https://martinboue.github.io/angular-tips/)
+[Documentation](https://ngtips.com)
 
 ## Contributing
 
