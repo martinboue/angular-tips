@@ -1,7 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import {name as projectName, description, author} from './package.json';
+import {homepage, name as projectName, description, author} from './package.json';
 
 const appName = 'Angular Tips';
 const organizationName = 'martinboue';
@@ -15,7 +15,7 @@ const config: Config = {
   favicon: 'img/favicon.png',
 
   // Set the production url of your site here
-  url: `https://ngtips.com`,
+  url: homepage,
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: `/`,
@@ -81,9 +81,9 @@ const config: Config = {
       ],
     },
     algolia: {
-      appId: '2ILZS3R8JA',
-      apiKey: '8acfd050f8e1e0854b3f49f80ec46a26',
-      indexName: 'martinboueio',
+      appId: '9K5EE9F705',
+      apiKey: '4bb0dda93d707f3e480714f1bac0b1c7',
+      indexName: 'ngtips',
     },
     tableOfContents: {
       maxHeadingLevel: 4
