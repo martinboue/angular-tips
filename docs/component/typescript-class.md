@@ -13,21 +13,6 @@ This page provides best practices and recommendations for writing TypeScript cla
 You can use a single file for components with no style and extremely short template (1 to 3 lines).
 :::
 
-**Avoid** direct DOM access or manipulation.
-
-- ❌ `document.getElementById('my-button')`
-- ❌ `document.createElement('div')`
-- ❌ `window.innerWidth`
-
-:::info Why?
-Direct DOM access breaks Angular's abstraction layer and makes testing and maintenance harder. Direct DOM accesses are likely to break in future changes, as they are not type-checked. Prefer Angular's reactive and declarative approach instead, some examples:
-- Conditional rendering
-- `viewChild()` and `viewChildren()` queries
-- Templating with `<ng-content>` or `<ng-template>`
-- Angular Material `MediaMatcher`
-- ...
-:::
-
 **Do** use a selector prefix.
 - ❌ `selector: 'user-card'`
 - ✅ `selector: 'app-user-card'`
@@ -182,4 +167,21 @@ export class UserComponent implements OnInit {
 
 :::info Why?
 Angular will call your component's lifecycle methods even if it does not explicitly implement the interface, but make sure you implement it for type safety.
+:::
+
+## DOM interaction
+
+**Avoid** direct DOM access or manipulation.
+
+- ❌ `document.getElementById('my-button')`
+- ❌ `document.createElement('div')`
+- ❌ `window.innerWidth`
+
+:::info Why?
+Direct DOM access breaks Angular's abstraction layer and makes testing and maintenance harder. Direct DOM accesses are likely to break in future changes, as they are not type-checked. Prefer Angular's reactive and declarative approach instead, some examples:
+- Conditional rendering
+- `viewChild()`, `viewChildren()`, `contentChild` and `contentChildren()` queries
+- Templating with `<ng-content>` or `<ng-template>`
+- Angular Material `MediaMatcher`
+- ...
 :::

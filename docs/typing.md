@@ -95,10 +95,10 @@ No preferences for `null` or `undefined` in TypeScript, but be consistent in you
 
 **Avoid** unnecessary `null` and `undefined` types.
 
-- ❌ `name?: string = 'martin'`
-- ❌ `name: string | null = 'martin'`
-- ❌ `name: string | undefined = 'martin'`
-- ✅ `name: string = 'martin'`
+- ❌ `status: Status | null = 'pending'`
+- ❌ `status: Status | undefined = 'pending'`
+- ❌ `status?: Status = 'pending'`
+- ✅ `status: Status = 'pending'`
 
 :::info Why?
 Excessive use of optional types can lead to unnecessary code to handle `null` or `undefined` cases that will never occur. Or, it may also encourage developers to bypass the optional typing (using `name!`) which lead to runtime errors if a `null` case does occur.

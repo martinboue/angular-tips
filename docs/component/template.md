@@ -177,9 +177,13 @@ It also indicates that the component does not have projectable content.
 }
 ```
 
+:::tip
+You can run the [schematic migration](https://angular.dev/reference/migrations/control-flow) to automatically replace directives above by control flow syntax.
+:::
+
 ## Common issues
 
-**Avoid** function call in templates.
+**Avoid** function call in templates (except for accessing a signal value).
 
 **Avoid** heavy computations in templates.
 

@@ -75,6 +75,8 @@ sidebar_position: 0
     - use `Readonly<T>` or readonly T or "as const"
     - use satisfies
     - type vs interface
+    - protected
+    - type inference
 - when to use and not to use Angular
 - JavaScript details
     - false/true vs truthy/falsy
@@ -82,16 +84,32 @@ sidebar_position: 0
 - component
     - use angular cli
         - short: ng g c my-comp
-    - subscritions
-        - when and when not to unsubscribe
-        - use async pipes
-        - use takeUntilDestroyed instead of saving subscription and unsubscribe in ngOnDestroy
-    - rxjs ?
     - use standalone, never NgModule
     - component extending another component or directive
     - use host, view and viewChild signals instead of @Host, @View and @ViewChild decorator
+    - contentChild and contentChildren
+    - inject(DOCUMENT) and WINDOW instead of document and window
+- reactivity
+    - avoid setTimeout()
+    - signals
+        - mySignal.asReadonly()
+    - rxjs 
+        - common operators
+        - subscritions
+            - when and when not to unsubscribe
+            - use async pipes
+            - use takeUntilDestroyed instead of saving subscription and unsubscribe in ngOnDestroy
+    - interoperability
+- dependency injection
+    - overriding injection token
+    - forwardRef
+    - different injection tokens (useClass, useExisting, ...)
 - libraries
     - state management
         - NgXs
         - Elf
     - TanStack
+- i18n
+    - date and time formatting (date pipe)
+    - number formatting (number pipe)
+- angular material : type dialog data
