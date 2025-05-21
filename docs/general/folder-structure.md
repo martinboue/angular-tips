@@ -3,7 +3,7 @@ sidebar_position: 2
 ---
 # Folder structure
 
-This page is your roadmap to a well-organized Angular project, showing you how to structure your folders for scalability and readability.
+Folder structure refers to *how* files and directories are organized within a project. A well-designed methodology helps developers navigate the codebase efficiently and, above all, keeps the project understandable and maintanable as it grows. It provides a clear separation of concerns, making it easier to locate, update, and manage different parts of the application.
 
 ## General guidelines
 
@@ -15,7 +15,7 @@ This page is your roadmap to a well-organized Angular project, showing you how t
 
 A typical Angular project should look like this:
 
-```
+```txt title="✅ Project structure"
 <project root>
 ├── public
 ├── src
@@ -42,7 +42,7 @@ with 3 main folders inside `src/app`:
 
 This folder should contain global components, services, interceptors and more, usually all the things that should be instantiated once.
 
-```txt title="✅ Example"
+```txt title="✅ core folder"
 core
 ├── authentication
 |   └── authentication.service.ts
@@ -66,7 +66,7 @@ A feature folder can be as deep as needed and have feature sub-folders, sub-sub-
 
 A feature folder with more than one route should have a dedicated `<feature>.routes.ts` file (see [lazy loading](../routing.md)).
 
-```txt title="✅ Example"
+```txt title="✅ features folder"
 features
 ├── dashboard
 |   └── dashboard.component.ts
@@ -87,7 +87,7 @@ This folder should contain reusable components, services, directives and more, t
 
 Because many files in this folder are generics, i.e. not related to any feature, you can organize them by technical types. Other feature related files can be grouped together in feature folders.
 
-```txt title="✅ Example"
+```txt title="✅ shared folder"
 shared
 ├── components
 |   ├── form
