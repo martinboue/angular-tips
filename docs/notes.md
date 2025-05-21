@@ -104,12 +104,14 @@ sidebar_position: 0
     - overriding injection token
     - forwardRef
     - different injection tokens (useClass, useExisting, ...)
-- libraries
-    - state management
-        - NgXs
-        - Elf
-    - TanStack
 - i18n
     - date and time formatting (date pipe)
     - number formatting (number pipe)
-- angular material : type dialog data
+- angular material : 
+    - type dialog data
+    - how to override styles and how not to
+        - override mixin
+        - system css variables
+        - private implementation: css variables, ::ng-deep, !important, @layer, ...
+    - tailwind css:
+        - do not dynamically create classes (because detected at compile time)

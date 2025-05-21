@@ -168,19 +168,19 @@ Even if Karma is deprecated, it is still a valid option as it's the only officia
 ✅ **[Vitest](https://vitest.dev/)**
 
 - ✅ Fast
-- ❌ Not officially supported by Angular
-- ❌ Not real browser testing (uses JSDOM)
+- ❌ Experimental real browser testing
+- ❌ No official Angular support
 
 ✅ **[Jest](https://jestjs.io/)**
 
 - ✅ Fast
-- ❌ Not officially supported by Angular
+- ❌ Experimental Angular support
 - ❌ Not real browser testing (uses JSDOM)
 
 ✅ **[Web Test Runner](https://modern-web.dev/docs/test-runner/overview/)**
 
 - ✅ Real browser testing
-- ❌ Not officially supported by Angular
+- ❌ Experimental Angular support
 
 ### End-to-end testing (e2e)
 

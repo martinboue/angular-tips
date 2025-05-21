@@ -5,14 +5,18 @@ slug: /
 # Getting started
 
 ## About
+Angular Tips is a documentation intended to guide developers in building complex industry web applications, with a large scope and codebase, designed to last over time and be developed and maintained by many people.
 
-Angular Tips documentation is intended for those who want to build complex industry web applications, with a large scope and codebase, designed to last over time and be developed and maintained by multiple people. 
+It might *not* be suitable for simple web apps which can be simplified thanks to their smaller scope.
 
-It might not be suitable for simple web apps which can be simplified thanks to their smaller scope.
+## Motivation
 
-This guide is based on our experience of building a wide variety of applications with Angular.
+Angular is a powerful but complex framework that can be difficult to understand. It has evolved a lot over the years and will continue to do so.
+This means there are often several ways of doing the same thing, good ways and bad ways, and traps you can easily fall into.
 
-You may not agree with everything, the important thing is to understand *what* you're doing and *why*.
+The goal of this site is to share the best practices and recommendations of Angular experts, to help you learn from their experiences and mistakes.
+
+This guide will give you thoughtful opinions on Angular's features, you may not agree with everything, but the important thing is to understand *what* you're doing and *why*.
 
 ## Angular version
 
