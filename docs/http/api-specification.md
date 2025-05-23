@@ -42,7 +42,7 @@ You ensure that the data structures used in your code always match the expected 
 You can check out an interactive example of an API specification file on [Swagger Editor](https://editor.swagger.io/).
 :::
 
-**Do** generate models and HTTP clients from your API specification (see [recommended libraries](../libraries.md#openapi-code-generation)).
+**Do** generate models and HTTP clients from your API specification (see [recommended libraries](../external-libraries.md#openapi-code-generation)).
 
 **Do** put generated files in [`shared` folder](../general//folder-structure.md#shared-folder).
 
