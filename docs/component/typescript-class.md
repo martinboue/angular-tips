@@ -107,7 +107,7 @@ In addition, `OnPush` strategy improves performances by reducing the number of c
 You can set the default change detection strategy to `OnPush` in your `angular.json` file for components generated with Angular CLI.
 :::
 
-More info about change detection in [Reactivity](./reactivity.md).
+More info about change detection in [Reactivity](../reactivity.md).
 
 ## Lifecycle 
 
