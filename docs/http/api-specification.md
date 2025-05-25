@@ -26,14 +26,6 @@ This technique also has the great advantage of encouraging you to design your AP
 Also note that having a simple file is easier to deal with in your build pipelines.
 :::
 
-**Do** generate models and HTTP clients from API specifications.
-
-:::info Why?
-Having a document that describes how to use the API is great, but making sure it's used correctly is even better.
-In addition to saving you time, this technique grants you type safety. If a breaking changes is made to the API, you'll detect it at compile time.
-You ensure that the data structures used in your code always match the expected format.
-:::
-
 ## OpenAPI
 
 **Do** use [OpenAPI](https://www.openapis.org/) standard to describe your API.
@@ -42,7 +34,15 @@ You ensure that the data structures used in your code always match the expected 
 You can check out an interactive example of an API specification file on [Swagger Editor](https://editor.swagger.io/).
 :::
 
+## Code generation
+
 **Do** generate models and HTTP clients from your API specification (see [recommended libraries](../external-libraries.md#openapi-code-generation)).
+
+:::info Why?
+Having a document that describes how to use the API is great, but making sure it's used correctly is even better.
+In addition to saving you time, this technique grants you type safety. If a breaking changes is made to the API, you'll detect it at compile time.
+You ensure that the data structures used in your code always match the expected format.
+:::
 
 **Do** put generated files in [`shared` folder](../general//folder-structure.md#shared-folder).
 
@@ -52,7 +52,7 @@ You can check out an interactive example of an API specification file on [Swagge
 src/app/shared/openapi
 ```
 
-**Consider** using `postinstall` script to automatically regenerate files after running `npm install`.
+**Consider** using `postinstall` script to automatically generate files after running `npm install`.
 
 ```json title="✅ package.json"
 {

@@ -45,6 +45,7 @@ sidebar_position: 0
     - .gitignore
         - DO commit package-lock.json
         - use angular default .gitignore
+    - angular devtools chrome extension
 - testing
 - template
     - use layout components
