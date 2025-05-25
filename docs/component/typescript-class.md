@@ -107,17 +107,7 @@ In addition, `OnPush` strategy improves performances by reducing the number of c
 You can set the default change detection strategy to `OnPush` in your `angular.json` file for components generated with Angular CLI.
 :::
 
-**Avoid** using `ChangeDetectorRef` and its methods.
-- ❌ `this.changeDetectorRef.detectChanges()`
-- ❌ `this.changeDetectorRef.markForCheck()`
-
-:::info Why?
-You should use reactive structures like signals instead of manually triggering the change detection cycle.
-
-`detectChanges()` is almost always a bad practice as it usually means you are doing something wrong and should reorganize your code and how your components interact with each other.
-
-`markForCheck()` on the other hand can safely be used with `ChangeDetectionStrategy.OnPush` when there are no reactive alternatives. For example, updating a `FormControl` after an asynchronous task.
-:::
+More info about change detection in [Reactivity](./reactivity.md).
 
 ## Lifecycle 
 

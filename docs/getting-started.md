@@ -20,7 +20,7 @@ This guide will give you thoughtful opinions on Angular's features, you may not 
 
 ## Angular version
 
-This documentation assumes that you are using the **latest Angular version**.
+This documentation assumes that you are using the latest minor version of **Angular v19**.
 
 > Support for multiple Angular version may come in the future.
 

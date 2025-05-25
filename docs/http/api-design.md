@@ -119,7 +119,7 @@ interface SearchUserResponse {
 **Do** use `2XX` HTTP codes for successful responses, the most common are:
 
 - `200 OK` when the request was successfully processed.
-- `201 Created` when a ressource was successfully created.
+- `201 Created` when a resource was successfully created.
 - `202 Accepted` when an action has been queued for execution.
 - `204 No Content` when an action was successfully completed but did not return any content.
 - `206 Partially Returned` when only part of the collection is returned or the resource is incomplete.

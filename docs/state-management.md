@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 10
 ---
 # State management
 
@@ -25,6 +25,19 @@ The closer the state is to its consumer, the easier it is to maintain. Using a s
 :::tip
 Keep in mind that picking a state management library does not mean you have to use it everywhere. You can mix and match different state management solutions in your application, using a library for complex use cases and a service for simpler ones.
 :::
+
+**Do** use `asReadonly()` to expose readonly signals.
+
+```ts title="auth.service.ts"
+export class AuthService {
+  // ❌ Public writable signal
+  userName = signal("martin");
+
+  // ✅ Private writable signal + public readonly signal
+  #userName = signal("martin");
+  readonly userName = this.#userName.asReadonly();
+}
+```
 
 ## Libraries
 

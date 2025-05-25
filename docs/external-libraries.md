@@ -1,12 +1,12 @@
 ---
-sidebar_position: 10
+sidebar_position: 11
 ---
 # External libraries
 
 Below is a curated list of production-ready and battle-tested third-party libraries recommended for Angular developers, with their pros and cons. These libraries are widely used in the community and can help you build robust, efficient applications faster.
 
 :::info
-If a library is not listed here, it doesn't mean it's bad or not recommended. It just means that we haven't had the chance to evaluate it yet.
+If a library is not listed here, it doesn't mean it's bad or not recommended. It just means that we haven't had the chance to evaluate it yet. You can suggest a library on GitHub, see [how to contribute](./contributing.md).
 :::
 
 ## General guidelines

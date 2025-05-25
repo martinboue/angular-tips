@@ -10,3 +10,8 @@ draft: true
 - KISS
 - SOLID
 - Prefer composition over extension
+- single responsibility principle
+- seperation of concern
+- single source of truth
+- DRY (but not always)
+- YAGNI

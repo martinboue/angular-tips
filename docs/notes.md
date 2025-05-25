@@ -3,6 +3,7 @@ draft: true
 sidebar_position: 0
 ---
 # Notes
+- code style: add "why?" sections
 - avoid using switch default case with enums or union types (i.e. fixed set of values)
     - why? if you add a new case, the missing case will be detected by the compiler unless you have a default case
 - seperation of concern (the art of creating reusable components)
@@ -11,10 +12,6 @@ sidebar_position: 0
 - use custom data in route to pass static data to components
 - strategy pattern for component
     - routing vs if/switch vs NgComponentOutlet/ViewContainerRef
-- performance
-    - nothing then virtual scroll or client pagination then backend pagination
-    - rendering
-        - when to use CSR vs SSR vs SSG
 - features 
     - dynamic page titles and meta tags
     - prevent user from leaving the page with unsaved changes
@@ -36,6 +33,9 @@ sidebar_position: 0
             - Verify user has a given role (guard)
         - Hide UI elements (custom directive)
     - custom field with control value accessor
+    - show app version in UI:
+        - do NOT import package.json to display version
+        - use postversion script
 - maintenance : use migration guide and schematics
 - dev workspace
     - IDE
@@ -46,14 +46,6 @@ sidebar_position: 0
         - DO commit package-lock.json
         - use angular default .gitignore
 - testing
-- versioning
-    - use semver
-    - use npm version major/minor/patch
-    - how to show version to user:
-        - do NOT import package.json to display version
-        - use postversion script
-- going further, share useful links :
-    - git commit convention
 - template
     - use layout components
     - use content projection
@@ -89,17 +81,7 @@ sidebar_position: 0
     - use host, view and viewChild signals instead of @Host, @View and @ViewChild decorator
     - contentChild and contentChildren
     - inject(DOCUMENT) and WINDOW instead of document and window
-- reactivity
-    - avoid setTimeout()
-    - signals
-        - mySignal.asReadonly()
-    - rxjs 
-        - common operators
-        - subscritions
-            - when and when not to unsubscribe
-            - use async pipes
-            - use takeUntilDestroyed instead of saving subscription and unsubscribe in ngOnDestroy
-    - interoperability
+
 - dependency injection
     - overriding injection token
     - forwardRef
