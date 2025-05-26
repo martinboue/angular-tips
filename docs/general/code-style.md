@@ -49,6 +49,10 @@ focusing on best practices for naming conventions, code clarity, and consistency
 - ❌ `private myVar`
 - ✅ `#myVar`
 
+:::info Why?
+`private` is a TypeScript keyword enforced at compile time and removed after compilation, it can be bypassed at runtime, whereas `#` is a JavaScript feature that ensures the property is private at runtime.
+:::
+
 **Do** use plural form in names for iterables (array, set, ...).
 - ❌ `userList = getUserArray()`
 - ✅ `users = getUsers()`
