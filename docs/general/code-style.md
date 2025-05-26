@@ -4,8 +4,9 @@ sidebar_position: 1
 
 # Code style
 
-This page provides additional coding style guidelines on top of the [Angular official coding style guide](https://angular.dev/style-guide), 
-focusing on best practices for naming conventions, code clarity, and consistency.
+This page covers best practices and common mistakes when writing TypeScript code, focusing on those with the highest impact. It includes naming conventions, code clarity, consistency and more.
+
+The following guidelines are a complement to the [Angular official coding style guide](https://angular.dev/style-guide) that we recommend to read first.
 
 ## General guidelines
 
@@ -128,3 +129,10 @@ Developers will quickly understand a function's purpose without the need to read
 **Do** include a reference to the task in `TODO` and `FIXME` comments.
 - ❌ `// TODO improve performance`
 - ✅ `// TODO #2831: improve performance` (GitHub issue or Jira ticket)
+
+## Going further
+
+For a more in-depth guide, we recommend the following additional resources:
+- [TypeScript style guide by Google](https://google.github.io/styleguide/tsguide.html)
+- [Airbnb JavaScript code guide](https://github.com/airbnb/javascript)
+- [TypeScript coding guidelines for TypeScript contributors](https://github.com/microsoft/TypeScript/wiki/Coding-guidelines)
