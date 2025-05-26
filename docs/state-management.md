@@ -55,4 +55,4 @@ State management libraries add considerable complexity and can be overkill for m
 Stores are often misused and overused. Over time, a lot of data and logic ends up in there by mistake which makes it hard to maintain. It's important to define in each project what *should* go into a store and what *should not*.
 :::
 
-See [State management libraries](./external-libraries.md#state-management) for a list of recommended solutions.
+See [state management libraries](./external-libraries.md#state-management) for a list of recommended solutions.

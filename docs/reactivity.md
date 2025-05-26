@@ -111,18 +111,32 @@ constructor() {
 
 ### Fetching data
 
-**Do** fetch data with RxJs, then write the response to a `signal()`.
+**Do** fetch data with `HttpClient`, then consume it using an `async` pipe or by writing the response to a `signal()`.
 
-```ts title="✅ users-list.component.ts"
+```ts title="✅ Using async pipe (class)"
 #http = inject(HttpClient);
-users = signal<User[] | null>(null);
+user$ = this.#http.get<User>(`/api/users/${this.userId()}`);
+```
 
-fetchUsers() {
-  this.#http.get<User[]>('/api/users').subscribe(users => {
-    this.users.set(users);
+```html title="✅ Using async pipe (template)"
+@let user = user$ | async;
+<span>{{ user.name }}</span>
+```
+
+```ts title="✅ Using a signal"
+#http = inject(HttpClient);
+user = signal<User | null>(null);
+
+fetchUser(userId: string) {
+  this.#http.get<User>(`/api/users/${userId}`).subscribe(user => {
+    this.user.set(user);
   });
 }
 ```
+
+:::info
+When manually subscribing to an observable, you become responsible for the subscription, see [managing subscriptions](#managing-subscriptions) for more information.
+:::
 
 **Avoid** using `resource()`, `rxResource()` or `httpResource()` signals.
 

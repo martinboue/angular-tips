@@ -15,12 +15,12 @@ A clear API contract improves readability, reduce integration issues and helps d
 Because an API specification is language-agnostic, it allows consumers to easily interact with the API without needing to know or understand its implementation details.
 :::
 
-**Consider** writting a specification file instead of generating one from your source code.
+**Consider** writing a specification file instead of generating one from your source code.
 
 :::info Why?
 Even though it's tempting and seems faster, generating a specification file can create a bottleneck that could slow down team's productivity, as consumers may wait for the final implementation, reviewed and merged, before plugging in.
 
-On the another hand, writting your own specification file makes simultaneous work easier, consumers can start their developments as soon as the API is defined.
+On the another hand, writing your own specification file makes simultaneous work easier, consumers can start their developments as soon as the API is defined.
 This technique also has the great advantage of encouraging you to design your API before implementing it, focusing on business logic.
 
 Also note that having a simple file is easier to deal with in your build pipelines.
