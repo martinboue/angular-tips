@@ -89,7 +89,7 @@ JavaScript has two special values: `null` and `undefined`. When strict null chec
 You should use this feature to prevent "Null Pointer Exceptions" at runtime. TypeScript will warn you if you try to access a property of an object that might be `null` or `undefined`. On the other hand, if the object is guaranteed to be non-null, you can safely access its properties without any additional checks.
 :::
 
-:::info
+:::note
 No preferences for `null` or `undefined` in TypeScript, but be consistent in your codebase.
 :::
 

@@ -12,16 +12,18 @@ sidebar_position: 0
 - use custom data in route to pass static data to components
 - strategy pattern for component
     - routing vs if/switch vs NgComponentOutlet/ViewContainerRef
+- auth
+    - recommend tools : angular auth oidc client
+    - where to store token?
+        - cookie (httpOnly)
+            - pros: propagates to downloaded files with `<a download>` or `<img src>`
+        - localStorage
+        - sessionStorage
+    - how to inject token in requests
+    - openapi config?
 - features 
     - dynamic page titles and meta tags
     - prevent user from leaving the page with unsaved changes
-    - auth
-        - recommend tool : angular auth oidc client
-        - inject token by configuring openapi generator or use interceptor
-        - where to store token?
-        - how to inject token in requests
-        - openapi config?
-        - recommend https://www.npmjs.com/package/angular-auth-oidc-client or other?
     - logging
     - http error handling: add interceptor example.
     - Redirecting to 404 not found page
@@ -57,9 +59,7 @@ sidebar_position: 0
     - passing array as input and change detection not triggered when adding or removing elements in array, you need to create a new array
 - details or add external link on REST API principles
 - form
-    - Template vs ReactiveForm
     - how to translate enums to readable text
-    - how to use mat-select and reactive form to display a list of objects (id or object itself as option value ?)
     - how to reuse form for both edit and readonly page
     - how to split form in multiple components
     - leverage grouping controls to disable/enable a group of controls, checking a validity, ...
@@ -81,20 +81,19 @@ sidebar_position: 0
     - component extending another component or directive
     - use host, view and viewChild signals instead of @Host, @View and @ViewChild decorator
     - contentChild and contentChildren
-    - inject(DOCUMENT) and WINDOW instead of document and window
-
 - dependency injection
     - overriding injection token
     - forwardRef
     - different injection tokens (useClass, useExisting, ...)
-- i18n
-    - date and time formatting (date pipe)
-    - number formatting (number pipe)
 - angular material : 
     - type dialog data
     - how to override styles and how not to
         - override mixin
         - system css variables
         - private implementation: css variables, ::ng-deep, !important, @layer, ...
-    - tailwind css:
-        - do not dynamically create classes (because detected at compile time)
+    - how to use mat-select and reactive form to display a list of objects (id or object itself as option value ?): compareWith
+- tailwind css:
+    - do not dynamically create classes (because detected at compile time)
+- debugging
+    - angular chrome devtools
+    - json pipe

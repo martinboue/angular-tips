@@ -5,7 +5,7 @@ sidebar_position: 11
 
 Below is a curated list of production-ready and battle-tested third-party libraries recommended for Angular developers, with their pros and cons. These libraries are widely used in the community and can help you build robust, efficient applications faster.
 
-:::info
+:::note
 If a library is not listed here, it doesn't mean it's bad or not recommended. It just means that we haven't had the chance to evaluate it yet. You can suggest a library on GitHub, see [how to contribute](./contributing.md).
 :::
 
@@ -70,7 +70,7 @@ Run tests or proof of concept to compare solutions and ensure that the chosen on
 
 Headless UI library provide functional UI logic without any styling or markup, allowing developers full control over how components look, while still handling how they behave. They usually come with a set of primitives that handle behavior logic, state management and accessibility, giving you maximum visual flexibility.
 
-:::info
+:::note
 Headless UI libraries are not so popular and advanced in the Angular ecosystem compared to others like React (see [shadcn](https://ui.shadcn.com/), [Radix](https://www.radix-ui.com/), [TanStack](https://tanstack.com/), [HeadlessUI](https://headlessui.com/), etc.). There aren't many viable solutions, but they are evolving and still worth considering.
 :::
 

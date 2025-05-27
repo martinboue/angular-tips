@@ -134,7 +134,7 @@ fetchUser(userId: string) {
 }
 ```
 
-:::info
+:::warning
 When manually subscribing to an observable, you become responsible for the subscription, see [managing subscriptions](#managing-subscriptions) for more information.
 :::
 
@@ -247,7 +247,7 @@ this.http.post<User>('/api/users', user).pipe(
 });
 ```
 
-:::info
+:::note
 `tap()` and `finalize()` operators do not modify the emitted value.
 :::
 

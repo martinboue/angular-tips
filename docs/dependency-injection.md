@@ -51,7 +51,7 @@ Providing a service at the component level can be useful in some cases, a few ex
 
 When a dependency is provided in a component, it is only available to that component and its children. In some cases, you may need to inject a dependency provided at the component level to a component rendered at the root level. By default you'll get the following error: `NullInjectorError: No provider for <your dependency>!`.
 
-:::info
+:::note
 A good example of this is a component rendered in a dialog. Since the dialog component is rendered at the root level and not as a child of the component that opens the dialog, it cannot access the dependencies provided at the component level.
 :::
 
