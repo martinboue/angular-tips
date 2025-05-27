@@ -134,6 +134,10 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
       additionalLanguages: ['scss']
     },
+    announcementBar: {
+      id: 'support_project',
+      content: `❤️ Support this project by giving it a star on <a target="_blank" rel="noopener noreferrer" href="${repository}">GitHub</a>!`,
+    }
   } satisfies Preset.ThemeConfig,
 };
 
