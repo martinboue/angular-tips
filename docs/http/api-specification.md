@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 # API specification
 
@@ -36,7 +36,7 @@ You can check out an interactive example of an API specification file on [Swagge
 
 ## Code generation
 
-**Do** generate models and HTTP clients from your API specification (see [recommended libraries](../external-libraries.md#openapi-code-generation)).
+**Do** generate models and HTTP clients from your API specification (see [recommended libraries](#libraries)).
 
 :::info Why?
 Having a document that describes how to use the API is great, but making sure it's used correctly is even better.
@@ -62,3 +62,17 @@ src/app/shared/openapi
   }
 }
 ```
+
+### Libraries
+
+**Consider** using one of the following:
+
+✅ **[Orval](https://orval.dev/)** with [Angular client](https://orval.dev/guides/angular)
+
+- ✅ Zod integration
+- ✅ Mocking support
+
+✅ **[OpenAPI Generator](https://www.npmjs.com/package/@openapitools/openapi-generator-cli)** with [typescript-angular generator](https://openapi-generator.tech/docs/generators/typescript-angular)
+
+- ❌ Requires Java to run
+- ❌ Infrequent updates of the typescript-angular generator

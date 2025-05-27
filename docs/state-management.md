@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 12
 ---
 # State management
 
@@ -55,4 +55,10 @@ State management libraries add considerable complexity and can be overkill for m
 Stores are often misused and overused. Over time, a lot of data and logic ends up in there by mistake which makes it hard to maintain. It's important to define in each project what *should* go into a store and what *should not*.
 :::
 
-See [state management libraries](./external-libraries.md#state-management) for a list of recommended solutions.
+**Consider** using one the following:
+
+✅ **[NgRx](https://ngrx.io/)**: reactive state management library that provides a global store inspired by Redux, but also a simpler signal-based store.
+
+❌ **[TanStack Query](https://tanstack.com/query/latest/docs/framework/angular/overview)**: the Angular adapter is not yet production-ready, but worth keeping an eye on.
+
+❌ **[Akita](https://opensource.salesforce.com/akita/)**: no longer maintained.

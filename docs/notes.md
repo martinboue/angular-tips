@@ -49,6 +49,10 @@ sidebar_position: 0
         - use angular default .gitignore
     - angular devtools chrome extension
 - testing
+    - when to test and when not to test
+    - unit testing
+    - component testing
+    - e2e testing
 - template
     - use layout components
     - use content projection
@@ -97,3 +101,5 @@ sidebar_position: 0
 - debugging
     - angular chrome devtools
     - json pipe
+- add "Why?" to:
+    - Consider not using a CSS framework.

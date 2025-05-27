@@ -197,3 +197,19 @@ Try another technique mentioned above or use a more specific selector instead.
 this.mobileQuery = this.media.matchMedia('(max-width: 900px)');
 const isMobile = this.mobileQuery.matches;
 ```
+
+## Libraries
+
+**Consider** not using a CSS framework.
+
+:::info Why?
+While it's not a bad thing to use a CSS framework, it shouldn't be automatic. These frameworks are more complex than regular CSS and can harm your code readability and maintanability. Choose knowingly before integrating it deeply into your project.
+:::
+
+**Consider** using one the following:
+
+✅ **[Tailwind CSS](https://tailwindcss.com/)**: utility-first CSS framework that provides low-level utility classes to build custom designs.
+
+✅ **[Bootstrap](https://getbootstrap.com/)**: CSS framework that provides a set of pre-designed components and utilities.
+
+❌ **[PrimeFlex](https://primeflex.org/)**: project has stopped and no longer receive development or maintenance.
