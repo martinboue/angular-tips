@@ -22,11 +22,15 @@ This guide will give you thoughtful opinions on Angular's features, you may not 
 
 This documentation assumes that you are using the latest minor version of **Angular v19**.
 
-> Support for multiple Angular version may come in the future.
+:::note
+Angular Tips follows the same major versioning as Angular itself, starting with v19.
+
+If you're using an older version of Angular, we recommend you read Angular Tips v19. While many of the recommendations remain relevant, some may not be applicable to your specific version. Refer to the official [changelog](https://github.com/angular/angular/releases), [update guide](https://v19.angular.dev/update-guide) and [API reference](https://v19.angular.dev/api) to identify unstable and missing features.
+:::
 
 ## Vocabulary
 
-Angular Tips uses the same vocabulary as described in the [official Angular documentation](https://angular.dev/style-guide#style-vocabulary):
+Angular Tips uses the same vocabulary as described in the [official Angular documentation](https://v19.angular.dev/style-guide#style-vocabulary):
 
 >Each guideline describes either a good or bad practice, and all have a consistent presentation.
 >

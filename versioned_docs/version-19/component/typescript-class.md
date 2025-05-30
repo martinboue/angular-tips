@@ -71,7 +71,7 @@ export class UserComponent {
 **Do** use `input()` signal and `output()` function instead of `@Input()` and `@Ouput()` decorators.
 
 :::tip
-You can run [schematic migrations](https://angular.dev/reference/migrations) to automatically transform decorators to signals.
+You can run [schematic migrations](https://v19.angular.dev/reference/migrations) to automatically transform decorators to signals.
 :::
 
 **Do** type inputs and outputs.

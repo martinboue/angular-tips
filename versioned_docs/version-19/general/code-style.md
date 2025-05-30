@@ -6,7 +6,7 @@ sidebar_position: 1
 
 This page covers best practices and common mistakes when writing TypeScript code, focusing on those with the highest impact. It includes naming conventions, code clarity, consistency and more.
 
-The following guidelines are a complement to the [Angular official coding style guide](https://angular.dev/style-guide) that we recommend to read first.
+The following guidelines are a complement to the [Angular official coding style guide](https://v19.angular.dev/style-guide) that we recommend to read first.
 
 ## General guidelines
 

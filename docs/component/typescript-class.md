@@ -120,7 +120,7 @@ More info about change detection in [Reactivity](../reactivity.md).
 - ❌ `ngAfterContentChecked`
 - ❌ `ngAfterViewInit`
 - ❌ `ngAfterViewChecked`
-- ❌ `afterRender`
+- ❌ `afterEveryRender`
 - ❌ `afterNextRender`
 
 :::info Why?

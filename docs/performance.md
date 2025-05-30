@@ -118,6 +118,8 @@ SSR helps load time because:
 - TODO
 :::
 
+**Consider** using hybrid rendering at route level.
+
 ## Server-side rendering (SSR)
 
 - tips on making components SSR-compatible

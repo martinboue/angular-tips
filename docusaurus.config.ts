@@ -51,6 +51,9 @@ const config: Config = {
           versions: {
             current: {
               label: '20',
+            },
+            '19': {
+              banner: 'none',
             }
           }
         },

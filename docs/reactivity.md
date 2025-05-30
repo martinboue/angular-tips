@@ -74,13 +74,34 @@ teamDevelopers = computed(() => this.teamMembers().filter(user => user.role === 
 nbDevelopersInTeam = computed(() => this.teamDevelopers().length);
 ```
 
+### Writable and derived state
+
+**Do** use [`linkedSignal()`](https://angular.dev/guide/signals/linked-signal) for writable state that depends on another signal.
+
+```ts title="✅ Selecting an item from a reactive array"
+// Reactive array of users (could also be a computed(), input() or other).
+users = signal<User[]>([...]);
+
+// The selected user must be a user included in the users array.
+// If the users array changes and the selected user is no longer in the array, we need to deselect it.
+selectedUser = linkedSignal<User[], User | undefined>({
+  // Source signal that the linked signal depends on:
+  source: this.users,
+  // Compute function triggered when the source signal changes:
+  computation: (newUsers, prevSelectedUser) => {
+    // If the previously selected user is still in the new array, return it, otherwise return undefined.
+    return newUsers.find((user) => user.id === prevSelectedUser?.value.id);
+  }
+});
+```
+
+:::info Why?
+`linkedSignal()` helps you create derived but writable signals that always have a valid value, as you only need to manage a single source of truth, which is the `source` signal.
+:::
+
 ### Side effect
 
 **Consider** using `effect()` for side effects.
-
-:::warning
-`effect()` signal is in developer preview in Angular v19, but as it's an essential feature and becomes stable in v20 without API changes, you can safely make an exception and use it now.
-:::
 
 ```ts title="✅ Side effect"
 preference = signal('');
@@ -101,7 +122,8 @@ constructor() {
 
 **Consider** alternatives instead of writing to signals within an `effect`.
 
-- ✅ `computed()` signal
+- ✅ `computed()`
+- ✅ `linkedSignal()`
 - ✅ RxJs `Observable`
 - ...
 
