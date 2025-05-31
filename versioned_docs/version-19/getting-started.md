@@ -20,7 +20,7 @@ This guide will give you thoughtful opinions on Angular's features, you may not 
 
 ## Angular version
 
-This documentation assumes that you are using the latest minor version of **Angular v20**.
+This documentation assumes that you are using the latest minor version of **Angular v19**.
 
 :::note
 Angular Tips follows the same major versioning as Angular itself, starting with v19.
@@ -30,19 +30,23 @@ If you're using an older version of Angular, we recommend you read Angular Tips 
 
 ## Vocabulary
 
-Each guidelines describes either a good or bad practice, and all have a consistent presentation. The wording of each guideline indicates how strong the recommendation is.
+Angular Tips uses the same vocabulary as described in the [official Angular documentation](https://v19.angular.dev/style-guide#style-vocabulary):
 
-**"Do"** is one that should always be followed. Always might be a bit too strong of a word. Guidelines that literally should always be followed are extremely rare. On the other hand, you need a really unusual case for breaking a Do guideline.
-
-**"Consider"** tips should generally be followed. If you fully understand the meaning behind the guideline and have a good reason to deviate, then do so. Aim to be consistent.
-
-**"Avoid"** indicates something you should almost never do.
-
-**"Why?"** gives reasons for following the previous recommendations.
+>Each guideline describes either a good or bad practice, and all have a consistent presentation.
+>
+>The wording of each guideline indicates how strong the recommendation is.
+>
+>**Do** is one that should always be followed. Always might be a bit too strong of a word. Guidelines that literally should always be followed are extremely rare. On the other hand, you need a really unusual case for breaking a Do guideline.
+>
+>**Consider** guidelines should generally be followed. If you fully understand the meaning behind the guideline and have a good reason to deviate, then do so. Aim to be consistent.
+>
+>**Avoid** indicates something you should almost never do.
+>
+>**Why?** Gives reasons for following the previous recommendations.
 
 ✅ This icon is placed in front of each example that can be followed.
 
-❌ And this one is placed in front of each example *not* to be followed.
+❌ And this one is placed in front of each example not to be followed.
 
 <br/><br/>
 

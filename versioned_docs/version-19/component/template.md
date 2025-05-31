@@ -11,7 +11,7 @@ This page outlines best practices for Angular component's templates, focusing on
 
 **Consider** using meaningful semantic HTML elements instead of non-semantic ones.
 
-```html title="❌ app.html"
+```html title="❌ app.component.html"
 <div class="header">
   <div>Welcome to my Website</div>
 </div>
@@ -24,7 +24,7 @@ This page outlines best practices for Angular component's templates, focusing on
 <div class="footer">...</div>
 ```
 
-```html title="✅ app.html"
+```html title="✅ app.component.html"
 <header>
   <h1>Welcome to my Website</h1>
 </header>
@@ -55,9 +55,9 @@ Use `<div>` or `<span>` as last resort if no more suitable element exists, a few
 :::
 
 **Consider** using self-closing tags instead of container tags.
-- ❌ `<app-user-card></app-user-card>`
-- ✅ `<app-user-card/>`
-- ✅ `<app-card>Content</app-card>` (valid with content projection)
+- ❌ `<app-my-comp></app-my-comp>`
+- ✅ `<app-my-comp/>`
+- ✅ `<app-my-comp>Content</app-my-comp>` (valid with content projection)
 
 :::info Why?
 Closing tag isn't necessary and removing it improves readability.
@@ -66,13 +66,13 @@ It also indicates that the component does not have projectable content.
 
 **Do** use a proper indentation.
 
-```html title="❌ app.html"
+```html title="❌ app.component.html"
 <section>
 <h2>Title</h2><p>Then a paragraph.</p>
 </section>
 ```
 
-```html title="✅ app.html"
+```html title="✅ app.component.html"
 <section>
   <h2>Title</h2>
   <p>Then a paragraph.</p>
@@ -81,7 +81,7 @@ It also indicates that the component does not have projectable content.
 
 **Consider** grouping related tags into code blocks and adding descriptive comments.
 
-```html title="❌ app.html"
+```html title="❌ app.component.html"
 <header>
   ...
 </header>
@@ -95,7 +95,7 @@ It also indicates that the component does not have projectable content.
 </main>
 ```
 
-```html title="✅ app.html"
+```html title="✅ app.component.html"
 <!-- Navigation bar and menu -->
 <header>
   ...
@@ -178,7 +178,7 @@ It also indicates that the component does not have projectable content.
 ```
 
 :::tip
-You can run the [schematic migration](https://angular.dev/reference/migrations/control-flow) to automatically replace directives above by control flow syntax.
+You can run the [schematic migration](https://v19.angular.dev/reference/migrations/control-flow) to automatically replace directives above by control flow syntax.
 :::
 
 **Do** use class binding instead of `ngClass` directive.
@@ -191,14 +191,14 @@ You can run the [schematic migration](https://angular.dev/reference/migrations/c
 
 **Avoid** heavy computations in templates.
 
-```html title="❌ company-page.html"
+```html title="❌ teams.component.html"
 @for (team of teams; track team.id) {
   <li>Team manager: {{ getManager(team)?.name }}</li>
 }
 ```
 
-```ts title="❌ company-page.ts"
-export class CompanyPage {
+```ts title="❌ teams.component.ts"
+export class TeamsComponent {
   teams: Team[];
   getManager(team: Team) {
     // This is heavy computation, some teams can have a lot of members.
@@ -207,15 +207,15 @@ export class CompanyPage {
 }
 ```
 
-```ts title="✅ company-page.ts"
+```ts title="✅ teams.component.ts"
 // Define a new model to hold the manager in each team.
 interface ManagedTeam extends Team {
   manager?: User;
 }
 
-export class CompanyPage {
+export class TeamsComponent {
   teams: Team[];
-  // Compute who's the manager of each team once.
+  // Compute who's the manager of each team only once.
   managedTeams: ManagedTeam[] = this.teams.map(team => ({
     ...team,
     manager: team.members.find(m => m.role === 'manager')
@@ -223,7 +223,7 @@ export class CompanyPage {
 }
 ```
 
-```html title="✅ company-page.html"
+```html title="✅ teams.component.html"
 <!-- Loop over 'managedTeams' instead of 'teams'. -->
 @for (team of managedTeams; track team.id) {
   <li>Team manager: {{ team.manager?.name }}</li>

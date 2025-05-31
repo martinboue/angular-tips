@@ -28,8 +28,8 @@ Keep in mind that picking a state management library does not mean you have to u
 
 **Do** use `asReadonly()` to expose readonly signals.
 
-```ts title="auth-manager.ts"
-export class AuthManager {
+```ts title="auth.service.ts"
+export class AuthService {
   // ❌ Public writable signal
   userName = signal("martin");
 

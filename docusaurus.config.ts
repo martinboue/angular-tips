@@ -47,6 +47,15 @@ const config: Config = {
           editUrl: `${repository}/edit/main`,
           showLastUpdateTime: true,
           routeBasePath: '/',
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: '20',
+            },
+            '19': {
+              banner: 'none',
+            }
+          }
         },
         blog: false,
         theme: {
@@ -74,7 +83,18 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'docsSidebar',
           position: 'left',
-          label: 'Docs',
+          label: 'Documentation',
+        },
+        {
+          type: 'docsVersionDropdown',
+          position: 'right',
+          dropdownItemsBefore: [
+            {
+              type: 'html',
+              className: 'dropdown-versions-title',
+              value: '<b>Angular versions</b>',
+            }
+          ]
         },
         {
           href: repository,
@@ -96,7 +116,7 @@ const config: Config = {
       style: 'light',
       links: [
         {
-          title: 'Docs',
+          title: 'Documentation',
           items: [
             {
               label: 'Getting started',
@@ -135,7 +155,7 @@ const config: Config = {
     },
     prism: {
       theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      darkTheme: prismThemes.oneDark,
       additionalLanguages: ['scss']
     },
     announcementBar: {

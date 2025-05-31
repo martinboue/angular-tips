@@ -24,16 +24,16 @@ In multi-project workspace, it could be a good thing to have a different prefix 
 :::
 
 **Do** use the same name for component class name and the selector, but with a prefix and in snake-case.
-- Given the component class `ManagerTeamPreviewMenu`:
+- Given the component class `ManagerTeamPreviewMenuComponent`:
     - ❌ `selector: 'app-team-preview'`
     - ✅ `selector: 'app-manager-team-preview-menu'`
 
 **Do** group class attributes.
 
-```ts title="✅ user-page.ts"
-export class UserPage {
+```ts title="✅ user.component.ts"
+export class UserComponent {
   // 1. Injected dependencies
-  userHttpClient = inject(UserHttpClient);
+  userService = inject(UserService);
 
   // 2. Constants
   UserStatus = UserStatus;
@@ -52,10 +52,10 @@ export class UserPage {
 
 **Do** declare attributes first, then methods.
 
-```ts title="✅ user-page.ts"
-export class UserPage {
+```ts title="✅ user.component.ts"
+export class UserComponent {
   // Attributes
-  userHttpClient = inject(UserHttpClient);
+  userService = inject(UserService);
   user = input.required<User>();
   form = new FormGroup(...);
 
@@ -71,7 +71,7 @@ export class UserPage {
 **Do** use `input()` signal and `output()` function instead of `@Input()` and `@Ouput()` decorators.
 
 :::tip
-You can run [schematic migrations](https://angular.dev/reference/migrations) to automatically transform decorators to signals.
+You can run [schematic migrations](https://v19.angular.dev/reference/migrations) to automatically transform decorators to signals.
 :::
 
 **Do** type inputs and outputs.
@@ -120,7 +120,7 @@ More info about change detection in [Reactivity](../reactivity.md).
 - ❌ `ngAfterContentChecked`
 - ❌ `ngAfterViewInit`
 - ❌ `ngAfterViewChecked`
-- ❌ `afterEveryRender`
+- ❌ `afterRender`
 - ❌ `afterNextRender`
 
 :::info Why?
@@ -144,13 +144,13 @@ Because Angular v19 is not completely signal-based yet, you will need to rely on
 
 **Do** implement the lifecycle interface if its lifecycle method is defined.
 
-```ts title="❌ user-page.ts"
-export class UserPage {
+```ts title="❌ user.component.ts"
+export class UserComponent {
   ngOnInit() {...}
 }
 ```
-```ts title="✅ user-page.ts"
-export class UserPage implements OnInit {
+```ts title="✅ user.component.ts"
+export class UserComponent implements OnInit {
   ngOnInit() {...}
 }
 ```

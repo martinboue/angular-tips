@@ -26,14 +26,14 @@ Even if Karma is deprecated, it is still a valid option as it's the only officia
 ✅ **[Vitest](https://vitest.dev/)**
 
 - ✅ Fast
-- ✅ Simulated and real browser testing
-- ❌ Experimental Angular support
+- ✅ Real browser testing (experimental)
+- ❌ No official Angular support (experimental support introduced in Angular v20)
 
 ✅ **[Jest](https://jestjs.io/)**
 
 - ✅ Fast
 - ❌ Experimental Angular support
-- ❌ No real browser testing
+- ❌ No real browser testing (uses JSDOM)
 
 ✅ **[Web Test Runner](https://modern-web.dev/docs/test-runner/overview/)**
 

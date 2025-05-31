@@ -140,8 +140,8 @@ Use it only when you're absolutely sure that the value will never be `null` or `
 
 **Do** use import aliases.
 
-```ts title="❌ user-page.ts"
-import { UserCard } from '../../../../shared/user-card/user-card';
+```ts title="❌ user.component.ts"
+import { ManagerComponent } from '../../../../shared/manager/manager.component';
 ````
 
 ```json title="✅ tsconfig.json"
@@ -159,8 +159,8 @@ import { UserCard } from '../../../../shared/user-card/user-card';
 }
 ```
 
-```ts title="✅ user-page.ts"
-import { ManagerCard } from '@shared/user-card/user-card';
+```ts title="✅ user.component.ts"
+import { ManagerComponent } from '@shared/manager/manager.component';
 ````
 
 :::info Why?
