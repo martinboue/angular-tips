@@ -26,7 +26,7 @@ For major changes, please [submit an issue](#submitting-an-issue) first so we ca
 
 To submit a pull request: 
 1. Fork the [GitHub repository](https://github.com/martinboue/angular-tips).
-2. Push your changes in you forked repository.
+2. Push your changes in your forked repository.
 3. Create a pull request to the `main` branch.
 
 ## Rules
