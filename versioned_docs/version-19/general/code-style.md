@@ -89,7 +89,7 @@ Following a clear, strict and consitent pattern with function names improves rea
 Developers will quickly understand a function's purpose without the need to read it's content, avoiding misinterpretation.
 :::
 
-**Do**, for maps, specify the name of the key and then the value, seperating them with "To".
+**Do** name Maps by combining a description of the key and the value, separated by `To`.
 - ❌ `usersMap: Map<number, User>` (unclear what the key and value are)
 - ✅ `userIdToManager: Map<number, User>`
 - ✅ `companyIdToUsers: Map<number, User[]>`

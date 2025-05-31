@@ -89,10 +89,44 @@ Following a clear, strict and consitent pattern with function names improves rea
 Developers will quickly understand a function's purpose without the need to read it's content, avoiding misinterpretation.
 :::
 
-**Do**, for maps, specify the name of the key and then the value, seperating them with "To".
+**Do** name Maps by combining a description of the key and the value, separated by `To`.
 - ❌ `usersMap: Map<number, User>` (unclear what the key and value are)
 - ✅ `userIdToManager: Map<number, User>`
 - ✅ `companyIdToUsers: Map<number, User[]>`
+
+**Consider** *not* suffixing components, services and directives with their type.
+- ❌ `user.component.ts` for `UserComponent` class
+- ✅ `user-card.ts` for `UserCard` class
+- ❌ `user.service.ts` for `UserService` class
+- ✅ `user-http-client.ts` for `UserHttpClient` class
+- ❌ `user.directive.ts` for `UserDirective` class
+- ✅ `user-popover.ts` for `UserPopover` class
+
+:::info Why?
+Suffixes can be used to create files with the same name except for the suffix, discouraging developers to choose an appropriate and meaningful name. Several files may have a similar name even though they don't serve the same purpose at all, making it difficult to understand the differences at a glance.
+
+Removing suffixes encourages proper and more descriptive naming, making file names easier to read and understand.
+
+Note also that Angular is moving towards selectorless components in future releases. The component class name will be used in the template instead of the selector (e.g. `<UserCard/>` instead of `<app-user-card/>`), making the suffix even less relevant.
+:::
+
+**Consider** ending the names of routed components with `page`.
+- ❌ `user.ts` and `User` class name
+- ✅ `user-page.ts` and `UserPage` class name
+
+**Consider** using `-` instead of `.` as a separator for pipes, guards, resolvers and interceptors file names.
+- ❌ `kebab-case.pipe.ts`
+- ✅ `kebab-case-pipe.ts`
+- ❌ `authenticated.guard.ts`
+- ✅ `authenticated-guard.ts`
+- ❌ `user.resolver.ts`
+- ✅ `user-resolver.ts`
+- ❌ `error.interceptor.ts`
+- ✅ `error-interceptor.ts`
+
+:::info Why?
+This is an official Angular recommendations and aligns with Angular's CLI generation (i.e. `ng generate pipe|guard|resolver|interceptor`). It's also consistent with the removal of the suffix mentionned above.
+:::
 
 ## Code
 

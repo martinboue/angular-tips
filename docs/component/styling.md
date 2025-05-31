@@ -15,11 +15,11 @@ If you do, it usually means that you need to make a component out of it.
 **Do** use SASS (.scss).
 
 **Avoid** inline styles.
-```html title="❌ user.component.html"
+```html title="❌ user-page.html"
 <div style="margin-top: 20px">...</div>
 ```
 
-```scss title="✅ user.component.scss"
+```scss title="✅ user-page.scss"
 div { 
   margin-top: 20px;
 }
@@ -48,7 +48,7 @@ p {
 
 **Do** add extra base path to import global SASS variables.
 
-```scss title="❌ user.component.scss"
+```scss title="❌ user-page.scss"
 @use '../../../../../theme';
 h1 {
   color: theme.$primary;
@@ -61,7 +61,7 @@ h1 {
     "my-app": {
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular/build:application",
           "options": {
             "stylePreprocessorOptions": {
               // highlight-start
@@ -76,7 +76,7 @@ h1 {
 }
 ```
 
-```scss title="✅ user.component.scss"
+```scss title="✅ user-page.scss"
 @use 'theme';
 h1 {
   color: theme.$primary;
@@ -114,7 +114,7 @@ p {
 }
 ```
 
-```scss title="✅ user-card.component.scss"
+```scss title="✅ user-card.scss"
 .selected p > span {
   color: $primary;
 }
@@ -126,7 +126,7 @@ forcing you to override them in several places.
 :::
 
 **Do** use `:host` to apply styles to the component root element.
-```scss title="✅ user.component.scss"
+```scss title="✅ user-page.scss"
 :host { 
   display: flex;
 }
@@ -136,7 +136,7 @@ forcing you to override them in several places.
 
 **Do** prefix component's CSS variable names with the component name.
 
-```scss title="✅ user.component.scss"
+```scss title="✅ user-page.scss"
 :host { 
   --user-title-color: theme.$primary;
 }
@@ -155,7 +155,7 @@ forcing you to override them in several places.
 
 **Do** prefix global CSS variable names by `app-`.
 
-```scss title="✅ user.component.scss"
+```scss title="✅ user-page.scss"
 :root { 
   --app-text-color: #131218;
 }
@@ -168,7 +168,7 @@ forcing you to override them in several places.
 
 **Avoid** using `::ng-deep`.
 
-```scss title="❌ user.component.ts"
+```scss title="❌ user-page.ts"
 :host ::ng-deep .mat-mdc-chip-action > .mdc-evolution-chip__graphic {
   padding: 0;
 }
@@ -193,7 +193,7 @@ Try another technique mentioned above or use a more specific selector instead.
 ## Responsive design
 
 **Do** use `MediaMatcher` to listen for window width changes.
-```ts title="✅ layout.component.ts"
+```ts title="✅ Checking screen width"
 this.mobileQuery = this.media.matchMedia('(max-width: 900px)');
 const isMobile = this.mobileQuery.matches;
 ```

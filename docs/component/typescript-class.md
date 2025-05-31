@@ -24,16 +24,16 @@ In multi-project workspace, it could be a good thing to have a different prefix 
 :::
 
 **Do** use the same name for component class name and the selector, but with a prefix and in snake-case.
-- Given the component class `ManagerTeamPreviewMenuComponent`:
+- Given the component class `ManagerTeamPreviewMenu`:
     - ❌ `selector: 'app-team-preview'`
     - ✅ `selector: 'app-manager-team-preview-menu'`
 
 **Do** group class attributes.
 
-```ts title="✅ user.component.ts"
-export class UserComponent {
+```ts title="✅ user-page.ts"
+export class UserPage {
   // 1. Injected dependencies
-  userService = inject(UserService);
+  userHttpClient = inject(UserHttpClient);
 
   // 2. Constants
   UserStatus = UserStatus;
@@ -52,10 +52,10 @@ export class UserComponent {
 
 **Do** declare attributes first, then methods.
 
-```ts title="✅ user.component.ts"
-export class UserComponent {
+```ts title="✅ user-page.ts"
+export class UserPage {
   // Attributes
-  userService = inject(UserService);
+  userHttpClient = inject(UserHttpClient);
   user = input.required<User>();
   form = new FormGroup(...);
 
@@ -144,13 +144,13 @@ Because Angular v19 is not completely signal-based yet, you will need to rely on
 
 **Do** implement the lifecycle interface if its lifecycle method is defined.
 
-```ts title="❌ user.component.ts"
-export class UserComponent {
+```ts title="❌ user-page.ts"
+export class UserPage {
   ngOnInit() {...}
 }
 ```
-```ts title="✅ user.component.ts"
-export class UserComponent implements OnInit {
+```ts title="✅ user-page.ts"
+export class UserPage implements OnInit {
   ngOnInit() {...}
 }
 ```

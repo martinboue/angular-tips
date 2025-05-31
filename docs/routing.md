@@ -23,15 +23,15 @@ This page provides best practices for routing in Angular, focusing on structure,
 const routes: Routes = [
   {
     path: 'admin',
-    component: AdminComponent
+    component: AdminPage
   },
   {
     path: 'users',
-    component: SearchUsersComponent
+    component: BrowseUsersPage
   },
   {
     path: 'users/:id',
-    component: UserProfileComponent
+    component: UserProfilePage
   }
   // ...
 ];
@@ -42,7 +42,7 @@ const routes: Routes = [
   // use 'loadComponent' to lazy load single route features
   {
     path: 'admin',
-    loadComponent: () => import('./features/admin/admin.component').then(c => c.AdminComponent)
+    loadComponent: () => import('./features/admin/admin-page').then(c => c.AdminPage)
   },
   // use 'loadChildren' to lazy load multi route features.
   {
@@ -57,11 +57,11 @@ const routes: Routes = [
 const USERS_ROUTES: Routes = [
   {
     path: '',
-    component: SearchUsersComponent
+    component: BrowseUsersPage
   },
   {
     path: ':id',
-    component: UserProfileComponent
+    component: UserProfilePage
   },
   // ...
 ];
@@ -71,15 +71,15 @@ const USERS_ROUTES: Routes = [
 
 **Do** use `routerLink` for links over `router.navigate()` or `router.navigateByUrl()`.
 
-```html title="❌ company.component.html"
+```html title="❌ company-page.html"
 <button (click)="showEmployees()">See employees</button>
 <button (click)="showManager(user.id)">See manager</button>
 ```
 
-```ts title="❌ company.component.ts"
+```ts title="❌ company-page.ts"
 import { Router } from '@angular/router';
 
-export class CompanyComponent {
+export class CompanyPage {
   #router = inject(Router);
 
   showEmployees() {
@@ -91,8 +91,8 @@ export class CompanyComponent {
 }
 ```
 
-```html title="✅ company.component.html"
-<a routerLink="/users">See users</a>
+```html title="✅ company-page.html"
+<a routerLink="/users">See employees</a>
 <a [routerLink]="['/users', user.id]">See manager</a>
 ```
 
@@ -107,8 +107,8 @@ Only use `router` when programmatic navigation is required, such as redirects.
 
 **Do** use `withComponentInputBinding()` for accessing route data (resolver, params and static data).
 
-```ts title="❌ user.component.ts"
-export class UserComponent implements OnInit {
+```ts title="❌ user-page.ts"
+export class UserPage implements OnInit {
   #route = inject(ActivatedRoute);
 
   userId!: string;
@@ -130,8 +130,8 @@ export const appConfig: ApplicationConfig = {
 };
 ```
 
-```ts title="✅ user.component.ts"
-export class UserComponent implements OnInit {
+```ts title="✅ user-page.ts"
+export class UserPage implements OnInit {
   userId = input.required<string>();
   user = input.required<User>();
 }
@@ -139,23 +139,23 @@ export class UserComponent implements OnInit {
 
 **Consider** fetching data using a resolver instead of inside `ngOnInit` lifecycle hook.
 
-```ts title="❌ user.component.ts"
-export class UserComponent implements OnInit {
-  #userService = inject(UserService);
+```ts title="❌ user-page.ts"
+export class UserPage implements OnInit {
+  #userHttpClient = inject(UserHttpClient);
   userId = input.required<string>();
 
   // 'user' is undefined until HTTP request is resolved.
   user?: User;
 
   ngOnInit(): void {
-    this.#userService.getUser(this.userId())
+    this.#userHttpClient.getUser(this.userId())
       .subscribe(user => this.user = user);
   }
 }
 ```
 
-```ts title="✅ user.component.ts"
-export class UserComponent {
+```ts title="✅ user-page.ts"
+export class UserPage {
   // 'user' will be loaded before the component initializes
   // and there is no need to handle the loading state.
   user: input.required<User>();
@@ -166,12 +166,12 @@ export class UserComponent {
 const USERS_ROUTES: Routes = [
   {
     path: ':id',
-    component: UserProfileComponent,
+    component: UserPage,
     resolve: {
       // Define your resolver here
       user: (route: ActivatedRouteSnapshot) => {
         const userId = route.params['id'];
-        return inject(UserService).getUser(userId);
+        return inject(UserHttpClient).getUser(userId);
       }
     }
   },

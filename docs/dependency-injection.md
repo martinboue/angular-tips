@@ -9,13 +9,13 @@ Dependency injection is a powerful design pattern that allows you to create flex
 
 **Do** use `inject` function for dependency injection.
 
-```ts title="user.component.ts"
-export class UserComponent {
+```ts title="user-page.ts"
+export class UserPage {
   // ✅ inject function
-  userService = inject(UserService);
+  userHttpClient = inject(UserHttpClient);
 
   // ❌ constructor-based dependency injection
-  constructor(authService: AuthService) {}
+  constructor(teamHttpClient: TeamHttpClient) {}
 }
 ```
 
@@ -25,14 +25,14 @@ export class UserComponent {
 
 ```ts title="❌ Component level injection"
 @Injectable()
-export class UserService {...}
+export class UserHttpClient {...}
 ```
 
 ```ts title="✅ Root level injection"
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {...}
+export class UserHttpClient {...}
 ```
 
 :::info Why?
@@ -57,26 +57,26 @@ A good example of this is a component rendered in a dialog. Since the dialog com
 
 **Do** share injection context using `Injector`.
 
-```ts title="✅ user.component.ts"
+```ts title="✅ user-page.ts"
 @Component({
   ...
-  providers: [UserService] // UserService is provided at the component level
+  providers: [UserStore] // UserStore is provided at the component level
 })
-export class UserComponent {
+export class UserPage {
   dialog = inject(MatDialog);
   injector = inject(Injector);
 
   openDialog() {
     // Injection context is shared with the dialog component using Injector
-    this.dialog.open(DialogComponent, { injector: this.injector });
+    this.dialog.open(UserDialog, { injector: this.injector });
   }
 }
 ```
 
-```ts title="✅ dialog.component.ts"
-export class DialogComponent {
-  // UserService can now be injected in the dialog component
-  userService = inject(UserService);
+```ts title="✅ user-dialog.ts"
+export class UserDialog {
+  // UserStore can now be injected in the dialog component
+  userStore = inject(UserStore);
 }
 ```
 

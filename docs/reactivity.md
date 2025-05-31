@@ -279,7 +279,7 @@ Do use `takeUntilDestroyed()` to automatically unsubscribe when the component is
 
 ```ts title="✅ From an injection context (e.g. constructor)"
 constructor() {
-  this.userService.status$.pipe(
+  this.userStore.status$.pipe(
     takeUntilDestroyed()
   ).subscribe(status => {
     this.doSomethingWhenUserStatusChange(status);
@@ -291,7 +291,7 @@ constructor() {
 destroyRef = inject(DestroyRef);
 
 startListeningStatus() {
-  this.userService.status$.pipe(
+  this.userStore.status$.pipe(
     takeUntilDestroyed(this.destroyRef)
   ).subscribe(status => {
     this.doSomethingWhenUserStatusChange(status);

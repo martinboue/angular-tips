@@ -166,7 +166,7 @@ export class UserComponent {
 const USERS_ROUTES: Routes = [
   {
     path: ':id',
-    component: UserProfileComponent,
+    component: UserComponent,
     resolve: {
       // Define your resolver here
       user: (route: ActivatedRouteSnapshot) => {

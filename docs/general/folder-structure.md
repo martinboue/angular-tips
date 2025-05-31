@@ -11,6 +11,12 @@ Folder structure refers to *how* files and directories are organized within a pr
 
 **Consider** structuring the file tree as close as possible to the routing and navigation in the application.
 
+**Do** rename folders to avoid redundancy in path.
+- ❌ `blog/blog-post/blog-post.ts`
+- ✅ `blog/post/blog-post.ts`
+- ❌ `admin/admin-dashboard/admin-dashboard-settings/admin-dashboard-settings.ts`
+- ✅ `admin/dashboard/settings/admin-dashboard-settings.ts`
+
 ## Project structure
 
 A typical Angular project should look like this:
@@ -44,16 +50,16 @@ This folder should contain global components, services, interceptors and more, u
 
 ```txt title="✅ core folder"
 core
-├── authentication
-|   └── authentication.service.ts
+├── auth
+|   └── auth.ts
 ├── layout
 |   ├── nav-bar
-|   |   └── nav-bar.component.ts
+|   |   └── nav-bar.ts
 |   ├── page-layout
-|   |   └── page-layout.component.ts
+|   |   └── page-layout.ts
 |   └── ...
 ├── interceptors
-|   ├── error-handler.interceptor.ts
+|   ├── error-handler-interceptor.ts
 |   └── ...
 └── ...
 ```
@@ -69,12 +75,12 @@ A feature folder with more than one route should have a dedicated `<feature>.rou
 ```txt title="✅ features folder"
 features
 ├── dashboard
-|   └── dashboard.component.ts
+|   └── dashboard-page.ts
 ├── blog
 |   ├── post
-|   |   └── blog-post.component.ts
+|   |   └── blog-post-page.ts
 |   ├── feed
-|   |   └── blog-feed.component.ts
+|   |   └── blog-feed-page.ts
 |   └── blog.routes.ts
 └── ...
 ```
@@ -101,7 +107,7 @@ shared
 ├── models
 ├── pipes
 ├── services
-|   ├── i18n.service.ts
+|   ├── i18n.ts
 |   └── ...
 └── ...
 ```
