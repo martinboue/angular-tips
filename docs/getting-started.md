@@ -25,7 +25,7 @@ This documentation assumes that you are using the latest minor version of **Angu
 :::note
 Angular Tips follows the same major versioning as Angular itself, starting with v19.
 
-If you're using an older version of Angular, we recommend you read Angular Tips v19. While many of the recommendations remain relevant, some may not be applicable to your specific version. Refer to the official [changelog](https://github.com/angular/angular/releases), [update guide](https://v19.angular.dev/update-guide) and [API reference](https://v19.angular.dev/api) to identify unstable and missing features.
+If you're using an older version of Angular, we recommend you read Angular Tips v19. While many of the recommendations remain relevant, some may not be applicable to your specific version. Refer to the official [changelog](https://github.com/angular/angular/releases), [update guide](https://angular.dev/update-guide) and [API reference](https://angular.dev/api) to identify unstable and missing features.
 :::
 
 ## Vocabulary

@@ -13,6 +13,7 @@ Notes:
 - Hydration
 - Incremental hydration
 - Dispatch event or event replay
+- afterNextRender / afterEveryRender
 
 ## General guidelines
 

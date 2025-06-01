@@ -136,7 +136,7 @@ You can initialize your component inside the `constructor` instead of the `ngOnI
 :::
 
 :::warning Exceptions
-Because Angular v19 is not completely signal-based yet, you will need to rely on lifecycle hooks in some cases, for example:
+Because Angular v20 is not completely signal-based yet, you will need to rely on lifecycle hooks in some cases, for example:
 - Initializing a form
 - Accessing route data
 - ...

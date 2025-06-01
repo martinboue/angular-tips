@@ -54,6 +54,12 @@ The following guidelines are a complement to the [Angular official coding style 
 `private` is a TypeScript keyword enforced at compile time and removed after compilation, it can be bypassed at runtime, whereas `#` is a JavaScript feature that ensures the property is private at runtime.
 :::
 
+:::warning Exceptions
+If you target older browsers below ES2022, you should use the `private` keyword instead of `#` as the downleveling can impact performance and bundle size.
+
+If you use Angular's default target then you're not concerned, see `compilerOptions.target` in your `tsconfig.json` file.
+:::
+
 **Do** use plural form in names for iterables (array, set, ...).
 - ❌ `userList = getUserArray()`
 - ✅ `users = getUsers()`

@@ -133,7 +133,17 @@ constructor() {
 
 ### Fetching data
 
-**Do** fetch data with `HttpClient`, then consume it using an `async` pipe or by writing the response to a `signal()`.
+**Consider** not using `resource()`, `rxResource()` or `httpResource()` signals.
+
+:::info Why?
+`resource()`, `rxResource()` and `httpResource()` are experimental features in Angular v20 and are not recommended for production use.
+:::
+
+:::warning Exceptions
+Since these new tools will most likely become the future of Angular, and that they are an important missing piece, you can make an exception here and use them now. But be careful though, there's a high risk that the API may change as it's not stable yet.
+:::
+
+**Consider** fetching data with `HttpClient`, then consume it using an `async` pipe or by writing the response to a `signal()`.
 
 ```ts title="✅ Using async pipe (class)"
 #http = inject(HttpClient);
@@ -158,12 +168,6 @@ fetchUser(userId: string) {
 
 :::warning
 When manually subscribing to an observable, you become responsible for the subscription, see [managing subscriptions](#managing-subscriptions) for more information.
-:::
-
-**Avoid** using `resource()`, `rxResource()` or `httpResource()` signals.
-
-:::info Why?
-`resource()`, `rxResource()` and `httpResource()` are experimental features in Angular v19 and are not recommended for production use.
 :::
 
 ## RxJs
