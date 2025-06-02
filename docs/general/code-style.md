@@ -55,9 +55,9 @@ The following guidelines are a complement to the [Angular official coding style 
 :::
 
 :::warning Exceptions
-If you target older browsers below ES2022, you should use the `private` keyword instead of `#` as the downleveling can impact performance and bundle size.
+Avoid using `#` if you're targeting browsers that don't natively support them, as the downleveling can impact performance and bundle size.
 
-If you use Angular's default target then you're not concerned, see `compilerOptions.target` in your `tsconfig.json` file.
+You're not concerned if you use [Angular's default browserlist](https://angular.dev/reference/versions#browser-support).
 :::
 
 **Do** use plural form in names for iterables (array, set, ...).
