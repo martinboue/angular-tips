@@ -23,7 +23,7 @@ You can use a single file for components with no style and extremely short templ
 In multi-project workspace, it could be a good thing to have a different prefix for each project.
 :::
 
-**Do** use the same name for component class name and the selector, but with a prefix and in snake-case.
+**Do** use the same name for component class name and the selector, but with a prefix and in kebab-case.
 - Given the component class `ManagerTeamPreviewMenu`:
     - ❌ `selector: 'app-team-preview'`
     - ✅ `selector: 'app-manager-team-preview-menu'`

@@ -25,7 +25,7 @@ div {
 }
 ```
 
-**Do** use snake-case for class and id names.
+**Do** use kebab-case for class and id names.
 - ❌ `class="selectedItem"`
 - ✅ `class="selected-item"`
 - ❌ `id="add_button"`
