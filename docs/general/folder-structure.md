@@ -7,7 +7,7 @@ Folder structure refers to *how* files and directories are organized within a pr
 
 ## General guidelines
 
-**Consider** grouping files in folders by domain-specific (business feature) rather than technical type (components, services, ...).
+**Consider** grouping files by domain (business feature) rather than technical type (components, services, ...).
 
 **Consider** structuring the file tree as close as possible to the routing and navigation in the application.
 
@@ -19,7 +19,7 @@ Folder structure refers to *how* files and directories are organized within a pr
 
 ## Project structure
 
-A typical Angular project should look like this:
+**Consider** splitting your codebase into 3 main folders, [`core`](#core-folder), [`features`](#features-folder) and [`shared`](#shared-folder).
 
 ```txt title="✅ Project structure"
 <project root>
@@ -39,14 +39,17 @@ A typical Angular project should look like this:
 └── ...
 ```
 
-with 3 main folders inside `src/app`:
-- [`core` folder](#core-folder)
-- [`features` folder](#features-folder)
-- [`shared` folder](#shared-folder)
-
 ### `core` folder
 
-This folder should contain global components, services, interceptors and more, usually all the things that should be instantiated once.
+**Do** include non-business and global features in `core` folder.
+- ✅ Layout components
+- ✅ Authentication service
+- ✅ Interceptors
+- ...
+
+:::note
+`core` folder usually contains files that are instantiated once or used globally.
+:::
 
 ```txt title="✅ core folder"
 core
@@ -64,34 +67,65 @@ core
 └── ...
 ```
 
+**Avoid** importing files from `features` folder into the `core` folder.
+
 ### `features` folder
 
-This folder should contain domain-specific files divided in feature folders. Each feature folder can contains multiple components but also services, state management and more, but all should be related to the same feature.
-
-A feature folder can be as deep as needed and have feature sub-folders, sub-sub-folders, etc.
-
-A feature folder with more than one route should have a dedicated `<feature>.routes.ts` file (see [lazy loading](../routing.md)).
+**Do** include business features grouped by domain in `features` folder.
 
 ```txt title="✅ features folder"
 features
 ├── dashboard
 |   └── dashboard-page.ts
 ├── blog
-|   ├── post
-|   |   └── blog-post-page.ts
 |   ├── feed
 |   |   └── blog-feed-page.ts
+|   ├── post
+|   |   ├── comment
+|   |   |   └── blog-post-comment.ts
+|   |   └── blog-post-page.ts
 |   └── blog.routes.ts
 └── ...
 ```
 
-**Avoid** importing files from `core` folder into the `features` folder.
+:::tip
+Nested folders under `features` can be as deep as needed to represent the domain structure of your application.
+:::
+
+**Do** colocate files related to the same feature in the same folder.
+
+```txt title="✅ Colocated files"
+feed
+├── blog-feed-page.ts
+├── blog-feed-page.html
+├── blog-feed-page.css
+├── blog-feed-store.ts
+├── blog-feed-http-client.ts
+└── ...
+```
+
+**Consider** creating a dedicated `<feature>.routes.ts` file for domains that contain more than one route (see [lazy loading](../routing.md#lazy-loading)).
+
+```txt title="✅ Domain-specific route file"
+features
+├── blog
+|   ├── feed
+|   |   └── blog-feed-page.ts
+|   ├── post
+|   |   └── blog-post-page.ts
+    // highlight-start
+|   └── blog.routes.ts
+    // highlight-end
+└── ...
+```
 
 ### `shared` folder
 
-This folder should contain reusable components, services, directives and more, that are shared accross multiple features.
+**Do** include reusable components, services, directives and other files in `shared` folder.
 
-Because many files in this folder are generics, i.e. not related to any feature, you can organize them by technical types. Other feature related files can be grouped together in feature folders.
+:::note
+For some files under the `shared` folder, such as generic utilities or highly reusable code, grouping by domain doesn't make sense. Instead, you can organize them by technical type (like components, services or directives).
+:::
 
 ```txt title="✅ shared folder"
 shared
@@ -107,14 +141,13 @@ shared
 ├── models
 ├── pipes
 ├── services
-|   ├── i18n.ts
-|   └── ...
 └── ...
 ```
 
 **Avoid** importing files from `core` or `features` folders into the `shared` folder.
 
 ## Going further
+
 This folder structure is a strong starting point, but for very large codebase, you may need to adapt a more complex and strict structure to keep your project maintainable.
 
 For example, you can check out the [Feature Sliced Design methodology](https://feature-sliced.github.io/documentation/), which is a more advanced approach of the folder structure described above.
