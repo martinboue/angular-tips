@@ -60,7 +60,7 @@ In that case, you can safely break this rule and append the action name at the e
 
 ## Data modeling
 
-**Consider** defining a dedicated a DTO for each endpoint rather than reusing the same one.
+**Consider** defining a dedicated DTO for each endpoint rather than reusing the same one.
 
 :::info Why?
 - Clarity: clearly indicates the expected input/output, making it easier for consumers.
