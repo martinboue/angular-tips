@@ -143,33 +143,6 @@ constructor() {
 Since these new tools will most likely become the future of Angular, and that they are an important missing piece, you can make an exception here and use them now. But be careful though, there's a high risk that the API may change as it's not stable yet.
 :::
 
-**Consider** fetching data with `HttpClient`, then consume it using an `async` pipe or by writing the response to a `signal()`.
-
-```ts title="✅ Using async pipe (class)"
-#http = inject(HttpClient);
-user$ = this.#http.get<User>(`/api/users/${this.userId()}`);
-```
-
-```html title="✅ Using async pipe (template)"
-@let user = user$ | async;
-<span>{{ user.name }}</span>
-```
-
-```ts title="✅ Using a signal"
-#http = inject(HttpClient);
-user = signal<User | null>(null);
-
-fetchUser(userId: string) {
-  this.#http.get<User>(`/api/users/${userId}`).subscribe(user => {
-    this.user.set(user);
-  });
-}
-```
-
-:::warning
-When manually subscribing to an observable, you become responsible for the subscription, see [managing subscriptions](#managing-subscriptions) for more information.
-:::
-
 ## RxJs
 
 **Consider** using RxJs to handle events.
@@ -179,6 +152,49 @@ When manually subscribing to an observable, you become responsible for the subsc
 - ...
 
 **Consider** using [signals](#signals) instead of RxJs `BehaviorSubject`.
+
+### Managing subscriptions
+
+**Do** unsubcribe from observables.
+- ✅ Use `async` pipe in template (it handles subscription and unsubscription)
+- ✅ Use `takeUntilDestroyed()` (see [common use case](#unsubscribing-when-component-is-destroyed))
+- ✅ Call `unsubscribe` in `ngOnDestroy` lifecycle hook
+
+:::info Why?
+Unsubscribing from observables is crucial to prevent memory leaks in your application. When a component is destroyed, any active subscriptions will continue to run, potentially leading to unexpected behavior or performance issues. Subscriptions could accumulate as components are created and destroyed.
+:::
+
+:::warning Exceptions
+Finite subscriptions, such as HTTP requests, are automatically unsubscribed when a response is received, but that does not mean the request is cancelled. If your component is destroyed before the request completes, the callback will still be executed. This can lead to runtime errors if you are trying to access component properties that no longer exist.
+
+Preferably always unsubscribe from finite subscriptions, but you can omit the unsubscription if the callback is safe to execute after the component is destroyed.
+:::
+
+**Consider** using `async` pipe to consume observables in templates.
+
+```ts title="✅ user-dialog.ts"
+#http = inject(HttpClient);
+user$ = this.#http.get<User>(`/api/users/${this.userId()}`);
+```
+
+```html title="✅ user-dialog.html"
+@let user = user$ | async;
+<span>{{ user.name }}</span>
+```
+
+:::info Why?
+`AsyncPipe` automatically handles subscription and unsubscription, which helps prevent memory leaks, and also trigger change detection when the observable emits a new value.
+
+When manually subscribing to an observable, you become responsible for the subscription.
+:::
+
+:::warning Exceptions
+`AsyncPipe` is not suitable for all use cases. It is primarily used for displaying asynchronous state in the template. If you need to perform side effects based on the observable value, you can manually subscribe/unsubscribe to it in the component class instead. A few examples:
+- Redirecting to another route
+- Mutating server state (e.g. POST, PUT or DELETE HTTP request)
+- Opening a dialog and waiting for the result
+- ...
+:::
 
 ### Common use cases
 
@@ -200,23 +216,21 @@ this.askUserConfirmation().pipe(
 **Do** use `map()` to transform the emitted value.
 
 ```ts title="✅ Mapping to a property"
-this.http.get<User>(`/api/users/${id}`).pipe(
+manager$ = this.http.get<User>(`/api/users/${userId}`).pipe(
   map(user => user.manager)
-).subscribe(manager => {
-  this.doSomethingWithManager(manager);
-});
+);
 ```
 
 ```ts title="✅ Mapping to a new model"
-this.http.get<Team[]>('/api/teams').pipe(
-  map(teams => teams.map(team => ({
-    ...team,
-    // Add a 'manager' property for each team
-    manager: team.members.find(member => member.role === 'manager')
-  })))
-).subscribe(teamsWithManager => {
-  this.doSomethingWithTeams(teamsWithManager);
-});
+teamWithManager$ = this.http.get<Team>(`/api/teams/${teamId}`).pipe(
+  map(team => {
+    return {
+      ...team,
+      // Add a 'manager' property
+      manager: team.members.find(member => member.role === 'manager')
+    };
+  })
+);
 ```
 
 #### Handling errors
@@ -239,13 +253,11 @@ this.http.get<User>(`/api/users/${userId}`).subscribe({
 **Do** use `catchError()` operator to catch errors and fallback to a default value.
 
 ```ts title="✅ Catch errors and replace value"
-this.http.get<User[]>('/api/users').pipe(
+users$ = this.http.get<User[]>('/api/users').pipe(
   catchError(error => {
     return of([]);
   })
-).subscribe(users => {
-  this.doSomethingWithUsers(users);
-});
+);
 ```
 
 #### Side effects
@@ -257,9 +269,7 @@ this.http.post<User>('/api/users', user).pipe(
   tap(user => {
     this.showSuccessToaster(`User ${user.name} created successfully!`);
   })
-).subscribe(user => {
-  this.doSomethingWithUser(user);
-});
+);
 ```
 
 **Do** use `finalize()` to always perform side effects, on success and error.
@@ -267,10 +277,10 @@ this.http.post<User>('/api/users', user).pipe(
 ```ts title="✅ Side effect on success and error"
 this.loading.set(true);
 this.http.post<User>('/api/users', user).pipe(
-  finalize(() => this.loading.set(false))
-).subscribe(user => {
-  this.doSomethingWithUser(user);
-});
+  finalize(() => {
+    this.loading.set(false);
+  })
+);
 ```
 
 :::note
@@ -292,17 +302,18 @@ constructor() {
 ```
 
 ```ts title="✅ From outside an injection context with DestroyRef"
-destroyRef = inject(DestroyRef);
+#destroyRef = inject(DestroyRef);
 
 startListeningStatus() {
   this.userStore.status$.pipe(
-    takeUntilDestroyed(this.destroyRef)
+    takeUntilDestroyed(this.#destroyRef)
   ).subscribe(status => {
     this.doSomethingWhenUserStatusChange(status);
   });
 }
 ```
-More information below on [how to manage subscriptions](#managing-subscriptions).
+
+More information above on [how to manage subscriptions](#managing-subscriptions).
 
 #### Fetch once on demand then cache
 
@@ -324,16 +335,14 @@ preferences$.subscribe(preferences => this.doSomethingElseWithPreferences(prefer
 **Do** use `debounceTime()` and `distinctUntilChanged()` for search inputs.
 
 ```ts title="✅ Search input"
-this.searchControl.valueChanges.pipe(
+searchResults$ = this.searchControl.valueChanges.pipe(
   // Wait for 200ms of inactivity and use the latest value
   debounceTime(200), 
   // Only emit if the value has changed
   distinctUntilChanged()
   // Then perform the search
   switchMap(query =>  this.searchUsers(query))
-).subscribe(users => {
-  this.doSomethingWithUsers(users);
-});
+);
 ```
 
 :::info Why?
@@ -345,19 +354,16 @@ Using `debounceTime()` prevents sending too many requests while the user is typi
 **Do** use `forkJoin()` to send multiple HTTP requests in parallel and wait for all of them to complete.
 
 ```ts title="✅ Known number of parallel HTTP requests"
-forkJoin({
+userAndHisOrders$ = forkJoin({
   user: this.http.get(`/api/users/${userId}`),
   orders: this.http.get(`/api/users/${userId}/orders`)
-}).subscribe(({ user, orders }) => {
-  this.doSomethingWithUserAndOrders(user, orders);
 });
 ```
 
 ```ts title="✅ Unknown number of parallel HTTP requests"
-const request = selectedUsers.map(user => this.http.get(`/api/users/${user.id}`));
-forkJoin(users).subscribe((users) => {
-  this.doSomethingWithUserAndOrders(user, orders);
-});
+users$ = forkJoin(
+  userIds.map(userId => this.http.get<User>(`/api/users/${userId}`))
+);
 ```
 
 #### Sequential HTTP requests
@@ -366,35 +372,16 @@ forkJoin(users).subscribe((users) => {
 
 ```ts title="✅ Sequential HTTP requests"
 // Fetch a user by ID first
-this.http.get<User>(`/api/users/${userId}`).pipe(
+team$ = this.http.get<User>(`/api/users/${userId}`).pipe(
   // Then fetch the user's team using the user data
   switchMap(user => this.http.get<Team>(`/api/teams/${user.team.id}`))
-).subscribe(team => {
-  doSomethingWithTeam(team);
-});
+);
 ```
 
 :::warning
 Keep in mind that sequential requests should be avoided when possible, learn more in [HTTP guide](./http/index.md).
 :::
 
-#### Going further
+### Going further
 
 There are 90+ RxJs operators, we've covered only the most common here. You can learn more at [learnrxjs.io](https://www.learnrxjs.io/).
-
-### Managing subscriptions
-
-**Do** unsubcribe from observables.
-- ✅ Use `async` pipe in template (it handles subscription and unsubscription)
-- ✅ Use `takeUntilDestroyed()` (see [common use case](#unsubscribing-when-component-is-destroyed))
-- ✅ Call `unsubscribe` in `ngOnDestroy` lifecycle hook
-
-:::info Why?
-Unsubscribing from observables is crucial to prevent memory leaks in your application. When a component is destroyed, any active subscriptions will continue to run, potentially leading to unexpected behavior or performance issues. Subscriptions could accumulate as components are created and destroyed.
-:::
-
-:::warning Exceptions
-Finite subscriptions, such as HTTP requests, are automatically unsubscribed when a response is received, but that does not mean the request is cancelled. If your component is destroyed before the request completes, the callback will still be executed. This can lead to runtime errors if you are trying to access component properties that no longer exist.
-
-Preferably always unsubscribe from finite subscriptions, but you can omit the unsubscription if the callback is safe to execute after the component is destroyed.
-:::

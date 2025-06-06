@@ -29,6 +29,17 @@ Sequential requests can lead to performance issues and increased latency. Consid
 Sending too much data can lead to performance issues, increased bandwidth usage and slower response times. This is particularly true for low-end and mobile devices, or if your application is used in a location with poor network coverage. Remember to use paging, filtering and selecting the minimum required fields.
 :::
 
+**Do** send HTTP requests with `HttpClient`.
+
+- ❌ `new XMLHttpRequest()`
+- ❌ `fetch('/api/users')`
+- ✅ `this.httpClient.get<User[]>('/api/users')`
+- ✅ `this.httpClient.post<User>('/api/users', newUser)`
+
+:::info Why?
+`HttpClient` is the official recommendation for communicating with a server, its designed to be easily testable and supports the use of interceptors.
+:::
+
 ## Going further
 
 Jump into details in the following sections.

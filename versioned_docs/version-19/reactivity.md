@@ -174,7 +174,7 @@ this.askUserConfirmation().pipe(
 **Do** use `map()` to transform the emitted value.
 
 ```ts title="✅ Mapping to a property"
-this.http.get<User>(`/api/users/${id}`).pipe(
+this.http.get<User>(`/api/users/${userId}`).pipe(
   map(user => user.manager)
 ).subscribe(manager => {
   this.doSomethingWithManager(manager);
@@ -330,7 +330,7 @@ forkJoin({
 ```ts title="✅ Unknown number of parallel HTTP requests"
 const request = selectedUsers.map(user => this.http.get(`/api/users/${user.id}`));
 forkJoin(users).subscribe((users) => {
-  this.doSomethingWithUserAndOrders(user, orders);
+  this.doSomethingWithUsers(users);
 });
 ```
 
