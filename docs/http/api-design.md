@@ -111,6 +111,10 @@ interface SearchUserResponse {
 }
 ```
 
+:::tip
+To reduce redundancy, you can define base DTOs for shared properties that others can extend, but avoid directly using them as the main DTO for an endpoint.
+:::
+
 ## Response codes
 
 **Do** use the appropriate HTTP response code.
