@@ -63,6 +63,7 @@ In that case, you can safely break this rule and append the action name at the e
 **Consider** defining a dedicated DTO for each endpoint rather than reusing the same one.
 
 :::info Why?
+Defining a dedicated DTO for each endpoint has several advantages:
 - Clarity: clearly indicates the expected input/output, making it easier for consumers.
 - Flexibilty: allow different structure of the same data.
 - Maintainability & evolutivity: future modifications on an endpoint will not break others.

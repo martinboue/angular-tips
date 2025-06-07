@@ -148,6 +148,11 @@ This is an official Angular recommendations and aligns with Angular's CLI genera
 - ✅ `a !== b`
 - exception: comparing to `null` or `undefined`.
 
+:::info Why?
+Double equals (`==` and `!=`) performs type coercion, which can lead to unexpected results. For example, `0 == '0'` is true, but `0 === '0'` is false.
+Using triple equals ensures both value and type are compared, preventing implicit and unexpected type conversion.
+:::
+
 **Do** use single quotes for string.
 - ❌ `"some text"`
 - ✅ `'some text'`
@@ -160,7 +165,15 @@ This is an official Angular recommendations and aligns with Angular's CLI genera
 - ❌ `function() {...}`
 - ✅ `() => {...}`
 
+:::info Why?
+Arrow functions are more concise and do not bind their own `this`, avoiding common pitfalls with context binding in JavaScript.
+:::
+
 **Consider** using [pure](https://en.wikipedia.org/wiki/Pure_function) functions over impure ones.
+
+:::info Why?
+Pure functions are easier to test, reason about and debug. They always produce the same output for the same input and have no side effects, making them predictable and reliable.
+:::
 
 ## Comments
 

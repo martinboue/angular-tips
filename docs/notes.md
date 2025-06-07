@@ -3,7 +3,6 @@ draft: true
 sidebar_position: 0
 ---
 # Notes
-- code style: add "why?" sections
 - avoid using switch default case with enums or union types (i.e. fixed set of values)
     - why? if you add a new case, the missing case will be detected by the compiler unless you have a default case
 - seperation of concern (the art of creating reusable components)
