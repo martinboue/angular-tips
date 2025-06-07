@@ -11,6 +11,8 @@ The Angular testing ecosystem is currently in a transitioning state. Officialy s
 
 ## Testing frameworks
 
+**Do** use one of the following:
+
 ✅ **[Karma](https://karma-runner.github.io/)** is the pre-installed test runner with [Jasmine](https://jasmine.github.io/) as the assertion library.
 
 - ✅ Officially supported by Angular
@@ -41,6 +43,8 @@ Even if Karma is deprecated, it is still a valid option as it's the only officia
 - ❌ Experimental Angular support
 
 ## End-to-end testing tools (e2e)
+
+**Do** use one of the following:
 
 ✅ **[Playwright](https://playwright.dev/)**
 
