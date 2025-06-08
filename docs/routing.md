@@ -178,3 +178,67 @@ const USERS_ROUTES: Routes = [
   // ...
 ];
 ```
+
+## Error handling
+
+**Do** define a fallback route.
+
+```ts title="✅ app.routes.ts"
+export const routes: Routes = [
+  ...
+  // Keep this route at the end.
+  { path: '**', component: NotFoundPage },
+];
+```
+
+**Do** use `withNavigationErrorHandler` to handle navigation errors globally.
+
+```ts title="✅ app.config.ts"
+export const appConfig: ApplicationConfig = {
+  providers: [
+    ...,
+    provideRouter(routes, 
+      withNavigationErrorHandler(error => {
+        // Fallback to a generic error page
+        const router = inject(Router);
+        return new RedirectCommand(router.parseUrl('/error'));
+      })),
+  ]
+};
+```
+
+**Do** handle resolver errors by returning a `RedirectCommand`.
+
+```ts title="✅ app.routes.ts"
+const appRoutes: Routes = [
+  { 
+    path: 'post/:id',
+    component: PostPage,
+    resolve: {
+      // highlight-start
+      post: postResolver
+      // highlight-end
+    }
+  }
+];
+```
+
+```ts title="✅ post-resolver.ts"
+export const postResolver: ResolveFn<Post> = (route, state) => {
+  const postHttpClient = inject(PostHttpClient);
+  const router = inject(Router);
+
+  return postHttpClient.getPost(route.params['id']).pipe(
+    catchError((error: HttpErrorResponse) => {
+      if (error.status === 404) {
+        // Redirect to a specific 'Post not found' page
+        const redirect = new RedirectCommand(router.parseUrl('/post-not-found'));
+        return of(redirect);
+      } else {
+        // Throw unhandled error further, will be caught by the global navigation error handler
+        return throwError(() => error);
+      }
+    })
+  );
+};
+```
