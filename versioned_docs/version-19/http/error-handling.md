@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Error handling
+sidebar_label: Error handling
 ---
 # HTTP error handling
 
