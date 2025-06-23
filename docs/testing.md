@@ -11,7 +11,7 @@ The Angular testing ecosystem is currently in a transitioning state. Officialy s
 
 ## Testing frameworks
 
-**Do** use one of the following:
+**Do** use a testing framework.
 
 ✅ **[Karma](https://karma-runner.github.io/)** is the pre-installed test runner with [Jasmine](https://jasmine.github.io/) as the assertion library.
 
