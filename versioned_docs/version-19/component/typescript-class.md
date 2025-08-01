@@ -13,6 +13,10 @@ This page provides best practices and recommendations for writing TypeScript cla
 You can use a single file for components with no style and extremely short template (1 to 3 lines).
 :::
 
+**Do** use standalone components.
+- ❌ `@Component({ standalone: false, ... })`
+- ✅ `@Component({ ... })` (default value is `true`)
+
 **Do** use a selector prefix.
 - ❌ `selector: 'user-card'`
 - ✅ `selector: 'app-user-card'`

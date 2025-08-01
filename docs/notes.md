@@ -8,6 +8,33 @@ sidebar_position: 0
 - use custom data in route to pass static data to components
 - strategy pattern for component
     - routing vs if/switch vs NgComponentOutlet/ViewContainerRef
+- configuration
+    - do not use NgModule
+    - environments:
+        - use `environment.ts` for local development
+        - use `environment.<env name>.ts` for others, e.g. `environment.production.ts`
+        - only import `environment` in `main.ts`
+        - configure `angular.json` to use the correct environment file for each build
+        - info: angular build a separate bundle for each environment
+    - proxy.conf.json
+        - useful for cors issues that happen only in local development because of Angular dev server
+        - how to use configure: example + angular.json
+- folder structure
+    - explain other folders and what to put in them:
+        - public: unchanged files that are copied to the dist folder (e.g. favicon, robots.txt, ...)
+        - dist
+        - .angular
+        - node_modules ?
+    - explain files in the root folder?:
+        - angular.json
+        - package.json
+        - package.json.lock
+        - tsconfig.json
+        - tsconfig.app.json
+        - tsconfig.spec.json
+        - karma.conf.js
+        - .gitignore
+        - .editorconfig
 - features 
     - dynamic page titles and meta tags
     - prevent user from leaving the page with unsaved changes
@@ -68,7 +95,6 @@ sidebar_position: 0
 - component
     - use angular cli
         - short: ng g c my-comp
-    - use standalone, never NgModule
     - component extending another component or directive
     - use host, view and viewChild signals instead of @Host, @View and @ViewChild decorator
     - contentChild and contentChildren
