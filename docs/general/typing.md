@@ -40,6 +40,27 @@ Using `any` completely bypass type checking, as if there were no type at all.
 If the type doesn't matter, use `unknown` instead of `any`.
 :::
 
+**Consider** using [type inference](https://www.typescriptlang.org/docs/handbook/type-inference.html).
+- With primitive types:
+  - ❌ `name: string = 'Martin'` → type is redundant
+  - ✅ `name = 'Martin'` → type is correctly inferred as `string`
+- With complex types:
+  - ❌ `status: UserStatus = this.user.status` → type is redundant
+  - ✅ `status = this.user.status` → type is inferred from `this.user.status`'s type
+  - ❌ `status = 'busy'` → complex type cannot be inferred from a primitive value
+  - ✅ `status: UserStatus = 'busy'` → type must be explicitly defined
+- With object literals:
+  - ❌ `user = { name: 'Martin', status: 'busy' }` → it will create a new incorrect type `{ name: string; status: string }`
+  - ✅ `user: User = { name: 'Martin', status: 'busy' }` → type must be explicitly defined
+
+:::tip
+Type inference tips also apply to function return types.
+:::
+
+:::info Why?
+Type inference reduces boilerplate code by allowing TypeScript to automatically determine the type of a variable based on its value. This leads to cleaner code while still providing type safety.
+:::
+
 **Do** define an `interface` for structural types, not a `class`.
 
 ```ts title="❌ class"

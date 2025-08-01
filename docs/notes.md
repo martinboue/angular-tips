@@ -87,7 +87,6 @@ sidebar_position: 0
     - use satisfies
     - type vs interface
     - protected
-    - type inference
 - when to use and not to use Angular
 - JavaScript details
     - false/true vs truthy/falsy
