@@ -48,7 +48,7 @@ You ensure that the data structures used in your code always match the expected 
 
 **Avoid** committing or modifying generated files.
 
-```txt title="✅ .gitignore"
+```ignore title="✅ .gitignore"
 src/app/shared/openapi
 ```
 

@@ -14,6 +14,7 @@ Notes:
 - Incremental hydration
 - Dispatch event or event replay
 - afterNextRender / afterEveryRender
+- Zoneless
 
 ## General guidelines
 

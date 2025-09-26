@@ -156,7 +156,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.oneDark,
-      additionalLanguages: ['scss']
+      additionalLanguages: ['scss', 'ignore']
     },
     announcementBar: {
       id: 'support_project',
