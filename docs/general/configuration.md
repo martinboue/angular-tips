@@ -18,6 +18,7 @@ Standalone components are self-contained which is much easier to manage, and rem
 You can run the [schematic migration](https://angular.dev/reference/migrations/standalone) to automatically convert your project to standalone.
 :::
 
+## Zoneless 
 **Consider** using [Zoneless](https://angular.dev/guide/zoneless).
 
 :::info Why?
@@ -27,6 +28,37 @@ Opting for Zoneless mode is a future-proof choice as Angular is moving towards t
 :::warning Exceptions
 When using third-party libraries that depend on `zone.js`, you may need to keep zone-based change detection enabled. Some libraries or tools might not function correctly without it, so evaluate compatibility before switching to Zoneless mode.
 :::
+
+**To activated Zoneless feature :**
+
+```ts title="✅ Activate Zoneless"
+// main.ts
+bootstrapApplication(AppComponent, {
+  providers: [provideZonelessChangeDetection()],
+})
+```
+
+```ts title="✅ Remove ZoneJs form project"
+// angular.json
+"polyfills": [
+  // "zone.js",          <-- to remove
+  // "zone.js/testing"   <-- to remove
+]
+```
+
+**Do** use [Signals](../reactivity#signals).
+
+**Do** use [Async Pipe](../reactivity#managing-subscriptions).
+
+**Do** Clean up legacy code: replace `NgZone usage` (e.g., `run`, `onStable`) with reactive patterns (Signals/effects) or dedicated rendering hooks for post-render scenarios.
+
+**Do** migrate unit tests on Zoneless mode :
+
+```ts title="✅ Activate Zoneless in tests"
+TestBed.configureTestingModule({
+  providers: [provideZonelessChangeDetection()],
+})
+```
 
 ## Git
 
