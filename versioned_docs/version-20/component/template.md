@@ -178,7 +178,7 @@ It also indicates that the component does not have projectable content.
 ```
 
 :::tip
-You can run the [schematic migration](https://v21.angular.dev/reference/migrations/control-flow) to automatically replace directives above by control flow syntax.
+You can run the [schematic migration](https://v20.angular.dev/reference/migrations/control-flow) to automatically replace directives above by control flow syntax.
 :::
 
 **Do** use class binding instead of `ngClass` directive.

@@ -15,10 +15,10 @@ Standalone components are self-contained which is much easier to manage, and rem
 :::
 
 :::tip
-You can run the [schematic migration](https://v21.angular.dev/reference/migrations/standalone) to automatically convert your project to standalone.
+You can run the [schematic migration](https://v20.angular.dev/reference/migrations/standalone) to automatically convert your project to standalone.
 :::
 
-**Consider** using [Zoneless](https://v21.angular.dev/guide/zoneless).
+**Consider** using [Zoneless](https://v20.angular.dev/guide/zoneless).
 
 :::info Why?
 Opting for Zoneless mode is a future-proof choice as Angular is moving towards this direction. While the performance impact is minimal (especially if you have already followed best practices, e.g. [`OnPush` change detection](../component/typescript-class#change-detection)), it can improve developer experience by providing clearer stack traces. Additionally, it'll help reduce bundle size and startup time.
@@ -116,7 +116,7 @@ Committing run configurations ensures that all team members have access to the s
 For example, running `npm run build` will first run the `prebuild` script, then `build`, and finally `postbuild`.
 :::
 
-**Do** use the [`application` builder](https://v21.angular.dev/tools/cli/build-system-migration).
+**Do** use the [`application` builder](https://v20.angular.dev/tools/cli/build-system-migration).
 ```json title="✅ angular.json"
 {
   "projects": {

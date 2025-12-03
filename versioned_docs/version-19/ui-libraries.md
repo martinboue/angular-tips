@@ -19,7 +19,7 @@ Headless UI libraries are not so popular and advanced in the Angular ecosystem c
 
 **Consider** using one of the following:
 
-✅ **[Angular Material](https://material.angular.dev/)**: the official Angular component library that implements Material Design. It provides essential UI components and is well-maintained by the Angular team.
+✅ **[Angular Material](https://v19.material.angular.dev/)**: the official Angular component library that implements Material Design. It provides essential UI components and is well-maintained by the Angular team.
 
 - ✅ High quality components
 - ✅ Always up to date with Angular releases
@@ -47,7 +47,7 @@ Headless UI libraries are not so popular and advanced in the Angular ecosystem c
 
 **Consider** using the following:
 
-✅ **[Angular CDK](https://material.angular.dev/cdk)**:
+✅ **[Angular CDK](https://v19.material.angular.dev/cdk)**:
 The Component Development Kit (CDK) is a set of low-level primitives for building UI components, such as overlays, drag-and-drop, and accessibility features.
 
 - ✅ High quality primitives

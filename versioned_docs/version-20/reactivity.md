@@ -76,7 +76,7 @@ nbDevelopersInTeam = computed(() => this.teamDevelopers().length);
 
 ### Writable and derived state
 
-**Do** use [`linkedSignal()`](https://v21.angular.dev/guide/signals/linked-signal) for writable state that depends on another signal.
+**Do** use [`linkedSignal()`](https://v20.angular.dev/guide/signals/linked-signal) for writable state that depends on another signal.
 
 ```ts title="✅ Selecting an item from a reactive array"
 // Reactive array of users (could also be a computed(), input() or other).
@@ -136,7 +136,7 @@ constructor() {
 **Consider** not using `resource()`, `rxResource()` or `httpResource()` signals.
 
 :::info Why?
-`resource()`, `rxResource()` and `httpResource()` are experimental features in Angular v21 and are not recommended for production use.
+`resource()`, `rxResource()` and `httpResource()` are experimental features in Angular v20 and are not recommended for production use.
 :::
 
 :::warning Exceptions

@@ -6,7 +6,7 @@ sidebar_position: 1
 
 This page covers best practices and common mistakes when writing TypeScript code, focusing on those with the highest impact. It includes naming conventions, code clarity, consistency and more.
 
-The following guidelines are a complement to the [Angular official coding style guide](https://v21.angular.dev/style-guide) that we recommend to read first.
+The following guidelines are a complement to the [Angular official coding style guide](https://v20.angular.dev/style-guide) that we recommend to read first.
 
 ## General guidelines
 
@@ -57,7 +57,7 @@ The following guidelines are a complement to the [Angular official coding style 
 :::warning Exceptions
 Avoid using `#` if you're targeting browsers that don't natively support them, as the downleveling can impact performance and bundle size.
 
-You're not concerned if you use [Angular's default browserlist](https://v21.angular.dev/reference/versions#browser-support).
+You're not concerned if you use [Angular's default browserlist](https://v20.angular.dev/reference/versions#browser-support).
 :::
 
 **Do** use plural form in names for iterables (array, set, ...).

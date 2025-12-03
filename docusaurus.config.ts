@@ -28,7 +28,11 @@ const config: Config = {
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'throw'
+    }
+  },
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -50,7 +54,10 @@ const config: Config = {
           lastVersion: 'current',
           versions: {
             current: {
-              label: '20',
+              label: '21',
+            },
+            '20': {
+              banner: 'none',
             },
             '19': {
               banner: 'none',
@@ -159,9 +166,9 @@ const config: Config = {
       additionalLanguages: ['scss', 'ignore']
     },
     announcementBar: {
-      id: 'support_project',
-      content: `❤️ Support this project by giving it a star on <a target="_blank" rel="noopener noreferrer" href="${repository}">GitHub</a>!`,
-    }
+      id: 'v21-released',
+      content: `🎉 Angular Tips now supports Angular v21! Consider starring it on <a target="_blank" rel="noopener noreferrer" href="${repository}">GitHub</a> ⭐`,
+    },
   } satisfies Preset.ThemeConfig,
 };
 

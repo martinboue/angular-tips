@@ -90,7 +90,7 @@ It is only once the Angular application has been fully initialized that it can m
 }
 ```
 
-More about deferred loading in the [Angular documentation](https://angular.dev/guide/templates/defer).
+More about deferred loading in the [Angular documentation](https://v21.angular.dev/guide/templates/defer).
 
 :::tip
 Useful for "below the fold"
@@ -110,7 +110,7 @@ Might have some exceptions?
 }
 ```
 
-More about incremental hydration in the [Angular documentation](https://angular.dev/guide/incremental-hydration).
+More about incremental hydration in the [Angular documentation](https://v21.angular.dev/guide/incremental-hydration).
 
 :::tip
 Useful for "above the fold"

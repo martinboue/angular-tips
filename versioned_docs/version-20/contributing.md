@@ -33,7 +33,7 @@ To submit a pull request:
 
 When adding a new tip:
 - It must be Angular related.
-- It must add value to the [official Angular documentation](https://v21.angular.dev/).
+- It must add value to the [official Angular documentation](https://v20.angular.dev/).
 - It must follow the [vocabulary](./getting-started.md#vocabulary).
 - If possible, provide bad and good examples.
   - Bad examples must be prefixed with "❌"

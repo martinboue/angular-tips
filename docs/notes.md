@@ -26,7 +26,7 @@ sidebar_position: 0
         - do NOT import package.json to display version
         - use postversion script
 - maintenance : 
-    - use update guide https://angular.dev/update-guide
+    - use update guide https://v21.angular.dev/update-guide
     - use schematics
     - upgrade versions one by one
     - read changelogs
