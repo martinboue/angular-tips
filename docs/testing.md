@@ -29,7 +29,7 @@ You can still use Karma and Jasmine for existing projects, but you will most lik
 - ❌ [Web Test Runner](https://modern-web.dev/docs/test-runner/overview/)
 
 :::info Why?
-Jest and Web Test Runner were evaluated as alternatives to Karma/Jasmine but were rejected in favor of Vitest in Angular v21.
+Jest and Web Test Runner were evaluated as potential alternatives to Karma/Jasmine but were not chosen as the official recommendation. Experimental support for Jest and Web Test Runner is deprecated and will be removed in Angular v22.
 :::
 
 ## End-to-end testing (e2e)
