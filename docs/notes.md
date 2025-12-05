@@ -25,14 +25,8 @@ sidebar_position: 0
     - show app version in UI:
         - do NOT import package.json to display version
         - use postversion script
-- maintenance : 
-    - use update guide https://v21.angular.dev/update-guide
-    - use schematics
-    - upgrade versions one by one
-    - read changelogs
-    - keep up to date with latest angular releases (third party libraries are harder to maintain)
+- migration : 
     - "What's new?" section for each major release?
-    - "What's coming?" page?
 - angular devtools chrome extension
 - testing
     - when to test and when not to test
