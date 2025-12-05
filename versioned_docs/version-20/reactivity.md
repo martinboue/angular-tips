@@ -133,7 +133,7 @@ constructor() {
 
 ### Fetching data
 
-**Consider** not using `resource()`, `rxResource()` or `httpResource()` signals.
+**Consider** not using `resource()`, `rxResource()` or `httpResource()` signals, yet.
 
 :::info Why?
 `resource()`, `rxResource()` and `httpResource()` are experimental features in Angular v20 and are not recommended for production use.

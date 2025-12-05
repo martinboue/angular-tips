@@ -80,6 +80,4 @@ sidebar_position: 0
     - json pipe
 - v21
     - zoneless
-    - signal forms
-    - vitest
     
