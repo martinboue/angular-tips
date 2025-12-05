@@ -5,55 +5,42 @@ sidebar_position: 10
 
 Testing is a crucial part of software development, especially for large applications, as it improves reliability and maintainability. 
 
-:::warning
-The Angular testing ecosystem is currently in a transitioning state. Officialy supported tools are deprecated, and the community is actively exploring modern alternatives. Expect recommendations and best practices to evolve in the near future as the ecosystem stabilizes.
-:::
-
 ## Testing frameworks
 
 **Do** use a testing framework.
 
-✅ **[Karma](https://karma-runner.github.io/)** is the pre-installed test runner with [Jasmine](https://jasmine.github.io/) as the assertion library.
-
-- ✅ Officially supported by Angular
-- ✅ Real browser testing
-- ❌ Deprecated and no longer maintained
-- ❌ Slow
-- ❌ Angular support will probably drop in future releases
+- ✅ [Vitest](https://vitest.dev/)
 
 :::info Why?
-Even if Karma is deprecated, it is still a valid option as it's the only officially supported framework, and it gets the job done. Other options may or may not be supported in the future, they are currently not as well integrated with Angular and may require additional configuration to work.
+The Angular testing ecosystem has completed its transition. Karma and Jasmine have been replaced by Vitest as the recommended and default testing framework in Angular v21. While legacy projects may still use Karma/Jasmine, new projects should adopt Vitest for better performance and modern tooling.
+
+Vitest offers a fast and efficient testing experience with support for both simulated and real browser environments. It is actively maintained, officially supported by Angular and integrated directly into the Angular CLI.
 :::
 
-✅ **[Vitest](https://vitest.dev/)**
+- ❌ [Karma](https://karma-runner.github.io/) and [Jasmine](https://jasmine.github.io/)
 
-- ✅ Fast
-- ✅ Simulated and real browser testing
-- ❌ Experimental Angular support
+:::info Why?
+Karma has been the default test runner for Angular applications for many years. However, it has been deprecated in 2023 and is no longer maintained. Vitest replaced it as the default testing framework in Angular in v21, and Angular's support for Karma/Jasmine will drop in future releases.
 
-✅ **[Jest](https://jestjs.io/)**
+You can still use Karma and Jasmine for existing projects, but you will most likely need to migrate to Vitest in the future to ensure compatibility with newer Angular versions. For new projects, you should directly start with Vitest.
+:::
 
-- ✅ Fast
-- ❌ Experimental Angular support
-- ❌ No real browser testing
+- ❌ [Jest](https://jestjs.io/)
+- ❌ [Web Test Runner](https://modern-web.dev/docs/test-runner/overview/)
 
-✅ **[Web Test Runner](https://modern-web.dev/docs/test-runner/overview/)**
+:::info Why?
+Jest and Web Test Runner were evaluated as alternatives to Karma/Jasmine but were rejected in favor of Vitest in Angular v21.
+:::
 
-- ✅ Real browser testing
-- ❌ Experimental Angular support
+## End-to-end testing (e2e)
 
-## End-to-end testing tools (e2e)
+**Consider** e2e testing for critical user flows and complex interactions.
 
-**Do** use one of the following:
+**Do** use an e2e testing tool.
 
-✅ **[Playwright](https://playwright.dev/)**
-
-✅ **[Cypress](https://docs.cypress.io/)**
-
-✅ **[Puppeteer](https://pptr.dev/)**
-
-✅ **[WebdriverIO](https://webdriver.io/)**
-
-✅ **[Nightwatch.js](https://nightwatchjs.org/)**
-
-❌ **[Protractor](https://www.protractortest.org/)**: deprecated and no longer maintained.
+- ✅ [Playwright](https://playwright.dev/)
+- ✅ [Cypress](https://docs.cypress.io/)
+- ✅ [Puppeteer](https://pptr.dev/)
+- ✅ [WebdriverIO](https://webdriver.io/)
+- ✅ [Nightwatch.js](https://nightwatchjs.org/)
+- ❌ [Protractor](https://www.protractortest.org/): deprecated and no longer maintained.
