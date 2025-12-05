@@ -29,36 +29,33 @@ Opting for Zoneless mode is a future-proof choice as Angular is moving towards t
 When using third-party libraries that depend on `zone.js`, you may need to keep zone-based change detection enabled. Some libraries or tools might not function correctly without it, so evaluate compatibility before switching to Zoneless mode.
 :::
 
-**To activated Zoneless feature :**
+**What It Means and How to Adapt**
 
-```ts title="✅ Activate Zoneless"
-// main.ts
-bootstrapApplication(AppComponent, {
-  providers: [provideZonelessChangeDetection()],
-})
-```
+Zoneless mode represents a major shift in Angular’s change detection strategy. Historically, Angular relied on Zone.js, a patching library that intercepted asynchronous tasks—timers, promises, events—to automatically trigger UI updates. With zoneless, this implicit mechanism is gone. Angular no longer monitors every async operation; instead, updates happen only when the framework knows something changed.
 
-```ts title="✅ Remove ZoneJs form project"
-// angular.json
-"polyfills": [
-  // "zone.js",          <-- to remove
-  // "zone.js/testing"   <-- to remove
-]
-```
+**Key Impacts**
 
-**Do** use [Signals](../reactivity#signals).
+**Do** Watch for UI not updating after async operations (state changes happen, but rendered HTML does not reflect them).  
 
-**Do** use [Async Pipe](../reactivity#managing-subscriptions).
+**Do** Check for legacy code using NgZone or relying on implicit refresh after timers, HTTP calls, or event handlers.
 
-**Do** Clean up legacy code: replace `NgZone usage` (e.g., `run`, `onStable`) with reactive patterns (Signals/effects) or dedicated rendering hooks for post-render scenarios.
+**Do** Use debugging tools or logs to confirm: if state changes but the DOM stays stale, you need explicit triggers.
 
-**Do** migrate unit tests on Zoneless mode :
 
-```ts title="✅ Activate Zoneless in tests"
-TestBed.configureTestingModule({
-  providers: [provideZonelessChangeDetection()],
-})
-```
+**How to fix change due to Zoneless**
+
+**Do** Use [Signals](../reactivity#signals) for local state. Signals integrate with Angular’s rendering engine: reading a signal in a template registers it for updates, and calling set() or update() marks the view dirty automatically.
+
+**Do** Use [Async Pipe](../reactivity#managing-subscriptions) for Observables. It subscribes and triggers view checks on each emission, replacing the implicit Zone.js refresh.
+
+**Do** Combine Signals and RxJS when needed. Convert streams to signals with toSignal() for unified template usage while keeping Observables for complex async flows.
+
+**Do** Trigger updates through Angular events—user interactions, input changes, lifecycle hooks—rather than relying on patched async tasks.
+
+**Do** Keep OnPush as your default strategy. It aligns with explicit updates and avoids unnecessary checks.
+
+**Do** For tests, configure TestBed in zoneless mode and use explicit triggers (signal updates, Observable emissions) instead of waiting for microtasks.
+
 
 ## Git
 
