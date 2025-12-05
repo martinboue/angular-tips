@@ -142,6 +142,11 @@ forcing you to override them in several places.
 }
 ```
 
+**Do** use style binding instead of `ngStyle` directive.
+- ❌ `[ngStyle]="{ 'width': '200px' }"`
+- ✅ `[style]="{ 'width': '200px' }"`
+- ✅ `[style.width.px]="200"`
+
 ## Global styles
 
 **Do** split global styles in partial SCSS files.
@@ -209,6 +214,10 @@ While it's not a bad thing to use a CSS framework, it shouldn't be automatic. Th
 **Consider** using one the following:
 
 ✅ **[Tailwind CSS](https://tailwindcss.com/)**: utility-first CSS framework that provides low-level utility classes to build custom designs.
+
+:::note
+Since Angular v21, Tailwind CSS is natively supported and integrated with the Angular CLI, see [Angular guide](https://v21.angular.dev/guide/tailwind).
+:::
 
 ✅ **[Bootstrap](https://getbootstrap.com/)**: CSS framework that provides a set of pre-designed components and utilities.
 
