@@ -75,7 +75,7 @@ export class UserPage {
 **Do** use `input()` signal and `output()` function instead of `@Input()` and `@Ouput()` decorators.
 
 :::tip
-You can run [schematic migrations](https://v21.angular.dev/reference/migrations) to automatically transform decorators to signals.
+You can run [schematic migrations](https://v20.angular.dev/reference/migrations) to automatically transform decorators to signals.
 :::
 
 **Do** type inputs and outputs.
@@ -140,7 +140,7 @@ You can initialize your component inside the `constructor` instead of the `ngOnI
 :::
 
 :::warning Exceptions
-Because Angular v21 is not completely signal-based yet, you will need to rely on lifecycle hooks in some cases, for example:
+Because Angular v20 is not completely signal-based yet, you will need to rely on lifecycle hooks in some cases, for example:
 - Initializing a form
 - Accessing route data
 - ...

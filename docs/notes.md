@@ -25,7 +25,8 @@ sidebar_position: 0
     - show app version in UI:
         - do NOT import package.json to display version
         - use postversion script
-- maintenance : use migration guide and schematics
+- migration : 
+    - "What's new?" section for each major release?
 - angular devtools chrome extension
 - testing
     - when to test and when not to test
@@ -71,3 +72,6 @@ sidebar_position: 0
 - debugging
     - angular chrome devtools
     - json pipe
+- v21
+    - zoneless
+    
