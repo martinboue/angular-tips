@@ -38,7 +38,7 @@ CSS classes, HTML structure and private CSS variables are Material's internal im
 }
 ```
 
-**Do** override CSS [system variables](https://v21.material.angular.dev/guide/system-variables).
+**Do** override CSS [system variables](https://v20.material.angular.dev/guide/system-variables).
 ```css title="✅ System variables"
 @include mat.theme-overrides((
   primary-container: green
@@ -51,7 +51,7 @@ Angular Material provides public and stable APIs to customize the look of compon
 
 ## Custom components
 
-**Consider** using [Angular CDK](https://v21.material.angular.dev/cdk).
+**Consider** using [Angular CDK](https://v20.material.angular.dev/cdk).
 - ❌ Work around the limitations of Angular Material's components
 - ✅ Build custom components with CDK utilities
 

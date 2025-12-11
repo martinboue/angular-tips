@@ -20,12 +20,12 @@ This guide will give you thoughtful opinions on Angular's features, you may not 
 
 ## Angular version
 
-This documentation assumes that you are using the latest minor version of **Angular v21**.
+This documentation assumes that you are using the latest minor version of **Angular v20**.
 
 :::note
 Angular Tips follows the same major versioning as Angular itself, starting with v19.
 
-If you're using an older version of Angular, we recommend you read Angular Tips v19. While many of the recommendations remain relevant, some may not be applicable to your specific version. Refer to the official [changelog](https://github.com/angular/angular/releases), [update guide](https://v21.angular.dev/update-guide) and [API reference](https://v21.angular.dev/api) to identify unstable and missing features.
+If you're using an older version of Angular, we recommend you read Angular Tips v19. While many of the recommendations remain relevant, some may not be applicable to your specific version. Refer to the official [changelog](https://github.com/angular/angular/releases), [update guide](https://v20.angular.dev/update-guide) and [API reference](https://v20.angular.dev/api) to identify unstable and missing features.
 :::
 
 ## Vocabulary

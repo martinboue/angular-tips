@@ -2,7 +2,7 @@
 This website is built using [Docusaurus](https://docusaurus.io).
 
 ## Requirements
-- `Node.js` version 18.0 or above.
+- `Node.js` version 20.0 or above.
 
 ## Installation
 To install all dependencies, run:

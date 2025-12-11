@@ -3,16 +3,6 @@ sidebar_position: 4
 ---
 # Form
 
-Forms are a fundamental part of most web applications, enabling users to input data, submit information, and interact with your application. Angular provides two primary approaches to handling forms, each with robust solutions for validation, data binding, and state management, designed to address different use cases and levels of complexity.
-
-[Template-Driven form](#template-driven-forms) is the simplest approach that relies on directives in the template, suitable for simple forms with minimal complexity.
-
-[Reactive form](#reactive-forms) is a more structured and flexible solution, but verbose, it is ideal for complex forms with programmatic control.
-
-:::warning
-Both approaches are expected to be superseded by [Signal Forms](#signal-forms) in future Angular versions, which will leverage Angular's signal-based reactivity system for improved performance and developer experience.
-:::
-
 ## General guidelines
 
 **Avoid** mixing reactive and template-driven form for the same control.
@@ -35,23 +25,6 @@ Both approaches are expected to be superseded by [Signal Forms](#signal-forms) i
   <button type="submit">Submit</button>
 </form>
 ```
-
-## Signal forms
-
-**Consider** not using signal forms, yet.
-
-:::info Why?
-Signal forms are experimental features in Angular v21 and are not recommended for production use as they may change in future releases.
-Use [Reactive forms](#reactive-forms) or [Template-driven forms](#template-driven-forms) instead.
-:::
-
-## Template-driven forms
-
-**Consider** using template-driven forms for simple interactive components.
-- ❌ Multi-field form with validation
-- ✅ Toggle button to open/close a menu
-- ✅ Simple search bar
-- ✅ Single-field form
 
 ## Reactive forms
 
@@ -80,6 +53,14 @@ Using strings prevents type checking and can cause runtime errors if the control
 :::
 
 **Do** use `getRawValue()` to get all control values including disabled controls.
+
+## Template-driven forms
+
+**Consider** using template-driven forms for simple interactive components.
+- ❌ Multi-field form with validation
+- ✅ Toggle button to open/close a menu
+- ✅ Simple search bar
+- ✅ Single-field form
 
 ## Custom fields
 
