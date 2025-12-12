@@ -80,4 +80,41 @@ export class UserDialog {
 }
 ```
 
+## Asserting injection context
 
+When creating reusable helper functions that use `inject()`, you may want to ensure they are only called from an injection context. The `assertInInjectionContext()` function helps you enforce this constraint and provide clear error messages.
+
+**Consider** using `assertInInjectionContext()` in helper functions that use `inject()`.
+
+**Do** call helper functions from injection contexts.
+
+```ts title="❌ Without assertion - unclear error"
+export function injectBody(): HTMLElement {
+  return inject(DOCUMENT).body;
+  // Error: NullInjectorError: No provider for DOCUMENT!
+}
+```
+
+```ts title="✅ With assertion - clear error"
+export function injectBody(): HTMLElement {
+  assertInInjectionContext(injectBody);
+  return inject(DOCUMENT).body;
+  // Error: NG0203: injectBody() can only be used within an injection context
+}
+```
+
+:::info Why?
+`assertInInjectionContext()` provides a clearer, more actionable error message that points to your helper function instead of the generic `inject()` call. This makes debugging easier for developers using your code.
+:::
+
+Helper functions using `inject()` can be called from:
+
+- ✅ Constructor
+- ✅ Field initializer
+- ✅ Within `runInInjectionContext()`
+- ❌ Event handler
+- ❌ Lifecycle hook
+
+:::warning Error NG0203
+Calling `inject()` or `assertInInjectionContext()` outside an injection context throws [error NG0203](https://angular.dev/errors/NG0203). Make sure to call these functions only during construction or initialization phases.
+:::
