@@ -153,6 +153,14 @@ Since these new tools will most likely become the future of Angular, and that th
 
 **Consider** using [signals](#signals) instead of RxJs `BehaviorSubject`.
 
+### Interoperability with signals
+
+**Do** use `toSignal()` to convert an Observable to a Signal.
+
+:::tip
+You can combine Signals and RxJS when needed. Convert streams to signals with `toSignal()` for unified template usage while keeping Observables for complex async flows.
+:::
+
 ### Managing subscriptions
 
 **Do** unsubcribe from observables.

@@ -18,16 +18,6 @@ Standalone components are self-contained which is much easier to manage, and rem
 You can run the [schematic migration](https://v21.angular.dev/reference/migrations/standalone) to automatically convert your project to standalone.
 :::
 
-**Consider** using [Zoneless](https://v21.angular.dev/guide/zoneless).
-
-:::info Why?
-Opting for Zoneless mode is a future-proof choice as Angular is moving towards this direction. While the performance impact is minimal (especially if you have already followed best practices, e.g. [`OnPush` change detection](../component/typescript-class#change-detection)), it can improve developer experience by providing clearer stack traces. Additionally, it'll help reduce bundle size and startup time.
-:::
-
-:::warning Exceptions
-When using third-party libraries that depend on `zone.js`, you may need to keep zone-based change detection enabled. Some libraries or tools might not function correctly without it, so evaluate compatibility before switching to Zoneless mode.
-:::
-
 ## Git
 
 **Do** commit `package.json` and `package-lock.json` files.

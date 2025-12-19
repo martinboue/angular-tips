@@ -1,6 +1,6 @@
 ---
 draft: true
-sidebar_position: 4
+sidebar_position: 5
 ---
 # Reusability
 - seperation of concern (the art of creating reusable components)
