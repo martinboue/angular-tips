@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+sidebar_class_name: updated
 ---
 # Styling
 This page covers best practices for styling in Angular, including structuring styles, using variables, scoping component styles, and avoiding common pitfalls.
