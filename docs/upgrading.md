@@ -1,5 +1,6 @@
 ---
 sidebar_position: 15
+sidebar_class_name: new
 ---
 # Upgrading
 

@@ -139,45 +139,48 @@ export class UserPage implements OnInit {
 
 **Consider** fetching data using a resolver instead of inside `ngOnInit` lifecycle hook.
 
-```ts title="❌ user-page.ts"
-export class UserPage implements OnInit {
+```ts title="❌ users-page.ts"
+export class UsersPage implements OnInit {
   #userHttpClient = inject(UserHttpClient);
-  userId = input.required<string>();
-
-  // 'user' is undefined until HTTP request is resolved.
-  user?: User;
+  // 'users' is undefined until HTTP request is resolved.
+  users?: User[];
 
   ngOnInit(): void {
-    this.#userHttpClient.getUser(this.userId())
-      .subscribe(user => this.user = user);
+    this.#userHttpClient.getUsers().subscribe(users => this.users = users);
   }
 }
 ```
 
 ```ts title="✅ user-page.ts"
-export class UserPage {
-  // 'user' will be loaded before the component initializes
+export class UsersPage {
+  // 'users' will be loaded before the component initializes
   // and there is no need to handle the loading state.
-  user: input.required<User>();
+  users: input.required<User[]>();
 }
 ```
 
 ```ts title="✅ users.routes.ts"
 const USERS_ROUTES: Routes = [
   {
-    path: ':id',
-    component: UserPage,
+    path: '',
+    component: UsersPage,
     resolve: {
       // Define your resolver here
-      user: (route: ActivatedRouteSnapshot) => {
-        const userId = route.params['id'];
-        return inject(UserHttpClient).getUser(userId);
-      }
+      users: () => inject(UserHttpClient).getUsers()
     }
   },
-  // ...
+  // other routes...
 ];
 ```
+
+:::info Why?
+Using resolvers ensures that the required data is fetched before the component is initialized. This approach simplifies component logic by eliminating the need to manage loading states and subscriptions within the component itself.
+:::
+
+:::warning Exceptions
+Note that resolvers block navigation until data is fetched, which may not be ideal in every scenario. For better UX when dealing with non-critical data or when you want to show the page immediately, consider fetching data within the component and displaying a placeholder, skeleton, or loading indicator until the data is available.
+:::
+
 
 ## Error handling
 

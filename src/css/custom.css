@@ -4,8 +4,8 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
-:root {
+ :root {
+  /* You can override the default Infima variables here. */
   --ifm-color-primary: #1a75ff;
   --ifm-color-primary-dark: #0064fd;
   --ifm-color-primary-darker: #005fef;
@@ -15,10 +15,16 @@
   --ifm-color-primary-lightest: #6ea8ff;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Sidebar tags */
+  --ngtips-tag-new-background: #d4e4ff;
+  --ngtips-tag-new-color: #005ae2;
+  --ngtips-tag-updated-background: #d6fff7;
+  --ngtips-tag-updated-color: #007761;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
+  /* For readability concerns, you should choose a lighter palette in dark mode. */
   --ifm-color-primary: #00ffd0;
   --ifm-color-primary-dark: #00e6bb;
   --ifm-color-primary-darker: #00d9b1;
@@ -27,6 +33,12 @@
   --ifm-color-primary-lighter: #26ffd7;
   --ifm-color-primary-lightest: #4dffde;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* Sidebar tags */
+  --ngtips-tag-new-background: #002c6e;
+  --ngtips-tag-new-color: #b5d2ff;
+  --ngtips-tag-updated-background: #01493b;
+  --ngtips-tag-updated-color: #81ffe8;
 }
 
 /* GitHub icon in navbar */
@@ -48,4 +60,35 @@
   color: var(--ifm-color-emphasis-700);
   padding: 0.2rem 0.5rem;
   font-size: 0.875rem;
+}
+
+/* Sibebar tags */
+.theme-doc-sidebar-item-link.updated > a::after,
+.theme-doc-sidebar-item-category.updated > div > a::after,
+.theme-doc-sidebar-item-link.new > a::after,
+.theme-doc-sidebar-item-category.new > div > a::after {
+  margin-left: 0.6em;
+  font-size: 0.75em;
+  border-radius: 0.3em;
+  padding: 0.2em 0.4em;
+  /* Prevent tag in category to rotate with expand/collapse icon. */
+  transform: none;
+}
+
+.theme-doc-sidebar-item-link.updated > a::after,
+.theme-doc-sidebar-item-category.updated > .menu__list-item-collapsible > a::after {
+  content: 'Updated';
+  background-color: var(--ngtips-tag-updated-background);
+  color: var(--ngtips-tag-updated-color);
+}
+.theme-doc-sidebar-item-link.new > a::after,
+.theme-doc-sidebar-item-category.new > .menu__list-item-collapsible > a::after {
+  content: 'New';
+  background-color: var(--ngtips-tag-new-background);
+  color: var(--ngtips-tag-new-color);
+}
+
+.theme-doc-sidebar-item-category > .menu__list-item-collapsible > a > span {
+  /* Prevent label in category to expand in width, so that the tag is closer to the label. */
+  flex: 0 1 auto;
 }
