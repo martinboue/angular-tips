@@ -94,25 +94,6 @@ You can run [schematic migrations](https://v21.angular.dev/reference/migrations)
 - ❌ `selected = input(false)` and `selectedChange = output<boolean>()`
 - ✅ `selected = model(false)`
 
-## Change detection
-
-**Consider** using `ChangeDetectionStrategy.OnPush` for every components.
-- ❌  unspecified change detection strategy 
-- ❌ `changeDetection: ChangeDetectionStrategy.Default`
-- ✅ `changeDetection: ChangeDetectionStrategy.OnPush`
-
-:::info Why?
-The main reason is sustainability. Angular is heading towards better reactivity with signals and Zoneless application, and using `OnPush` now will make migration to future major releases easier.
-
-In addition, `OnPush` strategy improves performances by reducing the number of change detection cycles, which is particularly interesting for large projects.
-:::
-
-:::tip
-You can set the default change detection strategy to `OnPush` in your `angular.json` file for components generated with Angular CLI.
-:::
-
-More info about change detection in [Reactivity](../reactivity.md).
-
 ## Lifecycle 
 
 **Avoid** misusing or overusing component lifecycle hooks.
