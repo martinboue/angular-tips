@@ -86,8 +86,6 @@ When creating reusable helper functions that use `inject()`, you may want to ens
 
 **Consider** using `assertInInjectionContext()` in helper functions that use `inject()`.
 
-**Do** call helper functions from injection contexts.
-
 ```ts title="❌ Without assertion - unclear error"
 export function injectBody(): HTMLElement {
   return inject(DOCUMENT).body;
@@ -107,7 +105,7 @@ export function injectBody(): HTMLElement {
 `assertInInjectionContext()` provides a clearer, more actionable error message that points to your helper function instead of the generic `inject()` call. This makes debugging easier for developers using your code.
 :::
 
-Helper functions using `inject()` can be called from:
+**Do** call helper functions from injection contexts.
 
 - ✅ Constructor
 - ✅ Field initializer
@@ -115,8 +113,8 @@ Helper functions using `inject()` can be called from:
 - ❌ Event handler
 - ❌ Lifecycle hook
 
-:::warning Error NG0203
-Calling `inject()` or `assertInInjectionContext()` outside an injection context throws [error NG0203](https://angular.dev/errors/NG0203). Make sure to call these functions only during construction or initialization phases.
+:::info Why?
+Calling `inject()` or `assertInInjectionContext()` outside an injection context throws [error NG0203](https://v19.angular.dev/errors/NG0203). Make sure to call these functions only during construction or initialization phases.
 :::
 
 
