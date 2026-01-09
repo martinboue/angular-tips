@@ -37,7 +37,7 @@ Angular provides Long-Term Support (LTS) for each major release for 18 months.
 
 This section provides an overview of upcoming features, improvements, and deprecations that developers can expect in future versions of Angular.
 
-### Features coming soon
+### Features in preview
 
 The most impactful experimental and developer preview features that will soon be stable:
 
