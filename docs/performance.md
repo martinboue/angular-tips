@@ -1,16 +1,19 @@
 ---
 sidebar_position: 13
-draft: true
 ---
 
 # Performance
 
+Performance is a critical aspect of front-end development that directly impacts user experience and satisfaction. A fast and responsive application can lead to higher user engagement, better retention rates, and improved SEO rankings. Conversely, a slow application can frustrate users, leading to increased bounce rates and lost opportunities.
+
 ## General guidelines
 
-**Avoid** over-optimizing or prematurely optimizing.
+**Do** define performance requirements.
+- ❌ Unrealistic, vague or ambiguous performance goals, such as "fast" or "responsive".
+- ✅ Clear and measurable performance goals, such as "load time under 2 seconds".
 
 :::info Why?
-In addition to being a potential waste of time, premature optimizations can introduce unnecessary complexity, making your code harder to maintain. Instead, focus on building a functional application first, then measure its performance to identify bottlenecks and optimize accordingly.
+What is considered "fast" or "slow" can vary greatly depending on the context and the use case of the application. Defining clear performance requirements helps set expectations and provides a benchmark against which to measure the application's performance. This can include metrics such as load time, time to interactive, and responsiveness.
 :::
 
 **Do** measure performance before and after optimizations.
@@ -27,13 +30,19 @@ Front-end applications are often network-bound rather than CPU-bound. This means
 Measuring performance helps identify bottlenecks so that appropriate optimizations can be applied. It also helps verify that changes have the desired effect and do not introduce regressions.
 :::
 
+**Avoid** over-optimizing or prematurely optimizing.
+
+:::info Why?
+In addition to being a potential waste of time, premature optimizations can introduce unnecessary complexity, making your code harder to maintain. Instead, focus on building a functional application first, then measure its performance to identify bottlenecks and optimize accordingly.
+:::
+
 **Do** use Angular latest features.
 - ✅ Signals
 - ✅ Control flow (@if, @for, etc.)
 - ✅ OnPush change detection strategy
 - ...
 
-## Displaying a large list
+## Displaying a large dataset
 
 **Avoid** creating too many DOM elements.
 
@@ -147,12 +156,6 @@ Incremental hydration can only be used for server-side rendered pages.
 ### Rendering modes
 
 **Consider** setting the most suitable rendering mode for each route with hybrid rendering.
-
-<details>
-  <summary>What is hybrid rendering?</summary>
-  
-  TODO
-</details>
 
 ```ts title="✅ app.routes.server.ts"
 export const serverRoutes: ServerRoute[] = [
@@ -275,7 +278,7 @@ export const appConfig: ApplicationConfig = {
 and one for the server:
 ```ts title="✅ app.config.server.ts"
 const serverConfig: ApplicationConfig = {
-  providers: [{ provide: CacheService, useClass: ServerCacheService }],
+  providers: [{ provide: CacheService, useClass: ServerCacheService }]
 };
 ```
 
