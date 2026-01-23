@@ -1,5 +1,6 @@
 ---
 sidebar_position: 13
+sidebar_class_name: new
 ---
 
 # Performance
