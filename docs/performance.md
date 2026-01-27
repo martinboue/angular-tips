@@ -11,7 +11,7 @@ Performance is a critical aspect of front-end development that directly impacts 
 
 **Do** define performance requirements.
 - ❌ Unrealistic, vague or ambiguous performance goals, such as "fast" or "responsive".
-- ✅ Clear and measurable performance goals, such as "load time under 2 seconds".
+- ✅ Realistic, clear and measurable performance goals, such as "load time under 2 seconds".
 
 :::info Why?
 What is considered "fast" or "slow" can vary greatly depending on the context and the use case of the application. Defining clear performance requirements helps set expectations and provides a benchmark against which to measure the application's performance. This can include metrics such as load time, time to interactive, and responsiveness.
