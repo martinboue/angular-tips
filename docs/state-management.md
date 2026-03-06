@@ -62,3 +62,9 @@ Stores are often misused and overused. Over time, a lot of data and logic ends u
 ❌ **[TanStack Query](https://tanstack.com/query/latest/docs/framework/angular/overview)**: the Angular adapter is not yet production-ready, but worth keeping an eye on.
 
 ❌ **[Akita](https://opensource.salesforce.com/akita/)**: no longer maintained.
+
+:::note
+Other popular libraries that have not yet been evaluated:
+- **[NGXS](https://www.ngxs.io)**
+- **[Elf](https://ngneat.github.io/elf)**
+:::

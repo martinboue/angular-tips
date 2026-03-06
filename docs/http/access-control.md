@@ -202,6 +202,15 @@ export class IsAuthenticated implements OnInit {
 
 ✅ **[angular-auth2-oidc](https://github.com/manfredsteyer/angular-oauth2-oidc)**
 
+:::note
+Other popular libraries that have not yet been evaluated:
+- **[auth0](https://auth0.com/docs/quickstart/spa/angular)**
+- **[Better Auth](https://better-auth.com)**
+- **[Clerk](https://clerk.com)**
+- **[Keycloak JS](https://www.keycloak.org/securing-apps/javascript-adapter)**
+- **[Microsoft Authentication Library (MSAL)](https://www.npmjs.com/package/@azure/msal-angular)**
+:::
+
 ## Authorization
 
 **Do** filter data based on user permissions on the server side, not on the client side.

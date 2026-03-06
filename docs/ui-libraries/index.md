@@ -43,31 +43,52 @@ Headless UI libraries are not so popular and advanced in the Angular ecosystem c
 
 ❌ **[Spartan](https://www.spartan.ng/)**: promising library but not yet production-ready, you should avoid it for the time being.
 
+:::note
+Other popular libraries that have not yet been evaluated:
+- **[AG Grid](https://www.ag-grid.com)**
+- **[daisyUI](https://daisyui.com)**
+- **[Kendo UI](https://www.telerik.com/kendo-angular-ui)**
+- **[Taiga UI](https://taiga-ui.dev)**
+:::
+
 ## Headless UI
 
 **Consider** using the following:
 
-✅ **[Angular CDK](https://v21.material.angular.dev/cdk)**:
-The Component Development Kit (CDK) is a set of low-level primitives for building UI components, such as overlays, drag-and-drop, and accessibility features.
+✅ **[Angular CDK](https://v21.material.angular.dev/cdk)**: a set of low-level and unstyled primitives for building UI components.
 
 - ✅ High quality primitives
 - ✅ Well-maintained by the Angular team
+- ❌ Limited or no built-in accessibility features
 - ❌ Not a complete headless UI library, insufficient on its own
 
 :::tip
 Angular CDK can be used with any UI component library, not just Angular Material. It's useful for building custom components that your component library doesn't provide.
 :::
 
+:::note
+Other popular libraries that have not yet been evaluated:
+- **[Angular Aria](https://angular.dev/guide/aria/overview)**: unstyled accessible UI directives, built on top of Angular CDK by the Angular team.
+- **[TanStack Table](https://tanstack.com/table/latest)**
+- **[TanStack Form](https://tanstack.com/form/latest)**
+- **[TanStack Virtual](https://tanstack.com/virtual/latest)**
+:::
+
 ## Icons
 
 **Consider** using one of the following:
 
-✅ **[Material Icons](https://fonts.google.com/icons)**
-
-✅ **[Prime Icons](https://primeng.org/icons)**
+- ✅ **[Material Icons](https://fonts.google.com/icons)**
+- ✅ **[Prime Icons](https://primeng.org/icons)**
 
 ## Charts
 
 **Consider** using one of the following:
 
-✅ **[ngx-charts](https://swimlane.gitbook.io/ngx-charts)**
+- ✅ **[ngx-charts](https://swimlane.gitbook.io/ngx-charts)**
+
+:::note
+Other popular libraries that have not yet been evaluated:
+- **[AG Charts](https://www.ag-grid.com/charts)**
+- **[ngDiagram](https://www.ngdiagram.dev)**
+:::

@@ -76,3 +76,9 @@ src/app/shared/openapi
 
 - ❌ Requires Java to run
 - ❌ Infrequent updates of the typescript-angular generator
+
+:::note
+Other popular libraries that have not yet been evaluated:
+- **[Hey API](https://heyapi.dev)**
+- **[tRPC](https://trpc.io)**
+:::
