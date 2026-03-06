@@ -8,6 +8,12 @@
 
 [Documentation](https://ngtips.com)
 
+| Supported Angular versions  |
+|-----------------------------|
+| [v21](https://ngtips.com)   |
+| [v20](https://ngtips.com/20)|
+| [v19](https://ngtips.com/19)|
+
 ## Contributing
 
 See [contributing guidelines](docs/contributing.md).

@@ -21,5 +21,6 @@ To create a new version of Angular Tips:
     - Set `presets > docs > versions > current > label` to the new version number.
     - Add a new entry in `presets > docs > versions` for the previous version.
 4. Delete `draft: true` pages in the new `versioned_docs/version-vX` folder if any.
-5. Test the new version locally and make sure it builds correctly.
-6. Commit and push the changes.
+5. Update 'Supported Angular Versions' table in [README.md](./README.md).
+6. Test the new version locally and make sure it builds correctly.
+7. Commit and push the changes.
