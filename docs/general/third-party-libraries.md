@@ -43,3 +43,14 @@ Run tests or proof of concept to compare solutions and ensure that the chosen on
 :::info Why?
 Using multiple libraries that offer similar functionality can lead to confusion and potential conflicts, making your code harder to maintain and understand. It also increases the bundle size of your application, which can impact performance and loading times.
 :::
+
+## Library recommendations
+
+See the following pages for specific library recommendations:
+- [UI components, headless, charts & icons](../ui-libraries/index.md)
+- [State management](../state-management.md#libraries)
+- [Authentication](../http/access-control.md#libraries)
+- [API code generation](../http/api-specification.md#libraries)
+- [Internationalization (i18n)](../i18n.md#libraries)
+- [Testing](../testing.md)
+  
