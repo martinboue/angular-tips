@@ -186,9 +186,18 @@ Enabling source maps in development helps with debugging by providing a way to m
 - ❌ Different quote styles
 - ❌ Inconsistent indentation
 
-**Consider** using [ESLint](https://eslint.org/).
+**Do** use a linter.
+- ✅ [ESLint](https://eslint.org/): default linter for Angular projects, integrated with Angular CLI.
+- ✅ [Oxlint](https://oxc.rs/docs/guide/usage/linter.html): alternative to ESLint with a focus on performance and developer experience that will most likely become the next default linter. Not yet supported by Angular CLI but can be used with a custom setup, recommended if you have performance issues with ESLint.
+- ❌ [TSLint](https://palantir.github.io/tslint/): deprecated in favor of ESLint since 2019, not recommended for new projects.
 
-**Consider** using [Prettier](https://prettier.io/).
+:::tip
+Run `ng lint` to automatically configure ESLint in your Angular project.
+:::
+
+**Consider** using a code formatter.
+- ✅ [Prettier](https://prettier.io/)
+- ❌ [Oxfmt](https://oxc.rs/docs/guide/usage/formatter.html): high performance code formatter that is currently in beta and not yet recommended.
 
 ## Environments & Deployments
 
