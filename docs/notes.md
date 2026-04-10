@@ -74,4 +74,7 @@ sidebar_position: 0
     - json pipe
 - v21
     - zoneless
+- v22
+    - ChangeDetectionStrategy: Default -> Eager
+    - Default change detection will be Eager
     
