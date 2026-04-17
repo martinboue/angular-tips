@@ -1,0 +1,78 @@
+# TODO
+
+- avoid using switch default case with enums or union types (i.e. fixed set of values)
+    - why? if you add a new case, the missing case will be detected by the compiler unless you have a default case
+- use custom data in route to pass static data to components
+- strategy pattern for component
+    - routing vs if/switch vs NgComponentOutlet/ViewContainerRef
+- features 
+    - dynamic page titles and meta tags
+    - prevent user from leaving the page with unsaved changes
+    - logging
+    - http error handling: add interceptor example.
+    - Redirecting to 404 not found page
+        - for unknown route
+        - on resolver fail
+    - Controlling user access / preventing unauthorized access
+        - Protect routes
+            - Verify user is authenticated (guard) 
+            - Verify user has a given role (guard)
+        - Hide UI elements (custom directive)
+    - custom field with control value accessor
+    - show app version in UI:
+        - do NOT import package.json to display version
+        - use postversion script
+- migration : 
+    - "What's new?" section for each major release?
+- angular devtools chrome extension
+- testing
+    - when to test and when not to test
+    - unit testing
+    - component testing
+    - e2e testing
+- template
+    - use layout components
+    - use content projection
+    - ng container ?
+    - ng template ?
+    - use @let
+    - @for: use @empty, $last and $first
+    - passing array as input and change detection not triggered when adding or removing elements in array, you need to create a new array
+- details or add external link on REST API principles
+- form
+    - how to translate enums to readable text
+    - how to reuse form for both edit and readonly page
+    - how to split form in multiple components
+    - leverage grouping controls to disable/enable a group of controls, checking a validity, ...
+- typing
+    - use `?` for optional properties or method inputs
+    - use `Readonly<T>` or readonly T or "as const"
+    - use satisfies
+    - type vs interface
+    - protected
+- when to use and not to use Angular
+- JavaScript details
+    - false/true vs truthy/falsy
+    - spread operator on list or object: `...myVar`
+- component
+    - use angular cli
+        - short: ng g c my-comp
+    - component extending another component or directive
+    - use host, view and viewChild signals instead of @Host, @View and @ViewChild decorator
+    - contentChild and contentChildren
+- dependency injection
+    - overriding injection token
+    - forwardRef
+    - different injection tokens (useClass, useExisting, ...)
+- tailwind css:
+    - do not dynamically create classes (because detected at compile time)
+- debugging
+    - angular chrome devtools
+    - json pipe
+- v21
+    - zoneless
+- v22
+    - ChangeDetectionStrategy: Default -> Eager
+    - Default change detection will be Eager
+    - @Service decorator
+    

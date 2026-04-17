@@ -14,6 +14,12 @@ const config: Config = {
   tagline: description,
   favicon: 'img/favicon.png',
 
+  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
+  future: {
+    faster: true,
+    v4: true
+  },
+
   // Set the production url of your site here
   url: homepage,
   // Set the /<baseUrl>/ pathname under which your site is served
