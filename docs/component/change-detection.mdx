@@ -8,18 +8,13 @@ Change detection is a core concept in Angular that ensures the UI stays in sync 
 ## General guidelines
 
 **Consider** using `ChangeDetectionStrategy.OnPush` for every components.
-- ❌  unspecified change detection strategy
-- ❌ `changeDetection: ChangeDetectionStrategy.Default`
-- ✅ `changeDetection: ChangeDetectionStrategy.OnPush`
+- ❌ `changeDetection: ChangeDetectionStrategy.Eager`
+- ✅ `changeDetection: ChangeDetectionStrategy.OnPush` (default)
 
 :::info[Why?]
 The main reason is sustainability. Angular is heading towards better reactivity with signals and Zoneless application, and using `OnPush` now will make migration to future major releases easier.
 
 In addition, `OnPush` strategy improves performances by reducing the number of change detection cycles, which is particularly interesting for large projects.
-:::
-
-:::tip
-You can set the default change detection strategy to `OnPush` in your `angular.json` file for components generated with Angular CLI.
 :::
 
 **Do** rely on reactive primitives to trigger change detection.
