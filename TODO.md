@@ -73,6 +73,10 @@
     - zoneless
 - v22
     - ChangeDetectionStrategy: Default -> Eager
-    - Default change detection will be Eager
+    - Default change detection will be OnPush
     - @Service decorator
+    - stable signal forms
+    - stable resource signals
+    - remove jest and web test runner supports
+    - remove ngIf, ngFor and ngSwitch directives
     

@@ -1,5 +1,6 @@
 ---
 sidebar_position: 10
+sidebar_class_name: updated
 ---
 # Testing
 

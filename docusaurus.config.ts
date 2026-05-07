@@ -60,7 +60,10 @@ const config: Config = {
           lastVersion: 'current',
           versions: {
             current: {
-              label: '21',
+              label: '22',
+            },
+            '21': {
+              banner: 'none',
             },
             '20': {
               banner: 'none',
@@ -172,8 +175,8 @@ const config: Config = {
       additionalLanguages: ['scss', 'ignore']
     },
     announcementBar: {
-      id: 'v21-released',
-      content: `🎉 Angular Tips now supports Angular v21! Consider starring it on <a target="_blank" rel="noopener noreferrer" href="${repository}">GitHub</a> ⭐`,
+      id: 'v22-released',
+      content: `🎉 Angular Tips v22 is here! Show your support by starring it on <a target="_blank" rel="noopener noreferrer" href="${repository}">GitHub</a> ⭐`,
     },
   } satisfies Preset.ThemeConfig,
 };

@@ -1,6 +1,5 @@
 ---
 sidebar_position: 6
-sidebar_class_name: updated
 ---
 
 # Reactivity
@@ -134,10 +133,15 @@ constructor() {
 
 ### Fetching data
 
-**Consider** using resource signals to fetch data.
-- ✅ `resource()`
-- ✅ `httpResource()`
-- ✅ `rxResource()`
+**Consider** not using `resource()`, `rxResource()` or `httpResource()` signals, yet.
+
+:::info[Why?]
+`resource()`, `rxResource()` and `httpResource()` are experimental features in Angular v21 and are not recommended for production use as they may change in future releases.
+:::
+
+:::warning[Exceptions]
+Since these new tools will most likely become the future of Angular, and that they are an important missing piece, you can make an exception here and use them now. But be careful though, there's a high risk that the API may change as it's not stable yet.
+:::
 
 ## RxJs
 
@@ -146,10 +150,6 @@ constructor() {
 - ✅ Asynchronous mutation (e.g. HTTP POST request)
 - ✅ Complex event handling (e.g. debounce, throttle, etc.)
 - ...
-
-:::info[Why?]
-Resource signals are reactive and integrate seamlessly with signals. They provide additional features compared to RxJS, such as automatic refetching, loading and error state management and manual reload.
-:::
 
 **Consider** using [signals](#signals) instead of RxJs `BehaviorSubject`.
 
