@@ -32,6 +32,10 @@ You should use reactive structures like signals instead of manually triggering t
 
 **Consider** using signals to manage reactive state.
 
+:::info[Why?]
+When a signal is consumed in a template, Angular automatically re-renders the component when the signal value changes.
+:::
+
 **Avoid** using signals for event handling, use [RxJs](#rxjs) instead.
 
 ### Writable state

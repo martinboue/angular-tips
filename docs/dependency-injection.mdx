@@ -1,5 +1,6 @@
 ---
 sidebar_position: 11
+sidebar_class_name: updated
 ---
 # Dependency injection
 
@@ -19,6 +20,10 @@ export class UserPage {
 }
 ```
 
+**Do** use `@Service()` decorator for root services.
+- ❌ `@Injectable({ providedIn: 'root' })`
+- ✅ `@Service()`
+
 ## Injection level
 
 **Do** use root level injection by default.
@@ -29,9 +34,7 @@ export class UserHttpClient {...}
 ```
 
 ```ts title="✅ Root level injection"
-@Injectable({
-  providedIn: 'root'
-})
+@Service() // or @Injectable({ providedIn: 'root' })
 export class UserHttpClient {...}
 ```
 
