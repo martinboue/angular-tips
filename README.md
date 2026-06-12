@@ -10,7 +10,8 @@
 
 | Supported Angular versions  |
 |-----------------------------|
-| [v21](https://ngtips.com)   |
+| [v22](https://ngtips.com)   |
+| [v21](https://ngtips.com/21)|
 | [v20](https://ngtips.com/20)|
 | [v19](https://ngtips.com/19)|
 

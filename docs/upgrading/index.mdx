@@ -1,0 +1,39 @@
+---
+title: Upgrading
+sidebar_position: 15
+sidebar_class_name: new
+---
+# Upgrading Angular
+
+**Consider** keeping up to date with the latest Angular release.
+
+:::info[Why?]
+Staying up to date with Angular versions enhances maintainability and security while providing access to the latest features and performance improvements. Regular upgrades are easier to manage than to upgrade several versions at once.
+
+Angular limits breaking changes, new features are always opt-in and obsolete features are deprecated for several major versions before being removed.
+Angular releases a major version every six months, you can anticipate and plan for upcoming version upgrades. Third party libraries are often the most painful to upgrade, not Angular itself.
+:::
+
+**Consider** using Long-Term Support (LTS) versions.
+
+:::note
+Angular provides Long-Term Support (LTS) for each major release for 18 months, see [Angular support policy and schedule](https://v22.angular.dev/reference/releases#support-policy-and-schedule).
+:::
+
+**Do** upgrade one major version at a time.
+- ❌ From v18 to v20
+- ✅ From v18 to v19, then from v19 to v20
+
+**Do** verify your dependencies compatibility with the target Angular version.
+
+**Do** use [migrations schematics](https://v22.angular.dev/reference/migrations) to automate the upgrade process.
+
+**Do** use the [Angular Update Guide](https://v22.angular.dev/update-guide).
+
+**Consider** reading the [changelogs](https://github.com/angular/angular/releases).
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
+```

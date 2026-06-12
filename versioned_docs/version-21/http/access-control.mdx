@@ -28,7 +28,7 @@ Implementing custom authentication is very complex and error-prone, it will most
 **Consider** using a service to globally manage authentication and interact with the chosen client library.
 
 ```ts title="✅ auth-manager.ts"
-@Service()
+@Injectable({ providedIn: 'root' })
 export class AuthManager {
   // Expose readonly signals
   isAuthenticated: Signal<boolean> = ...;
@@ -224,7 +224,7 @@ Relying on client-side filtering can expose sensitive data to unauthorized users
 ```ts title="✅ permission-manager.ts"
 export type UserPermission = 'read_post' | 'write_post' | 'write_comment' | 'read_comment';
 
-@Service()
+@Injectable({ providedIn: 'root' })
 export class PermissionManager {
   #authManager = inject(AuthManager);
 
