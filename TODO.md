@@ -22,8 +22,6 @@
     - show app version in UI:
         - do NOT import package.json to display version
         - use postversion script
-- migration : 
-    - "What's new?" section for each major release?
 - angular devtools chrome extension
 - testing
     - when to test and when not to test
