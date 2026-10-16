@@ -1,0 +1,54 @@
+---
+sidebar_position: 1
+---
+# AI IDE setup
+
+Modern AI-powered editors let you provide custom context, system instructions and rules to guide code generation. Angular maintains a set of official, regularly updated resources you should plug into your IDE to generate idiomatic and up-to-date Angular code.
+
+## Rules files
+
+Most AI editors support a "rules" or "instructions" file that is automatically included as context in every request.
+
+**Do** add Angular's official best practices to your editor's rules file.
+
+:::info[Why?]
+This file gives the AI critical, version-aligned context (signals, standalone components, native control flow, `inject()`, typed forms, accessibility, etc.), so it generates code that follows current Angular conventions instead of legacy patterns.
+:::
+
+Angular provides a ready-to-use [`best-practices.md`](https://angular.dev/assets/context/best-practices.md) file. Add it to the location expected by your editor:
+
+| Editor                | Rules file location                  |
+|-----------------------|--------------------------------------|
+| VS Code               | `.github/instructions/*.instructions.md` |
+| GitHub Copilot        | `.github/copilot-instructions.md`    |
+| Cursor                | `.cursor/rules/*.mdc`                |
+| JetBrains IDEs        | `guidelines.md`                      |
+| Windsurf              | `guidelines.md`                      |
+| Firebase Studio       | `airules.md`                         |
+
+## System instructions
+
+**Consider** adding Angular's instructions as system instructions when you interact with an LLM directly (outside of an editor with rules files).
+
+:::info[Why?]
+System instructions are applied to the whole conversation and steer the model towards Angular best practices from the very first prompt. The same [`best-practices.md`](https://angular.dev/assets/context/best-practices.md) file can be used for this purpose.
+:::
+
+## Providing context with llms.txt
+
+[`llms.txt`](https://llmstxt.org/) is a proposed standard that helps LLMs better understand and process a website's content. The Angular team maintains two versions:
+
+- [`llms.txt`](https://angular.dev/llms.txt): an index file linking to key resources.
+- [`llms-full.txt`](https://angular.dev/assets/context/llms-full.txt): a full, compiled set of resources describing how Angular works and how to build Angular applications.
+
+**Consider** referencing these files in tools that support fetching external context.
+
+:::info[Why?]
+They give AI tools a curated, authoritative source of Angular knowledge, reducing hallucinations and outdated answers.
+:::
+
+## Going further
+
+- Configure the [Angular MCP server](./mcp.mdx) to give agents action tools (build, test, workspace analysis).
+- Install the [official agent skills](./agent-skills.mdx) for deeper, task-specific guidance.
+- Read the [official Angular AI guide](https://angular.dev/ai/develop-with-ai) for the latest details.

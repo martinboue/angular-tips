@@ -1,0 +1,90 @@
+---
+sidebar_position: 2
+---
+# Angular MCP configuration
+
+The Angular CLI ships with a built-in [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server. While rules files and instructions provide *knowledge*, the MCP server provides *action tools*, letting AI agents interact directly with the Angular CLI to analyze your workspace, run builds and tests, and apply migrations.
+
+**Consider** enabling the Angular MCP server in AI agents that support it.
+
+:::info[Why?]
+It turns a code-generating assistant into a capable development agent that can discover your projects, follow version-aligned best practices, run your test suite to verify its own changes, and perform guided migrations, all through official, safe tooling.
+:::
+
+## Get started
+
+Configure your host environment (IDE or CLI) to run the server with `npx @angular/cli mcp`.
+
+For **VS Code**, create a `.vscode/mcp.json` file in your project root:
+
+```json
+{
+  "servers": {
+    "angular-cli": {
+      "command": "npx",
+      "args": ["-y", "@angular/cli", "mcp"]
+    }
+  }
+}
+```
+
+For **Cursor** and other hosts that use the standard `mcpServers` format:
+
+```json
+{
+  "mcpServers": {
+    "angular-cli": {
+      "command": "npx",
+      "args": ["-y", "@angular/cli", "mcp"]
+    }
+  }
+}
+```
+
+:::note
+Refer to your specific tool's documentation for the exact configuration file name and location, as it varies between editors.
+:::
+
+## Available tools
+
+Once enabled, agents get access to tools such as:
+
+| Tool                        | Description                                                                 |
+|-----------------------------|-----------------------------------------------------------------------------|
+| `get_best_practices`        | Retrieves the Angular best practices guide (standalone components, typed forms, etc.). |
+| `list_projects`             | Lists all applications and libraries in the workspace by reading `angular.json`. |
+| `search_documentation`      | Searches the official documentation at [angular.dev](https://angular.dev). |
+| `run_target`                | Executes a configured target (`build`, `test`, `lint`, `e2e`, `deploy`, ...). |
+| `devserver.start` / `devserver.stop` | Starts and stops a dev server (`ng serve`).                        |
+| `devserver.wait_for_build`  | Returns the logs of the most recent build in a running dev server.          |
+| `onpush_zoneless_migration` | Analyzes code and provides a plan to migrate it to OnPush / zoneless.        |
+| `ai_tutor`                  | Launches an interactive AI-powered Angular tutor.                           |
+
+## Command options
+
+You can pass arguments in the `args` array to restrict the server's capabilities:
+
+- `--read-only`: only registers tools that do **not** modify the project.
+- `--local-only`: only registers tools that do **not** require an internet connection.
+
+```json
+{
+  "servers": {
+    "angular-cli": {
+      "command": "npx",
+      "args": ["-y", "@angular/cli", "mcp", "--read-only"]
+    }
+  }
+}
+```
+
+**Consider** using `--read-only` when you only want analysis and want to prevent the agent from changing your files.
+
+:::info[Why?]
+It gives you a safe, non-destructive way to benefit from workspace analysis and documentation search without risking unintended modifications.
+:::
+
+## Going further
+
+- Combine the MCP server with the [official agent skills](./agent-skills.mdx) for a complete development agent.
+- Read the [official Angular MCP guide](https://angular.dev/ai/mcp) for the latest details.

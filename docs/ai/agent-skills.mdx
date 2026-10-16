@@ -1,0 +1,41 @@
+---
+sidebar_position: 3
+---
+# Official agent skills
+
+Agent skills are specialized, domain-specific instructions and capabilities designed for AI agents. They provide architectural guidance, generate idiomatic Angular code and help scaffold new projects using modern best practices. The Angular team maintains a collection of official skills that are regularly updated to stay in sync with the latest framework improvements.
+
+**Consider** using the official Angular skills with agentic coding tools.
+
+:::info[Why?]
+Unlike a static rules file, a skill is loaded on demand for a specific task, giving the agent deep, focused instructions and resources exactly when they are needed. This keeps context relevant and ensures the agent uses up-to-date Angular conventions (signals, standalone components, project structure, etc.).
+:::
+
+## Available skills
+
+| Skill               | Description                                                                                     |
+|---------------------|-------------------------------------------------------------------------------------------------|
+| `angular-developer` | Generates Angular code and provides architectural guidance for components, services, reactivity (signals, `linkedSignal`, `resource`), forms, dependency injection, routing, SSR, accessibility, animations, styling, testing and CLI tooling. |
+| `angular-new-app`   | Creates a new Angular app using the Angular CLI, with guidelines for setting up and structuring a modern application. |
+
+## Using agent skills
+
+Agent skills are designed to work with agentic coding tools such as [Gemini CLI](https://geminicli.com/docs/cli/skills/) and [Antigravity](https://antigravity.google/docs/skills). Follow the instructions for your specific tool, or use a community tool like [skills.sh](https://skills.sh/):
+
+```bash
+npx skills add https://github.com/angular/skills
+```
+
+Activating a skill loads the specific instructions and resources needed for that task.
+
+## Combining skills with the MCP server
+
+**Consider** using the official skills together with the [Angular MCP server](./mcp.mdx).
+
+:::info[Why?]
+Skills provide deep, instruction-level guidance and coding standards, while the MCP server provides the action tools (compiling, running tests, analyzing the workspace) to execute those guidelines. Combined, they form a complete and powerful development agent.
+:::
+
+## Going further
+
+- Read the [official Angular agent skills guide](https://angular.dev/ai/agent-skills) for the latest details.
